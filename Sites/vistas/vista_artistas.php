@@ -10,6 +10,7 @@
 <div class="content-box">
     <section class="section section-destination">
         <div>
+            <article>
             <table>
             <tr>
                 <th>Nombre artista</th>
@@ -21,6 +22,7 @@
                 }
             ?>
             </table>
+            </article>
             <hr />
         </div>
     </section>
