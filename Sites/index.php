@@ -41,7 +41,18 @@
                <div class="container">
                   <div class="hero-text align-center">
                      <h1>Reserve a boat now!</h1>
-                     <a href="vistas/vista_artistas.php">Ver artistas</a>
+
+                     <form id="ver_artistas" action ="vistas/vista_artistas.php" method="post">
+                              <div class="container">
+                                 <article id="main">
+                                    <header>
+                                          <h2><a onclick="document.getElementById('ver_artistas').submit()">Ver artistas</a></h2>
+                                    </header>
+                                 <hr />
+                              </div>
+                        </div>
+                     </form>
+
                      <p>and set your sails into paradise!</p>
                   </div>
 
