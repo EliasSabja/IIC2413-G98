@@ -1,7 +1,5 @@
 <?php include('../templates/header.html'); ?>
 
-<section class="section section-destination">
-
 <?php
     require("../assets/conexion.php");
     $query = "SELECT Artistas.nombre FROM Artistas;";
@@ -10,6 +8,7 @@
     $dataCollected = $result -> fetchAll();
 ?>
 
+<section class="section section-destination">
     <div class="container">
         <table>
         <tr>
@@ -24,6 +23,6 @@
         </table>
         <hr />
     </div>
-<section>
+</section>
 
 <?php include('../templates/footer.html'); ?>
