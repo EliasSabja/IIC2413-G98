@@ -3,7 +3,7 @@
 <section class="section section-destination">
 
 <?php
-    require("../config/conexion.php");
+    require("../assets/conexion.php");
     $query = "SELECT Artistas.nombre FROM Artistas;";
     $result = $db8 -> prepare($query);
     $result -> execute();
