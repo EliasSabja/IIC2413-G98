@@ -2,10 +2,10 @@
 
 <?php
     require("../assets/conexion.php");
-    $query = "SELECT Artistas.nombre FROM Artistas;";
-    $result = $db8 -> prepare($query);
+    $query = "SELECT DISTINCT anombre FROM artistas;";
+    $result = $db -> prepare($query);
     $result -> execute();
-    $dataCollected = $result -> fetchAll();
+    $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 ?>
 
 <section class="section section-destination">
@@ -17,16 +17,12 @@
     <div class="container">
         <div class="row">
             <article>
-            <table>
+            <table class="custom">
             <tr>
                 <th>Nombre artista</th>
                 <th>Ver detalles</th>
             </tr>
-            <?php
-                foreach ($dataCollected as $p) {
-                    echo "<tr> <td>$p[0]</td> <td> <a> Ver detalles </a> </td> </tr>";
-                }
-            ?>
+            
             </table>
             </article>
             <hr />

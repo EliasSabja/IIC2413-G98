@@ -3206,3 +3206,32 @@ textarea:focus {
 .social-block li i:hover.icon-google-plus {
   background: #dd4b39;
 }
+
+
+.custom {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom td,
+.custom th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.custom tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.custom tr:hover {
+  background-color: #ddd;
+}
+
+.custom th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3A3939;
+  color: white;
+}
