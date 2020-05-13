@@ -3,7 +3,7 @@
 <?php
     require("../assets/conexion.php");
     $query = "SELECT DISTINCT anombre FROM artistas;";
-    $result = $db -> prepare($query);
+    $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 ?>
