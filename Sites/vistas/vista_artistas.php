@@ -11,7 +11,7 @@
 ?>
 
     <div class="container">
-        <table class="custom">
+        <table>
         <tr>
             <th>Nombre artista</th>
             <th>Ver detalles</th>
