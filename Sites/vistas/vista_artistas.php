@@ -7,9 +7,15 @@
     $result -> execute();
     $dataCollected = $result -> fetchAll();
 ?>
-<div class="content-box">
-    <section class="section section-destination">
-        <div>
+
+<section class="section section-destination">
+    <div class="section-title">
+        <div class="container">
+            <h2 class="title">Explora los artistas registrados</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <article>
             <table>
             <tr>
@@ -25,6 +31,7 @@
             </article>
             <hr />
         </div>
-    </section>
-</div>
+    </div>
+</section>
+
 <?php include('../templates/footer.html'); ?>

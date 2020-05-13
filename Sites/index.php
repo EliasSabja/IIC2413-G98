@@ -52,18 +52,6 @@
                               </div>
                         </div>
                      </form>
-
-                     <form id="ver_obras" action ="vistas/vista_obras.php" method="post">
-                              <div class="container">
-                                 <article id="main">
-                                    <header>
-                                          <h2><a onclick="document.getElementById('ver_obras').submit()">Ver artistas</a></h2>
-                                    </header>
-                                 <hr />
-                              </div>
-                        </div>
-                     </form>
-
                      <p>and set your sails into paradise!</p>
                   </div>
 
