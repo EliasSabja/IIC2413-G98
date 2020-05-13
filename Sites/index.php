@@ -1,5 +1,4 @@
 <?php include('templates/header.html'); ?>
-   <li><a href="vistas/vista_artistas.php">Ver artistas</a></li>
       <!-- Main Content -->
       <div class="content-box">
          <!-- Hero Section -->
@@ -8,6 +7,7 @@
                <div class="container">
                   <div class="hero-text align-center">
                      <h1>Reserve a boat now!</h1>
+                     <a href="vistas/vista_artistas.php">Ver artistas</a>
                      <p>and set your sails into paradise!</p>
                   </div>
 
