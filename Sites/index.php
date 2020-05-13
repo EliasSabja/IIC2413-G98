@@ -1,5 +1,5 @@
 <?php include('templates/header.html'); ?>
-   <a href="consultas/consulta_artistas">Ver artistas</a>
+   <a href="consultas/consulta_artistas.php">Ver artistas</a>
       <!-- Main Content -->
       <div class="content-box">
          <!-- Hero Section -->
