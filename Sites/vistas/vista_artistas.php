@@ -22,7 +22,11 @@
                 <th>Nombre artista</th>
                 <th>Ver detalles</th>
             </tr>
-            
+            <?php
+                foreach ($dataCollected as $p) {
+                    echo "<tr> <td>$p[0]</td> <td>Ver detalles</td> </tr>";
+                }
+            ?>
             </table>
             </article>
             <hr />
