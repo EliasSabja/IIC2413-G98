@@ -2,7 +2,7 @@
 
 <?php
     require("../assets/conexion.php");
-    $query = "SELECT DISTINCT anombre FROM artistas;";
+    $query = "SELECT DISTINCT anombre, aid FROM artistas;";
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
@@ -20,11 +20,11 @@
             <table class="custom">
             <tr>
                 <th>Nombre artista</th>
-                <th>Ver detalles</th>
+                <th></th>
             </tr>
             <?php
                 foreach ($dataCollected as $p) {
-                    echo "<tr> <td>$p[0]</td> <td>Ver detalles</td> </tr>";
+                    echo "<tr> <td>$p[0]</td> <td> <a href='vista_por_artista.php?id=$p[1]'>Ingresar a la página del artista</a></td> </tr>";
                 }
             ?>
             </table>
