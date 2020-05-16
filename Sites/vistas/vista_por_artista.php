@@ -24,12 +24,11 @@
             <tr>
                 <th>Nombre artista</th>
                 <th>Fecha de nacimiento</th>
-                <th>Fecha de fallecimiento</th>
                 <th>Descripción</th>
             </tr>
             <?php
                 foreach ($dataCollected as $p) {
-                    echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td> </tr>";
+                    echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
                 }
             ?>
             </table>
