@@ -23,11 +23,10 @@
                   <ul class="clean-list site-links">
                      <li>
                         <a href="#"> <?php
-                           echo 1;
                            if ($_SESSION["user"]) {
-                              $user = "user";
-                              echo 2;
+                              echo "HOLA ";
                               echo $_SESSION["user"];
+                              echo ", BIENVENIDO!!";
                            }
                         ?> </a>
                      </li>
