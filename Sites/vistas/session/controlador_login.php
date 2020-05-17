@@ -12,7 +12,10 @@
     #}
     $validado = false;
     foreach ($data as $tupla){
-        if (($_POST["correo"] == $tupla[0]) and ($_POST["contrasena"] == $tupla[1])){
+        if ($_POST["correo"] == $tupla[0]){
+            $validado = true;
+        }
+        if ($_POST["contrasena"] == $tupla[1]){
             $validado = true;
         }
     }
