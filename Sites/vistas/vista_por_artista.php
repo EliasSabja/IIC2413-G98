@@ -19,14 +19,17 @@
     $result2 = $db8 -> prepare($query2);
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
-    
-    $values1 = array_values($dataCollected1[0])
-    $values2 = array_values($dataCollected2[0])
 
-    echo "<h2>$values1</h2>"
-    echo "<h3>$dataCollected1</h3>"
-    echo "<h2>$values2</h2>"
-    echo "<h3>$dataCollected2</h3>"
+    $values1 = array_values($dataCollected1);
+    $values2 = array_values($dataCollected2);
+
+    $values11 = array_values($dataCollected1[0]);
+    $values22 = array_values($dataCollected2[0]);
+
+    echo "<h2>$values1</h2><br>";
+    echo "<h3>$values11</h3><br>";
+    echo "<h2>$values2</h2><br>";
+    echo "<h3>$values22</h3>";
 
     foreach($dataCollected1 as $d){
         if ($current_aid == $d[0]){
