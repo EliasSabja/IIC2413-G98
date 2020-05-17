@@ -20,8 +20,16 @@
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
 
-    echo "$dataCollected1[aid]";
-    echo "$dataCollected2[aid]";
+    $values1 = array_values($dataCollected1)
+    $values2 = array_values($dataCollected2)
+
+    $values1 = array_values($dataCollected1[0])
+    $values2 = array_values($dataCollected2[0])
+
+    echo "<h2>$values1</h2>"
+    echo "<h3>$dataCollected1</h3>"
+    echo "<h2>$values2</h2>"
+    echo "<h3>$dataCollected2</h3>"
 
     foreach($dataCollected1 as $d){
         if ($current_aid == $d[0]){
@@ -35,7 +43,9 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-           
+           <?php 
+             echo "($dataCollected[0])[0]"
+           ?>
         
             <h3>Datos del artista</h3>
         </div>
