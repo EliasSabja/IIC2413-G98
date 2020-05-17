@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -23,7 +24,7 @@
                      <li>
                         <a href="#"> <?php
                            echo 1;
-                           if ($_SESSION["user"] != null) {
+                           if ($_SESSION["user"]) {
                               $user = "user";
                               echo 2;
                               echo $_SESSION["user"];
