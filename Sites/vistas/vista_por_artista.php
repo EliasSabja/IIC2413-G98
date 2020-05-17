@@ -22,11 +22,14 @@
 
     if ($dataCollected1[0]){
         $dataCollected = $dataCollected1;
-        echo "<h1>VIVO</h1>";
     } elseif ($dataCollected2[0]){
         $dataCollected = $dataCollected2;
-        echo "<h1>MUERTO</h1>";
     }
+
+    $query_obras = "SELECT obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=$current_aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
+    $result_obras = $db8 -> prepare($query_obras);
+    $result_obras -> execute();
+    $data_obras_collected = $result -> fetchAll();
 ?>
 
 <section class="section section-destination">
@@ -65,6 +68,29 @@
                         }
                     }
             ?>
+            </table>
+            </article>
+            <hr />
+        </div>
+    </div>
+    
+    <div class="section-title">
+        <div class="container">
+            <h2>Obras del artista</h2>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <article>
+            <table class="custom">
+                <tr>
+                    <th>Nombre obra</th>
+                </tr>
+                <?php foreach ($data_obras_collected as $obra){
+                    echo "<tr><td><a href=#>$obra[0]</a></td></tr>";
+                }
+                ?>
             </table>
             </article>
             <hr />
