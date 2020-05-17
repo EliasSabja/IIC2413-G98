@@ -35,7 +35,8 @@
                      </li>
                   </ul>
 
-                  <a href="#" class="btn btn-outlined">Sign up</a>
+                  <a href="vistas/session/vista_signup.php" class="btn btn-outlined">Sign up</a>
+                  <a href="vistas/session/vista_login.php" class="btn btn-outlined">Log in</a>
                </nav>
             </div>
          </div>
