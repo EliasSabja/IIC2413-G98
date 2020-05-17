@@ -5,7 +5,11 @@
     $result -> execute();
     $data = $result -> fetchAll();
     $credenciales =  array($_POST["correo"], $_POST["contrasena"]);
-    echo "<!DOCTYPE html><html> <body> <h1> $credenciales[0], $credenciales[1] </h1></body> </html>";
+    echo "<!DOCTYPE html> <body> <h1> $data[0], $data[1] </h1>";
+    foreach($data as $p){
+        echo "$p[0], $p[1]-";
+    }
+    echo "</body></html>" ;
     if (in_array($credenciales, $data)) {
         session_start();
         $_SESSION["user"] = $credenciales[0];
