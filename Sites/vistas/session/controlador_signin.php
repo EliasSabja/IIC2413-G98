@@ -21,7 +21,7 @@
         $result_i -> execute();
         $foo = $result_i -> fetchAll();
         session_start();
-        $_SESSION["user"] = $credenciales[3];
+        $_SESSION["user"] = $credenciales[2];
         header("Location: ../../index.php");
         die();
     }
