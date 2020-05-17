@@ -29,7 +29,7 @@
     $query_obras = "SELECT obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=$current_aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
     $result_obras = $db8 -> prepare($query_obras);
     $result_obras -> execute();
-    $data_obras_collected = $result -> fetchAll();
+    $data_obras_collected = $result_obras -> fetchAll();
 ?>
 
 <section class="section section-destination">
