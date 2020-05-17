@@ -14,10 +14,12 @@
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
 
-    if ($current_aid == $dataCollected1[0]){
-        $dataCollected = $dataCollected1;
-    } else{
-        $dataCollected = $dataCollected2;
+    foreach($dataCollected1 as $d){
+        if ($current_aid == $d[0]){
+            $dataCollected = $dataCollected1;
+        } else{
+            $dataCollected = $dataCollected2;
+        }
     }
 ?>
 
