@@ -12,11 +12,11 @@
     #}
     $validado = false;
     foreach ($data as $tupla){
-        if (array($_POST["correo"], $_POST["contrasena"]) == $tupla){
+        if (array($_POST["correo"], $_POST["contrasena"]) == array($tupla[0], $tupla[1])){
             $validado = true;
         }
     }
-    echo "<h1> $validado </h1>";
+    echo $validado ? 'true':'false';
     echo "</body></html>" ;
     if (in_array($credenciales, $data)) {
         session_start();
