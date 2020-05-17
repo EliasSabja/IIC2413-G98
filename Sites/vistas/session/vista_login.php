@@ -4,7 +4,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h2 class="title">Ingresa tus datos para inscribirte</h2>
+            <h2 class="title">Ingresa tus datos para loggearte</h2>
         </div>
     </div>
     <div class="container">
