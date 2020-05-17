@@ -20,8 +20,8 @@
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
 
-    echo "$dataCollected1[0]";
-    echo "$dataCollected2[0]";
+    echo "$dataCollected1[aid]";
+    echo "$dataCollected2[aid]";
 
     foreach($dataCollected1 as $d){
         if ($current_aid == $d[0]){
