@@ -26,7 +26,7 @@
                 foreach ($dataCollected as $p) {
                     echo "<tr> <td>$p[0]</td> <td> <a href='vista_por_artista.php?id=$p[1]'>Ingresar a la página del artista</a></td> </tr>";
                 }
-            ?>
+            ?> 
             </table>
             </article>
             <hr />
