@@ -9,10 +9,17 @@
     $result -> execute();
     $dataCollected1 = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
-    $query2 = "SELECT DISTINCT * FROM artistas, muerte WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < Current_date";
+    $query2 = "SELECT * FROM artistas, muerte WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < Current_date;";
     $result2 = $db8 -> prepare($query2);
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
+
+    foreach($dataCollected1 as $d){
+        echo "$d[0]"
+        echo "$d[1]"
+        echo "$d[2]"
+        echo "$d[3]"
+    }
 
     foreach($dataCollected1 as $d){
         if ($current_aid == $d[0]){
