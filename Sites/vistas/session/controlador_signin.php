@@ -17,7 +17,7 @@
     }
     else {
         $query_i = "INSERT INTO usuarios VALUES(default, $credenciales[0], $credenciales[1], $credenciales[2], $credenciales[3], true, $credenciales[4]);";
-        $result_i = $db9 -> prepare($query_c);
+        $result_i = $db9 -> prepare($query_i);
         $result_i -> execute();
         $foo = $result_i -> fetchAll();
         session_start();
