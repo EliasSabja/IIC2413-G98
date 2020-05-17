@@ -23,7 +23,7 @@
                      <li>
                         <a href="#"> <?php
                            echo 1;
-                           if ($_SESSION["user"]) {
+                           if ($_SESSION["user"] != null) {
                               $user = "user";
                               echo 2;
                               echo $_SESSION["user"];
