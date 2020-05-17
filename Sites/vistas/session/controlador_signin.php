@@ -4,8 +4,14 @@
     $result_c = $db9 -> prepare($query_c);
     $result_c -> execute();
     $correos = $result_c -> fetchAll();
-    $credenciales =  array($_POST["username"], $_POST["nombre"], $_POST["direccion"], $_POST["correo"], $_POST["contrasena"]);
-    if (in_array(array($credenciales["correo"]), $correos) or ($_POST["contrasena"] == null) or ($_POST["correo"] == null)) {
+    $credenciales =  array(trim($_POST["username"]), trim($_POST["nombre"]), trim($_POST["correo"]), trim($_POST["direccion"]), trim($_POST["contrasena"]));
+    $usado = false;
+    foreach ($data as $tupla){
+        if (trim($_POST["correo"]) == trim($tupla[0])){
+            $usado = true;
+        }
+    }
+    if (($usado) or ($_POST["contrasena"] == null) or ($_POST["correo"] == null)) {
         header("Location: vista_signin.php");
         die();
     }
