@@ -15,10 +15,10 @@
     $dataCollected2 = $result2 -> fetchAll();
 
     foreach($dataCollected1 as $d){
-        echo "$d[0]"
-        echo "$d[1]"
-        echo "$d[2]"
-        echo "$d[3]"
+        echo "$d[0]";
+        echo "$d[1]";
+        echo "$d[2]";
+        echo "$d[3]";
     }
 
     foreach($dataCollected1 as $d){
