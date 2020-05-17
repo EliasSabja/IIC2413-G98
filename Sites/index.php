@@ -23,9 +23,9 @@
                   <ul class="clean-list site-links">
                      <li>
                         <a href="#"> <?php
-                           if ($_SESSION["user"]) {
+                           if ($_SESSION["nombre"]) {
                               echo "HOLA ";
-                              echo $_SESSION["user"];
+                              echo $_SESSION["nombre"];
                               echo ", BIENVENIDO!!";
                            }
                         ?> </a>
