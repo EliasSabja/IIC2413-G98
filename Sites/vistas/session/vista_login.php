@@ -15,7 +15,7 @@
                 <input type="text" name="correo"><br>
                 <label for="contrasena">Contraseña:</label>
                 <input type="text" name="contrasena"><br>
-                <input type="submit" value="Loguearse">
+                <input type="submit" value="Loguearse" class="btn">
             </form>
             </article>
             <hr />
