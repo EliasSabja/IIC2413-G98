@@ -1,5 +1,5 @@
 <?php
-    require("../assets/conexion.php");
+    require("../../assets/conexion.php");
     $query = "SELECT nombre, contrasena FROM usuarios;";
     $result = $db9 -> prepare($query);
     $result -> execute();

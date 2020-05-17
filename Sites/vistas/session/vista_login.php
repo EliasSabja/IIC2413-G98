@@ -1,4 +1,4 @@
-<?php include('../templates/header.html'); ?>
+<?php include('../../templates/header.html'); ?>
 
 
 
@@ -12,4 +12,4 @@
 
 
 
-<?php include('../templates/footer.html'); ?>
+<?php include('../../templates/footer.html'); ?>

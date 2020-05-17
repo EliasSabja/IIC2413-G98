@@ -1,5 +1,5 @@
 <?php
-    require("../assets/conexion.php");
+    require("../../assets/conexion.php");
     $query_c = "SELECT correo FROM usuarios;";
     $result_c = $db9 -> prepare($query_c);
     $result_c -> execute();
