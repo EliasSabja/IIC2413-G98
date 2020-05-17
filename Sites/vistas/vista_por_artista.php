@@ -19,10 +19,7 @@
     $result2 = $db8 -> prepare($query2);
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
-
-    $values1 = array_values($dataCollected1)
-    $values2 = array_values($dataCollected2)
-
+    
     $values1 = array_values($dataCollected1[0])
     $values2 = array_values($dataCollected2[0])
 
