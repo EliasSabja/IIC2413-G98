@@ -4,22 +4,21 @@
     $current_aid = $_GET['id'];
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM (SELECT DISTINCT artistas.aid FROM artistas WHERE artistas.aid=$current_aid EXCEPT SELECT DISTINCT artistas.aid FROM muerte, artistas WHERE artistas.aid=muerte.aid and muerte.fecha_fallecimiento >= Current_date) AS con, artistas WHERE artistas.aid=con.aid;";
+    $query = "SELECT artistas.aid, artistas.anombre, artistas.fecha_nacimiento, artistas.descripcion 
+    FROM (SELECT DISTINCT artistas.aid FROM muerte, artistas WHERE artistas.aid=muerte.aid and muerte.fecha_fallecimiento >= CURRENT_DATE) 
+    AS con, artistas WHERE artistas.aid=con.aid AND artistas.aid=$current_aid;";
+
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected1 = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
-    $query2 = "SELECT * FROM artistas, muerte WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < Current_date;";
+    $query2 = "SELECT artistas.aid, artistas.anombre, artistas.fecha_nacimiento, fecha_fallecimiento, artistas.descripcion 
+                FROM artistas, muerte 
+                WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < CURRENT_DATE;";
+
     $result2 = $db8 -> prepare($query2);
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
-
-    foreach($dataCollected1 as $d){
-        echo "$d[0]";
-        echo "$d[1]";
-        echo "$d[2]";
-        echo "$d[3]";
-    }
 
     foreach($dataCollected1 as $d){
         if ($current_aid == $d[0]){
