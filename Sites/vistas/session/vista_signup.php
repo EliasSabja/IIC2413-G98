@@ -2,7 +2,7 @@
 
 
 
-<form action="controlador_signin.php" method="post">
+<form action="controlador_signup.php" method="post">
     <label for="username">Username:</label>
     <input type="text" name="username"><br>
     <label for="nombre">Nombre:</label>
