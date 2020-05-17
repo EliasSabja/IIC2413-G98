@@ -20,13 +20,12 @@
             <table class="custom">
             <tr>
                 <th>Nombre artista</th>
-                <th></th>
             </tr>
             <?php
                 foreach ($dataCollected as $p) {
-                    echo "<tr> <td>$p[0]</td> <td> <a href='vista_por_artista.php?id=$p[1]'>Ingresar a la página del artista</a></td> </tr>";
+                    echo "<tr> <td><a href='vista_por_artista.php?id=$p[1]'>$p[0]</a></td></tr>";
                 }
-            ?>
+            ?> 
             </table>
             </article>
             <hr />
