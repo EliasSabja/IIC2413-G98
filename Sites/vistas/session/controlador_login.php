@@ -10,6 +10,13 @@
     #foreach($data as $p){
     #    echo "$p[0], $p[1]-";
     #}
+    $validado = false;
+    foreach ($data as $tupla){
+        if (array($_POST["correo"], $_POST["contrasena"]) == $tupla){
+            $validado = true;
+        }
+    }
+    echo "<h1> $validado </h1>";
     echo "</body></html>" ;
     if (in_array($credenciales, $data)) {
         session_start();
