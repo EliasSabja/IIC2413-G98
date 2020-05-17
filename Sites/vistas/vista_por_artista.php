@@ -8,23 +8,27 @@
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected1 = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
-    
+
     $query2 = "SELECT DISTINCT * FROM artistas, muerte WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < Current_date";
     $result2 = $db8 -> prepare($query2);
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
 
     if ($current_aid == $dataCollected1[0]){
-        $p = $dataCollected1;
+        $dataCollected = $dataCollected1;
     } else{
-        $p = $dataCollected2;
+        $dataCollected = $dataCollected2;
     }
 ?>
 
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <?php echo "<h1 class='title'> $p[1] </h1>";?>
+            <?php foreach($dataCollected as $p){
+                echo "<h1 class='title'> $p[1] </h1>";
+            }
+            ?>
+        
             <h3>Datos del artista</h3>
         </div>
     </div>
@@ -36,16 +40,20 @@
                 <th>Nombre artista</th>
                 <th>Fecha de nacimiento</th>
                 <?php
-                if ($p == $dataCollected2) {
+                if ($dataCollected == $dataCollected2) {
                         echo "<th>Fecha de fallecimiento</th>";
                     }
                 ?>
                 <th>Descripción</th>
             </tr>
-            <?php if ($p == $dataCollected1) {
-                        echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
+            <?php if ($dataCollected == $dataCollected1) {
+                        foreach($dataCollected as $p){
+                            echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
+                        }
                     } else {
-                        echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
+                        foreach($dataCollected as $p){
+                            echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
+                        }
                     }
             ?>
             </table>
