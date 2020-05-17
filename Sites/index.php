@@ -26,7 +26,7 @@
                            if ($_SESSION["nombre"]) {
                               echo "HOLA ";
                               echo $_SESSION["nombre"];
-                              echo ", BIENVENIDO!!";
+                              echo "!!";
                            }
                         ?> </a>
                      </li>
