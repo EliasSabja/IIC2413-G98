@@ -21,7 +21,12 @@
                <nav class="site-nav">
                   <ul class="clean-list site-links">
                      <li>
-                        <a href="#">Top Destinations</a>
+                        <a href="#"> <?php
+                           if ($_SESSION["user"]) {
+                              $user = "user";
+                              echo "$_SESSION[$user]";
+                           }
+                        ?> </a>
                      </li>
                      <li>
                         <a href="#">Add your boat</a>
