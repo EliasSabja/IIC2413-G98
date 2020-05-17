@@ -1,13 +1,14 @@
 <?php
     require("../../assets/conexion.php");
-    $query = "SELECT correo, contrasena, nombre FROM usuarios;";
+    $query = "SELECT correo, contrasena, nombre, logueable FROM usuarios;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
     $credenciales =  array($_POST["correo"], $_POST["contrasena"]);
     $validado = false;
+    # TESTEAR LOGUEABLE
     foreach ($data as $tupla){
-        if ((trim($_POST["correo"]) == trim($tupla[0])) and ($_POST["contrasena"] == $tupla[1])){
+        if ((trim($_POST["correo"]) == trim($tupla[0])) and ($_POST["contrasena"] == $tupla[1]) and ($tupla[3] == true)){
             $nombre = $tupla[2];
             $validado = true;
         }
