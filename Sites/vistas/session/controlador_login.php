@@ -7,12 +7,9 @@
     $credenciales =  array($_POST["correo"], $_POST["contrasena"]);
     $valores = array(gettype($credenciales[1]), gettype($data[0][1]));
     echo "<!DOCTYPE html> <body> <h1> $valores[0], $valores[1] </h1>";
-    #foreach($data as $p){
-    #    echo "$p[0], $p[1]-";
-    #}
     $validado = false;
     foreach ($data as $tupla){
-        if (trim($_POST["correo"]) == trim($tupla[0])){
+        if ($_POST["correo"] == trim($tupla[0])){
             echo 1;
             $validado = true;
         }
