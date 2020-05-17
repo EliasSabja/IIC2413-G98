@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <article>
-            <form action="controlador_signup.php" method="post">
+            <form action="controlador_signup.php" method="post" class="subscribe-form">
                 <label for="username">Username:</label>
                 <input type="text" name="username"><br>
                 <label for="nombre">Nombre:</label>
