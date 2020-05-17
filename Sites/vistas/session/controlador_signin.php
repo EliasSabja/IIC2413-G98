@@ -6,7 +6,7 @@
     $correos = $result_c -> fetchAll();
     $credenciales =  array(trim($_POST["username"]), trim($_POST["nombre"]), trim($_POST["correo"]), trim($_POST["direccion"]), trim($_POST["contrasena"]));
     $usado = false;
-    foreach ($data as $tupla){
+    foreach ($correos as $tupla){
         if (trim($_POST["correo"]) == trim($tupla[0])){
             $usado = true;
         }
