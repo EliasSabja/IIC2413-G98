@@ -20,23 +20,12 @@
     $result2 -> execute();
     $dataCollected2 = $result2 -> fetchAll();
 
-    $values1 = array_values($dataCollected1);
-    $values2 = array_values($dataCollected2);
-
-    $values11 = array_values($dataCollected1[0]);
-    $values22 = array_values($dataCollected2[0]);
-
-    echo "<h2>$values1</h2><br>";
-    echo "<h3>$values11</h3><br>";
-    echo "<h2>$values2</h2><br>";
-    echo "<h3>$values22</h3>";
-
-    foreach($dataCollected1 as $d){
-        if ($current_aid == $d[0]){
-            $dataCollected = $dataCollected1;
-        } else{
-            $dataCollected = $dataCollected2;
-        }
+    if ($dataCollected1[0]){
+        $dataCollected = $dataCollected1;
+        echo "<h1>VIVO</h1>";
+    } elseif ($dataCollected2[0]){
+        $dataCollected = $dataCollected2;
+        echo "<h1>MUERTO</h1>";
     }
 ?>
 
@@ -44,7 +33,9 @@
     <div class="section-title">
         <div class="container">
            <?php 
-             echo "($dataCollected[0])[0]"
+             foreach($dataCollected as $p){
+                 echo "<h1>$p[1]</h1>";
+             }
            ?>
         
             <h3>Datos del artista</h3>
