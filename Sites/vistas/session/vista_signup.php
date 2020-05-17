@@ -1,4 +1,4 @@
-<?php include('../../templates/header.html'); ?>
+<?php include('../../templates/session_header.html'); ?>
 
 
 
@@ -18,4 +18,4 @@
 
 
 
-<?php include('../../templates/footer.html'); ?>
+<?php include('../../templates/session_footer.html'); ?>
