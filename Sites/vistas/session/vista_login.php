@@ -12,10 +12,10 @@
             <article>
             <form action="controlador_login.php" method="post" class="subscribe-form">
                 <label for="correo">Correo:</label>
-                <input type="text" name="correo"><br>
+                <input type="text" name="correo" class="subscribe-form"><br>
                 <label for="contrasena">Contraseña:</label>
-                <input type="text" name="contrasena"><br>
-                <input type="submit" value="Loguearse" class="btn" style="position: static;">
+                <input type="text" name="contrasena" class="subscribe-form"><br>
+                <input type="submit" value="Loguearse" class="subscribe-form btn" style="position: static;">
             </form>
             </article>
             <hr />
