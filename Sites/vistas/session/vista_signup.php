@@ -41,7 +41,7 @@
                       <input type="password" name="contrasena" value=""/>
                 </div><br>
 
-                <input type="submit" value="Registrarse" class="subscribe-form btn" style="position: static;">
+                <input type="submit" value="Registrarse" class="subscribe-form btn align-center" style="position: static;">
             </form>
             </article>
             <hr />
