@@ -40,8 +40,9 @@
                 <div class="input-line">
                       <input type="password" name="contrasena" value=""/>
                 </div><br>
-
-                <input type="submit" value="Registrarse" class="subscribe-form btn align-center" style="position: static;">
+                <div class="align-center">
+                <input type="submit" value="Registrarse" class="subscribe-form btn btn-special no-icon size-2x" style="position: static;">
+                </div>
             </form>
             </article>
             <hr />
