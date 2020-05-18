@@ -2,7 +2,7 @@
 
 
 <section class="section section-destination">
-    <div class="section-title">
+    <div class="section-title" style="padding_top: 110px;">
         <div class="container">
             <h2 class="title">Ingresa tus datos para loggearte</h2>
         </div>
@@ -14,16 +14,15 @@
                 <label for="correo">Correo:</label>
                 <div class="input-line">
                       <input type="text" name="correo" value="" placeholder="Pon tu correo aquí" />
-                </div>
+                </div><br>
                 <!--
-                <input type="text" name="correo" class="subscribe-form"> --><br>
+                <input type="text" name="correo" class="subscribe-form"> -->
                 <label for="contrasena">Contraseña:</label>
                 <div class="input-line">
                       <input type="password" name="contrasena" value="" />
-                </div>
-                <!--<input type="password" name="contrasena" class="subscribe-form"><br>-->
+                </div><br>
+                <!--<input type="password" name="contrasena" class="subscribe-form">-->
                 <input type="submit" value="Loguearse" class="subscribe-form btn" style="position: static;">
-                <button type="button" name="subscribe-submit" class="btn no-icon">Logearse</button>
             </form>
             </article>
             <hr />

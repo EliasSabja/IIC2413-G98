@@ -2,7 +2,7 @@
 
 
 <section class="section section-destination">
-    <div class="section-title">
+    <div class="section-title" style="padding_top: 110px;">
         <div class="container">
             <h2 class="title">Ingresa tus datos para inscribirte</h2>
         </div>
@@ -12,16 +12,36 @@
             <article>
             <form action="controlador_signup.php" method="post" class="subscribe-form">
                 <label for="username">Username:</label>
-                <input type="text" name="username" class="subscribe-form"><br>
+                <!--<input type="text" name="username" class="subscribe-form"><br>-->
+                <div class="input-line">
+                      <input type="text" name="username" value="" placeholder="Pon tu username aquí" />
+                </div><br>
+
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" class="subscribe-form"><br>
-                <label for="direccion">Direccion:</label>
-                <input type="text" name="direccion" class="subscribe-form"><br>
+                <!--<input type="text" name="nombre" class="subscribe-form"><br>-->
+                <div class="input-line">
+                      <input type="text" name="nombre" value="" placeholder="Pon tu nombre aquí" />
+                </div><br>
+
+                <label for="direccion">Dirección:</label>
+                <!--<input type="text" name="direccion" class="subscribe-form"><br>-->
+                <div class="input-line">
+                      <input type="text" name="direccion" value="" placeholder="Pon tu dirección aquí" />
+                </div><br>
+
                 <label for="correo">Correo:</label>
-                <input type="text" name="correo" class="subscribe-form"><br>
+                <!--<input type="text" name="correo" class="subscribe-form"><br>-->
+                <div class="input-line">
+                      <input type="text" name="correo" value="" placeholder="Pon tu correo aquí" />
+                </div><br>
+
                 <label for="contrasena">Contraseña:</label>
-                <input type="text" name="contrasena" class="subscribe-form"><br>
-                <input type="submit" value="Loguearse" class="subscribe-form btn" style="position: static;">
+                <!--<input type="password" name="contrasena" class="subscribe-form"><br>-->
+                <div class="input-line">
+                      <input type="password" name="contrasena" value=""/>
+                </div><br>
+
+                <input type="submit" value="Registrarse" class="subscribe-form btn" style="position: static;">
             </form>
             </article>
             <hr />
