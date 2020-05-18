@@ -23,7 +23,7 @@
                 </div><br>
                 <!--<input type="password" name="contrasena" class="subscribe-form">-->
                 <div class="align-center">
-                <input type="submit" value="Loguearse" class="btn btn-special no-icon size-2x" style="position: static;">
+                <input type="submit" value="Loguearse" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                 </div>
             </form>
             </article>
