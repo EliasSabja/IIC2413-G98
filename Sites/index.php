@@ -40,8 +40,8 @@
                   </ul>
                   <?php 
                      if (!$_SESSION["nombre"]){
-                        echo "<a href='vistas/session/vista_signup.php' class='btn btn-outlined' style='margin:3px;'>Sign up</a>
-                        <a href='vistas/session/vista_login.php' class='btn btn-outlined' style='margin:3px;'>Log in</a>";
+                        echo "<a href='vistas/session/vista_signup.php' class='btn btn-outlined' style='margin:0px 6px;'>Sign up</a>
+                        <a href='vistas/session/vista_login.php' class='btn btn-outlined' style='margin:0px 6px;'>Log in</a>";
                      }
                   ?>
                   
@@ -56,19 +56,19 @@
             <div class="hero-box">
                <div class="container">
                   <div class="hero-text align-center">
-                     <h1>Reserve a boat now!</h1>
+                     <h1>Reserva un viaje ahora!</h1>
 
                      <form id="ver_artistas" action ="vistas/vista_artistas.php" method="post">
                               <div class="container">
                                  <article id="main">
                                     <header>
-                                          <h2><a onclick="document.getElementById('ver_artistas').submit()">Ver artistas</a></h2>
+                                          <h2><a onclick="document.getElementById('ver_artistas').submit() " class='btn btn-outlined'>Ver artistas</a></h2>
                                     </header>
                                  <hr />
                               </div>
                         </div>
                      </form>
-                     <p>and set your sails into paradise!</p>
+                     <p class="hero-text">and set your sails into paradise!</p>
                   </div>
 
                   <form class="destinations-form">
