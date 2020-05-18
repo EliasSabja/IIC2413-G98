@@ -2,7 +2,7 @@
 
 
 <section class="section section-destination">
-    <div class="section-title" style="padding_top: 110px;">
+    <div class="section-title" style="padding-top: 110px;">
         <div class="container">
             <h2 class="title">Ingresa tus datos para loggearte</h2>
         </div>
