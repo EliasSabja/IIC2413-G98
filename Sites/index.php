@@ -22,21 +22,29 @@
                <nav class="site-nav">
                   <ul class="clean-list site-links">
                      <li>
-                        <a href="#"> <?php
+                        <a href="#"> 
+                           <?php
                            if ($_SESSION["nombre"]) {
                               echo "HOLA ";
                               echo $_SESSION["nombre"];
                               echo "!!";
                            }
-                        ?> </a>
+                           ?> 
+                        </a>
                      </li>
-                     <li>
-                        <a href="#">Add your boat</a>
-                     </li>
+                     <?php 
+                     if ($_SESSION["nombre"]){
+                        echo "<li><a href='#'>Perfil</a></li>"
+                     }
+                     ?>
                   </ul>
-
-                  <a href="vistas/session/vista_signup.php" class="btn btn-outlined">Sign up</a>
-                  <a href="vistas/session/vista_login.php" class="btn btn-outlined">Log in</a>
+                  <?php 
+                     if (!$_SESSION["nombre"]){
+                        echo "<a href='vistas/session/vista_signup.php' class='btn btn-outlined' style='padding:3px;'>Sign up</a>
+                        <a href='vistas/session/vista_login.php' class='btn btn-outlined' style='padding:3px;'>Log in</a>";
+                     }
+                  ?>
+                  
                </nav>
             </div>
          </div>
