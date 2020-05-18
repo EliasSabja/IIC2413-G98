@@ -59,17 +59,18 @@
                      <h1>Reserva un viaje ahora!</h1>
 
                      <form id="ver_artistas" action ="vistas/vista_artistas.php" method="post">
-                              <div class="container">
-                                 <article id="main">
-                                    <header>
-                                          <h2><a onclick="document.getElementById('ver_artistas').submit() " class='btn btn-outlined'>Ver artistas</a></h2>
-                                    </header>
-                                 <hr />
-                              </div>
+                        <div class="container">
+                           <article id="main">
+                              <header>
+                                    <h2><a onclick="document.getElementById('ver_artistas').submit() " class='btn btn-outlined'>Ver artistas</a></h2>
+                              </header>
+                           <hr>
+                           </article>
                         </div>
                      </form>
                      <p class="hero-text">and set your sails into paradise!</p>
                   </div>
+               </div>
 
                   <form class="destinations-form">
                      <div class="input-line">
