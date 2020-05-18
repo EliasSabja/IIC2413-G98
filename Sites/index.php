@@ -34,7 +34,7 @@
                      </li>
                      <?php 
                      if ($_SESSION["nombre"]){
-                        echo "<li><a href='#'>Perfil</a></li>"
+                        echo "<li><a href='#'>Perfil</a></li>";
                      }
                      ?>
                   </ul>
