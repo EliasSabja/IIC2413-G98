@@ -40,8 +40,8 @@
                   </ul>
                   <?php 
                      if (!$_SESSION["nombre"]){
-                        echo "<a href='vistas/session/vista_signup.php' class='btn btn-outlined' style='padding:3px;'>Sign up</a>
-                        <a href='vistas/session/vista_login.php' class='btn btn-outlined' style='padding:3px;'>Log in</a>";
+                        echo "<a href='vistas/session/vista_signup.php' class='btn btn-outlined' style='margin:3px;'>Sign up</a>
+                        <a href='vistas/session/vista_login.php' class='btn btn-outlined' style='margin:3px;'>Log in</a>";
                      }
                   ?>
                   
