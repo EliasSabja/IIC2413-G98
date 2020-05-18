@@ -21,9 +21,9 @@
                 <div class="input-line">
                       <input type="password" name="contrasena" value="" />
                 </div>
-                <!--<input type="password" name="contrasena" class="subscribe-form"><br>
-                <input type="submit" value="Loguearse" class="subscribe-form btn" style="position: static;">-->
-                <button type="button" name="subscribe-submit" class="btn btn-special no-icon">Logearse</button>
+                <!--<input type="password" name="contrasena" class="subscribe-form"><br>-->
+                <input type="submit" value="Loguearse" class="subscribe-form btn" style="position: static;">
+                <button type="button" name="subscribe-submit" class="btn no-icon">Logearse</button>
             </form>
             </article>
             <hr />
