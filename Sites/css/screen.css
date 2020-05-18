@@ -2499,7 +2499,7 @@ textarea:focus {
 .subscribe-form {
   display: block;
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 0px;
 }
 .subscribe-form input[type="text"] {
   display: block;
