@@ -16,7 +16,7 @@
          <div class="container">
             <div class="header-content">
                <a href="index.php">
-                  <img src="../img/site-identity.png" alt="site identity" />
+                  <img src="img/site-identity.png" alt="site identity" />
                </a>
 
                <nav class="site-nav">
