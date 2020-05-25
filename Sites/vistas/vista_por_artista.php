@@ -26,7 +26,7 @@
         $dataCollected = $dataCollected2;
     }
 
-    $query_obras = "SELECT obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=$current_aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
+    $query_obras = "SELECT obras.oid, obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=$current_aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
     $result_obras = $db8 -> prepare($query_obras);
     $result_obras -> execute();
     $data_obras_collected = $result_obras -> fetchAll();
@@ -88,7 +88,7 @@
                     <th>Nombre obra</th>
                 </tr>
                 <?php foreach ($data_obras_collected as $obra){
-                    echo "<tr><td><a href=#>$obra[0]</a></td></tr>";
+                    echo "<tr><td><a href='vista_por_obra.php?id=$obra[0]'>$obra[1]</a></td></tr>";
                 }
                 ?>
             </table>
