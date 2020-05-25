@@ -5,7 +5,7 @@
     $query = "SELECT DISTINCT anombre, aid FROM artistas;";
     $result = $db8 -> prepare($query);
     $result -> execute();
-    $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
+    $dataCollected = $result -> fetchAll();
 ?>
 
 <section class="section section-destination">
