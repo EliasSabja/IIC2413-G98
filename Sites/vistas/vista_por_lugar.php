@@ -91,7 +91,7 @@
             </tr>
             <?php 
                 foreach($dataCollected_datos_lugar as $datos_lugar){
-                    echo "<><td>$datos_lugar[0]</td><td>$datos_lugar[1]</td>";
+                    echo "<td>$datos_lugar[0]</td><td>$datos_lugar[1]</td>";
                 }
 
                 if ($dataCollected_lugar == $dataCollected_museos) {
