@@ -9,7 +9,7 @@
     include('../templates/header.html');
 
     require("../assets/conexion.php");
-    $id = $_SESSION["id"]
+    $id = $_SESSION["id"];
     $query = "SELECT username, nombre, direccion, correo FROM usuarios WHERE uid='$id';";
     $result = $db9 -> prepare($query);
     $result -> execute();
