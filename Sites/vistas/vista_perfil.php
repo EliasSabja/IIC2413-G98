@@ -27,9 +27,17 @@
     </div>
 
     <div class="container-fluid" style="margin:10px 50px;">
+        <!-- Datos de usuario -->
+        <div class="row" style="padding:20px;">
+            <div class = "col-md-8 " style="text-align: center;padding:20px;" >
 
+            </div>
+        </div>
+
+        <!-- Datos de compras -->
         <div class="row" style="padding:20px;">
 
+            <!-- Entradas -->
             <div class = "col-md-8 " style="text-align: center;padding:20px;" >
                 <div style="border:solid;padding:5px;border-radius:5px;">
                     <h1> Entradas </h1>
@@ -38,6 +46,7 @@
                 </div>
             </div>
             
+            <!-- Reservas -->
             <div class = "col-md-8 " style="text-align: center;padding:20px;">
                 <div style="border:solid;padding:5px;border-radius:5px;">
                     <h1> Reservas</h1>
@@ -46,6 +55,7 @@
                 </div>
             </div>
 
+            <!-- Tickets -->
             <div class = "col-md-8 " style="text-align: center;padding:20px;">
                 <div style="border:solid;padding:5px;border-radius:5px;">   
                     <h1> Tickets </h1>
@@ -55,18 +65,24 @@
             </div>
         </div>
 
+        <!-- Atras y log out -->
         <div class="row" style="padding:20px;">
 
+            <!-- Spacer -->
+            <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
+
+            <!-- Buttons -->
             <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                <a href="../index.php"class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Atras</a>
+                <a href="../index.php"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
+                <a href="session/controlador_logout.php" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Log out</a>
             </div>
 
-            <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                <a href="session/controlador_logout.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Log out</a>
-            </div>
+            <!-- Spacer -->
+            <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
 
         </div>
 
+        <!-- Borrar -->
         <div class="row" style="padding:20px;margin-top:100px;">
 
             <div class = "col-md-24 " style="text-align: center;padding:20px; border:solid;">
