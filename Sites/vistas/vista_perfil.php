@@ -71,8 +71,8 @@
 
             <div class = "col-md-24 " style="text-align: center;padding:20px; border:solid;">
                 <h1>Danger zone</h1>
-                <a href="# u sure" class="btn btn-special no-icon" style="border-radius: 5px;">Borrar Cuenta</a>
-                <p> borrar tu cuenta implica que no podrás volver a logearte nunca más.</p>
+                <a href="session/controlador_delete.php" onclick="return confirm('¿Estás seguro de querer borrar tu perfil?');" class="btn btn-special no-icon" style="border-radius: 5px;">Borrar Cuenta</a>
+                <br><p> borrar tu cuenta implica que no podrás volver a logearte nunca más.</p>
             </div>
 
         </div>
