@@ -18,7 +18,8 @@ if (!$_SESSION["nombre"]) {
     <div class="section-title">
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
             <?php
-                echo "<h2 class='title'>Perfil de $_SESSION['nombre']</h2>";
+                $nombre = $_SESSION["nombre"];
+                echo "<h2 class='title'>Perfil de $nombre </h2>";
             ?>
         </div>
     </div>
