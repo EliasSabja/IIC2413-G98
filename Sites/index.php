@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<!--<?php session_start(); ?>-->
 <!DOCTYPE html>
 <html>
    <head>
@@ -22,7 +22,7 @@
                <nav class="site-nav">
                   <ul class="clean-list site-links">
                      <li>
-                        <a href="#"> 
+                        <h1> 
                            <?php
                            if ($_SESSION["nombre"]) {
                               echo "HOLA ";
@@ -30,7 +30,7 @@
                               echo "!!";
                            }
                            ?> 
-                        </a>
+                        </h1>
                      </li>
                      <?php 
                      if ($_SESSION["nombre"]){
