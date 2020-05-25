@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="container" style="margin:10px 50px;">
+    <div class="container-fluid" style="margin:10px 50px;">
 
         <div class="row" style="padding:20px;">
 
