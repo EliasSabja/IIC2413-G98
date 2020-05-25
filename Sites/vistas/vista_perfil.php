@@ -30,10 +30,10 @@
     <div class="container-fluid" style="margin:10px 50px;">
         <!-- Datos de usuario -->
         <?php
-        $username: $datos[0][0];
-        $nombre: $datos[0][1];
-        $dirección: $datos[0][2];
-        $correo: $datos[0][3];
+        $username= $datos[0][0];
+        $nombre= $datos[0][1];
+        $dirección= $datos[0][2];
+        $correo= $datos[0][3];
         echo "<h2 class='title'>Username: $username </h2>";
         echo "<h2 class='title'>Nombre: $nombre </h2>";
         echo "<h2 class='title'>Dirección: $dirección </h2>";
