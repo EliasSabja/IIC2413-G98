@@ -21,28 +21,28 @@
             <div class = "col-md-8 " style="text-align: center;" >
                 <h1> Entradas </h1>
                 <p>Revisa todas tus Entradas a museos</p>
-                <a href="#" class="btn btn-special" style="margin:0;border-radius: 5px;">Go</a>
+                <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
             </div>
 
             <div class = "col-md-8 " style="text-align: center;">
                 <h1> Reservas</h1>
                 <p>Revisa todas tus reservas en hoteles</p>
-                <a href="#" class="btn btn-special" style="margin:0;border-radius: 5px;">Go</a>
+                <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
             </div>
 
             <div class = "col-md-8 " style="text-align: center;">
                 <h1> Tickets </h1>
                 <p>Revisa todos tus tickets para viajes</p>
-                <a href="#" class="btn btn-special" style="margin:0;border-radius: 5px;">Go</a>
+                <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
             </div>
         </div>
 
         <div class="row" style="padding:20px;">
             <div class = "col-md-12 " style="text-align: center;">
-                <a href="../index.php"class="btn btn-special" style="margin:0;border-radius: 5px;">Atras</a>
+                <a href="../index.php"class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Atras</a>
             </div>
             <div class = "col-md-12 " style="text-align: center;">
-                <a href="#" class="btn btn-special" style="margin:0;border-radius: 5px;">Log out</a>
+                <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Log out</a>
             </div>
         </div>
 
