@@ -9,10 +9,11 @@
     include('../templates/header.html');
 
     require("../assets/conexion.php");
-    $query = "SELECT DISTINCT anombre, aid FROM artistas;";
-    $result = $db8 -> prepare($query);
+    $id = $_SESSION["id"]
+    $query = "SELECT username, nombre, direccion, correo FROM usuarios WHERE uid='$id';";
+    $result = $db9 -> prepare($query);
     $result -> execute();
-    $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
+    $datos = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 ?>
 
 <section class="section section-destination">
@@ -28,12 +29,16 @@
 
     <div class="container-fluid" style="margin:10px 50px;">
         <!-- Datos de usuario -->
-        <div class="row" style="padding:20px;">
-            <div class = "col-md-8 " style="text-align: center;padding:20px;" >
-
-            </div>
-        </div>
-
+        <?php
+        $username: $datos[0][0];
+        $nombre: $datos[0][1];
+        $dirección: $datos[0][2];
+        $correo: $datos[0][3];
+        echo "<h2 class='title'>Username: $username </h2>";
+        echo "<h2 class='title'>Nombre: $nombre </h2>";
+        echo "<h2 class='title'>Dirección: $dirección </h2>";
+        echo "<h2 class='title'>Correo: $correo </h2>";
+        ?>
         <!-- Datos de compras -->
         <div class="row" style="padding:20px;">
 
@@ -78,7 +83,7 @@
             </div>
 
             <!-- Spacer -->
-            <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
+            <div class = "col-md-6 " style="texgitt-align: center;padding:20px;"></div>
 
         </div>
 

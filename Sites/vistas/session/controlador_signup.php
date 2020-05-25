@@ -1,6 +1,6 @@
 <?php
     require("../../assets/conexion.php");
-    $query_c = "SELECT correo, username FROM usuarios;";
+    $query_c = "SELECT correo, username, FROM usuarios;";
     $result_c = $db9 -> prepare($query_c);
     $result_c -> execute();
     $datos = $result_c -> fetchAll();
@@ -23,9 +23,18 @@
         $query_i = "INSERT INTO usuarios VALUES(default, '$credenciales[0]', '$credenciales[1]', '$credenciales[2]', '$credenciales[3]', true, '$credenciales[4]');";
         $result_i = $db9 -> prepare($query_i);
         $result_i -> execute();
+        
+        $query_uid = "SELECT uid FROM usuarios WHERE correo = $credenciales[2];";
+        $result_uid = $db9 -> prepare($query_uid);
+        $result_uid -> execute();
+        $uid = $result_c -> fetchAll();
         session_start();
         $_SESSION["correo"] = $credenciales[2];
         $_SESSION["nombre"] = $credenciales[1];
+
+        #Testear
+        $_SESSION["id"] = $uid[0][0]; 
+
         header("Location: ../../index.php");
         die();
     }
