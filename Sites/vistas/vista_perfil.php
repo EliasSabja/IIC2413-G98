@@ -1,11 +1,12 @@
-<?php session_start(); 
-if (!$_SESSION["nombre"]) {
-    header("Location: ../index.php");
-        die();
-?>
-<?php include('../templates/header.html'); ?>
+<?php 
+    session_start(); 
 
-<?php
+    if (!$_SESSION["nombre"]) {
+        header("Location: ../index.php");
+        die();
+
+    include('../templates/header.html');
+
     require("../assets/conexion.php");
     $query = "SELECT DISTINCT anombre, aid FROM artistas;";
     $result = $db8 -> prepare($query);
@@ -54,20 +55,25 @@ if (!$_SESSION["nombre"]) {
         </div>
 
         <div class="row" style="padding:20px;">
+
             <div class = "col-md-12 " style="text-align: center;padding:20px;">
                 <a href="../index.php"class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Atras</a>
             </div>
+
             <div class = "col-md-12 " style="text-align: center;padding:20px;">
                 <a href="session/controlador_logout.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Log out</a>
             </div>
+
         </div>
 
         <div class="row" style="padding:20px;margin-top:100px;">
+
             <div class = "col-md-24 " style="text-align: center;padding:20px; border:solid;">
                 <h1>Danger zone</h1>
-                <a href="# u sure?" class="btn btn-special no-icon " style="border-radius: 5px;">Borrar Cuenta</a>
+                <a href="# u sure" class="btn btn-special no-icon" style="border-radius: 5px;">Borrar Cuenta</a>
                 <p> borrar tu cuenta implica que no podrás volver a logearte nunca más.</p>
             </div>
+
         </div>
     
     </div>
