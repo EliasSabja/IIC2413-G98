@@ -89,7 +89,7 @@
             </tr>
             <?php 
                 foreach($dataCollected_lugares as $p){
-                    echo "<tr> <td><a href='vista_por_artista.php?id=$p[0]'>$p[1]</a></td><td>$p[2]</td><td>$p[3]</td></tr>";
+                    echo "<tr> <td><a href=#>$p[1]</a></td><td>$p[2]</td><td>$p[3]</td></tr>";
                 }
             ?>
             </table>
