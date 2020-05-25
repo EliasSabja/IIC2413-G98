@@ -11,26 +11,20 @@
     $result -> execute();
     $dataCollected_current_obra = $result -> fetchAll();
 
-    $query_artistas = "SELECT DISTINCT aid, anombre
+    $query_artistas = "SELECT DISTINCT artistas.aid, artistas.anombre
                     FROM artistas, pinto, obras 
                     WHERE obras.oid=$current_oid AND artistas.aid=pinto.aid AND obras.oid=pinto.oid;";
     $result_artistas = $db8 -> prepare($query_artistas);
     $result_artistas -> execute();
     $dataCollected_artistas = $result_artistas -> fetchAll();
 
-    foreach($dataCollected_artistas as $artista){
-        echo "<h1>$artista[1]</h1>";
-    }
     $query_lugares = "SELECT DISTINCT lugares.lid, lugares.lnombre, ciudades.ciudad, paises.pais
                     FROM obras, lugares, ciudades, paises 
-                    WHERE obras.oid=$current_oid AND obras.lid=lugares.lid AND lugares.lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
+                    WHERE obras.oid=$current_oid AND obras.lid=lugares.lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
     $result_lugares = $db8 -> prepare($query_lugares);
     $result_lugares -> execute();
     $dataCollected_lugares = $result_lugares -> fetchAll();
 
-    foreach($dataCollected_lugares as $lugar){
-        echo "<h1>$lugar[1], $lugar[2], $lugar[3]</h1>";
-    }
 ?>
 
 <section class="section section-destination">
