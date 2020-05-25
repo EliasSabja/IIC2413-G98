@@ -30,7 +30,7 @@ include('../templates/header.html'); ?>
             </tr>
             <?php
                 foreach ($data as $p) {
-                    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[0]</td> <td>$p[0]</td></tr>";
+                    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td></tr>";
                 }
             ?> 
             </table>
