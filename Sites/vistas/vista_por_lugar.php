@@ -96,11 +96,11 @@
 
                 if ($dataCollected_lugar == $dataCollected_museos) {
                     foreach($dataCollected_lugar as $p){
-                        echo "<td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
+                        echo "<td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
                     }
                 } elseif($dataCollected_lugar == $dataCollected_iglesias) {
                     foreach($dataCollected_lugar as $p){
-                        echo "<td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
+                        echo "<td>$p[2]</td><td>$p[3]</td></tr>";
                     }
                 } else{
                     echo "</tr>";
