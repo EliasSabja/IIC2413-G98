@@ -17,14 +17,19 @@
     <div class="container" style="margin:50px;">
 
         <div class="row" style="padding:20px;">
+
             <div class = "col-md-8 " style="text-align: center;" >
-                <h1> Entradas <h1><p>Revisa todas tus Entradas a museos</p><a href="#" class="btn btn-default" style="margin:0;">Go</a>
+                <h1> Entradas </h1>
+                <p>Revisa todas tus Entradas a museos</p>
+                <a href="#" class="btn btn-default" style="margin:0;">Go</a>
             </div>
+
             <div class = "col-md-8 " style="text-align: center;">
                 <h1> Reservas</h1>
                 <p>Revisa todas tus reservas en hoteles</p>
                 <a href="#" class="btn btn-default" style="margin:0;">Go</a>
             </div>
+
             <div class = "col-md-8 " style="text-align: center;">
                 <h1> Tickets </h1>
                 <p>Revisa todos tus tickets para viajes</p>
