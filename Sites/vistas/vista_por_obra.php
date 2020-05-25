@@ -19,7 +19,7 @@
     $dataCollected_artistas = $result_artistas -> fetchAll();
 
     foreach($dataCollected_artistas as $artista){
-        echo "<h1>$artista[1]</h1>"
+        echo "<h1>$artista[1]</h1>";
     }
     $query_lugares = "SELECT DISTINCT lugares.lid, lugares.lnombre, ciudades.ciudad, paises.pais
                     FROM obras, lugares, ciudades, paises 
@@ -29,7 +29,7 @@
     $dataCollected_lugares = $result_lugares -> fetchAll();
 
     foreach($dataCollected_lugares as $lugar){
-        echo "<h1>$lugar[1], $lugar[2], $lugar[3]</h1>"
+        echo "<h1>$lugar[1], $lugar[2], $lugar[3]</h1>";
     }
 ?>
 
