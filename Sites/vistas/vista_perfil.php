@@ -4,6 +4,7 @@
     if (!$_SESSION["nombre"]) {
         header("Location: ../index.php");
         die();
+    }
 
     include('../templates/header.html');
 
