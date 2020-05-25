@@ -18,7 +18,7 @@ if (!$_SESSION["nombre"]) {
     <div class="section-title">
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
             <?php
-                echo "<h2 class='title'>Perfil de $_SESSION["nombre"]</h2>";
+                echo "<h2 class='title'>Perfil de $_SESSION['nombre']</h2>";
             ?>
         </div>
     </div>
