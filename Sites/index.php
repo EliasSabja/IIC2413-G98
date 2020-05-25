@@ -22,7 +22,7 @@
                <nav class="site-nav">
                   <ul class="clean-list site-links">
                      <li>
-                        <h1> 
+                        <h3> 
                            <?php
                            if ($_SESSION["nombre"]) {
                               echo "HOLA ";
@@ -30,11 +30,11 @@
                               echo "!!";
                            }
                            ?> 
-                        </h1>
+                        </h3>
                      </li>
                      <?php 
                      if ($_SESSION["nombre"]){
-                        echo "<li><a href='#'>Perfil</a></li>";
+                        echo "<li><a href='vistas/vista_perfil.php'>Perfil</a></li>";
                      }
                      ?>
                   </ul>

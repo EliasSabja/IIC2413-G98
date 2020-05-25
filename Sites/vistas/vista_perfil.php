@@ -16,29 +16,29 @@
     </div>
     <div class="container-fluid">
 
-        <div class="row">
-            <div class = "col-md-6" >
+        <div class="row" style="height:200px;">
+            <div class = "col-md-8 border" style="text-align: center;" >
                 <h1> Entradas <h1>
             </div>
-            <div class = "col-md-6" >
+            <div class = "col-md-8 border" style="text-align: center;">
                 <h1> Reservas</h1>
             </div>
-            <div class = "col-md-6" >
+            <div class = "col-md-8 border" style="text-align: center;">
                 <h1> Tickets </h1>
             </div>
         </div>
 
-        <div class="row">
-            <div class = "col-md-12" >
+        <div class="row" style="height:60px;">
+            <div class = "col-md-12 border" style="text-align: center;">
                 <h1>Atras</h1>
             </div>
-            <div class = "col-md-12" >
+            <div class = "col-md-12 border" style="text-align: center;">
                 <h1>Log out</h1>
             </div>
         </div>
 
-        <div class="row">
-        <div class = "col-md-24" >
+        <div class="row" style="height:200px;">
+        <div class = "col-md-24 border" style="text-align: center;">
             <h1>Eliminar</h1>
         </div>
         </div>
