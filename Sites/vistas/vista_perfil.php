@@ -17,28 +17,28 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class = "col-md-3" >
+            <div class = "col-md-6" >
                 <h1> Entradas <h1>
             </div>
-            <div class = "col-md-3" >
+            <div class = "col-md-6" >
                 <h1> Reservas</h1>
             </div>
-            <div class = "col-md-3" >
+            <div class = "col-md-6" >
                 <h1> Tickets </h1>
             </div>
         </div>
 
         <div class="row">
-            <div class = "col-md-6" >
+            <div class = "col-md-12" >
                 <h1>Atras</h1>
             </div>
-            <div class = "col-md-6" >
+            <div class = "col-md-12" >
                 <h1>Log out</h1>
             </div>
         </div>
 
         <div class="row">
-        <div class = "col-md-12" >
+        <div class = "col-md-24" >
             <h1>Eliminar</h1>
         </div>
         </div>
