@@ -4,7 +4,7 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT H.nombre, H.direccion, R.f_in, R.f_out FROM RUH, Reservas AS R, Hoteles AS H WHERE $id = RUH.uid AND R.rid = RUH.rid AND H.hid = RUH.hid;";
+    $query = "SELECT T.asiento, T.f_viaje, T.f_compra, R.f_in, R.f_out FROM RUH, Reservas AS R, Hoteles AS H WHERE $id = RUH.uid AND R.rid = RUH.rid AND H.hid = RUH.hid;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -23,14 +23,25 @@ include('../templates/header.html'); ?>
             <article>
             <table class="custom">
             <tr>
-                <th>Nombre</th>
-                <th>Dirección</th>
-                <th>Fecha ingreso</th>
-                <th>Fecha egreso</th>
+
+                <th>Fecha de viaje</th>
+                <th>Fecha de compra</th>
+                
+                <th>Numero de asiento</th>
+
+                <th>Ciudad de origen</th>
+                <th>Ciudad de destino</th>
+
             </tr>
             <?php
                 foreach ($data as $p) {
-                    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[0]</td> <td>$p[0]</td></tr>";
+                    echo "<tr> 
+                        <td>$p[0]</td>
+                        <td>$p[0]</td>
+                        <td>$p[0]</td>
+                        <td>$p[0]</td>
+                        <td>$p[0]</td>
+                    </tr>";
                 }
             ?> 
             </table>

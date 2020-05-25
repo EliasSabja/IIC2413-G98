@@ -29,7 +29,7 @@
 
     <div class="container-fluid" style="margin:10px 50px;">
         <!-- Datos de usuario -->
-        <div class="section-title" stye="text-align:left;">
+        <div class="section-title" style="text-align:left;">
             <?php
                 $username= $datos[0][0];
                 $nombre= $datos[0][1];
@@ -58,7 +58,7 @@
                 <div style="border:solid;padding:5px;border-radius:5px;">
                     <h1> Reservas</h1>
                     <p>Revisa todas tus reservas en hoteles</p>
-                    <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
+                    <a href="vista_reservas.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
                 </div>
             </div>
 
