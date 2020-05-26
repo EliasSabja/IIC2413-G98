@@ -4,7 +4,7 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, C1.ciudad AS origen, C2.ciudad AS destino FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE INPUT_UID = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
+    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, C1.ciudad AS origen, C2.ciudad AS destino FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE $id = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -13,7 +13,7 @@ include('../templates/header.html'); ?>
 <section class="section section-destination">
     <div class="section-title">
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
-            <h2 class="title">Reservas realizadas por <?php echo $_SESSION["nombre"]?></h2>
+            <h2 class="title">Tickets de <?php echo $_SESSION["nombre"]?></h2>
         </div>
     </div>
     <div class="container">
