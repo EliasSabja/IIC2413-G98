@@ -67,7 +67,7 @@
                 <div style="border:solid;padding:5px;border-radius:5px;">   
                     <h1> Tickets </h1>
                     <p>Revisa todos tus tickets para viajes</p>
-                    <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
+                    <a href="vista_tickets.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
                 </div>
             </div>
         </div>

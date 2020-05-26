@@ -4,7 +4,7 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT T.asiento, T.f_viaje, T.f_compra, R.f_in, R.f_out FROM RUH, Reservas AS R, Hoteles AS H WHERE $id = RUH.uid AND R.rid = RUH.rid AND H.hid = RUH.hid;";
+    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, C1.ciudad AS origen, C2.ciudad AS destino FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE INPUT_UID = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -36,11 +36,11 @@ include('../templates/header.html'); ?>
             <?php
                 foreach ($data as $p) {
                     echo "<tr> 
+                        <td>$p[1]</td>
+                        <td>$p[2]</td>
                         <td>$p[0]</td>
-                        <td>$p[0]</td>
-                        <td>$p[0]</td>
-                        <td>$p[0]</td>
-                        <td>$p[0]</td>
+                        <td>$p[3]</td>
+                        <td>$p[4]</td>
                     </tr>";
                 }
             ?> 
