@@ -23,19 +23,19 @@
                <nav class="site-nav">
                   <ul class="clean-list site-links">
                      <li>
-                        <h3> 
+                        <h4> 
                            <?php
                            if ($_SESSION["nombre"]) {
-                              echo "HOLA ";
+                              echo "Hola";
                               echo $_SESSION["nombre"];
                               echo "!!";
                            }
                            ?> 
-                        </h3>
+                        </h4>
                      </li>
                      <?php 
                      if ($_SESSION["nombre"]){
-                        echo "<li><a href='vistas/vista_perfil.php'>Perfil</a></li>";
+                        echo "<li><a class='btn btn-outlined' style='margin:0px 6px;' href='vistas/vista_perfil.php'>Perfil</a></li>";
                      }
                      ?>
                   </ul>
