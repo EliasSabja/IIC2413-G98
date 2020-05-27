@@ -24,7 +24,7 @@
             </tr>
             <?php
                 foreach ($dataCollected as $p) {
-                    echo "<tr> <td><a href='vista_por_lugar.php?id=$p[1]'>$p[0]</a></td></tr>";
+                    echo "<tr> <td><a href='vista_por_lugar.php?id=$p[0]'>$p[1]</a></td></tr>";
                 }
             ?> 
             </table>
