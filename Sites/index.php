@@ -129,7 +129,7 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a onclick="document.getElementById('ver_artistas').submit() "> <!-- ref -->
+                           <a href="vistas/vista_obras.php"> <!-- ref -->
                               <img src="img/destination-2.jpg" alt="destination image" />
                            </a>
                         </div>
@@ -179,20 +179,7 @@
                      </div>
                   </div>
             </div>
-         </section>
-
-         <!-- Parallax Box -->
-         <div class="parallax-box">
-            <div class="container">
-               <div class="text align-center">
-                  <h1>Have your own boat?</h1>
-                  <p>navigare necesse est, vivere non est necesse</p>
-
-                  <a href="#" class="btn btn-special no-icon size-2x">Rent your boat</a>
-               </div>
-            </div>
-         </div>
-         
+         </section>        
       </div>
 
       <!--footer-->
@@ -204,9 +191,9 @@
                   <div class="widget widget_links">
                      <h5 class="widget-title">Servicios</h5>
                      <ul>
-                        <li><a onclick="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
-                        <li><a href="#">Obras</a></li>
-                        <li><a href="#">Lugares de interes</a></li>
+                        <li><a href="vistas/vista_obras.php">Artistas</a></li>
+                        <li><a href="vistas/vista_obras.php">Obras</a></li>
+                        <li><a href="vistas/vista_lugares.php">Lugares de interes</a></li>
                      </ul>
                   </div>
                </div>
