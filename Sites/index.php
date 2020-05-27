@@ -60,17 +60,7 @@
                <div class="container">
                   <div class="hero-text align-center">
                      <h1>¡Reserva un viaje ahora!</h1>
-
-                     <form id="ver_artistas" action ="vistas/vista_artistas.php" method="post">
-                        <div class="container">
-                           <article id="main">
-                              <header>
-                                    <h2><a onclick="document.getElementById('ver_artistas').submit() " class='btn btn-outlined'>Ver artistas</a></h2>
-                              </header>
-                           <hr>
-                           </article>
-                        </div>
-                     </form>
+                     <hr>
                      <p class="hero-text">Descubre un nuevo mundo con nosotros</p>
                   </div>
                </div>
