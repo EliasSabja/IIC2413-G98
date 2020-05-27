@@ -1,7 +1,8 @@
+<?php session_start(); ?>
+
 <?php include('../templates/header.html'); ?>
 
 <?php
-    session_start();
     $current_lid = $_GET['id'];
 
     require("../assets/conexion.php");
@@ -11,19 +12,19 @@
 
     $query_plazas = "SELECT lugares.lid, lugares.lnombre
                     FROM lugares
-                    WHERE lugares.lid=$current_lid;";
+                    WHERE lugares.lid=:lid;";
 
     $query_iglesias = "SELECT lugares.lid, lugares.lnombre, iglesias.hora_apertura, iglesias.hora_cierre
                     FROM lugares, iglesias
-                    WHERE lugares.lid=$current_lid AND lugares.lid=iglesias.lid;";
+                    WHERE lugares.lid=:lid AND lugares.lid=iglesias.lid;";
 
     $result_museos = $db8 -> prepare($query_museos);
     $result_plazas = $db8 -> prepare($query_plazas);
     $result_iglesias = $db8 -> prepare($query_iglesias);
 
     $result_museos -> execute([ 'lid' => $current_lid]);
-    $result_plazas -> execute();
-    $result_iglesias -> execute();
+    $result_plazas -> execute([ 'lid' => $current_lid]);
+    $result_iglesias -> execute([ 'lid' => $current_lid]);
 
     $dataCollected_museos = $result_museos -> fetchAll();
     $dataCollected_plazas = $result_plazas -> fetchAll();
@@ -39,23 +40,23 @@
 
     $query_datos_lugar = "SELECT DISTINCT paises.pais, ciudades.ciudad
                     FROM lugares, ciudades, paises 
-                    WHERE lugares.lid=$current_lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
+                    WHERE lugares.lid=:lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
     $result_datos_lugar = $db8 -> prepare($query_datos_lugar);
-    $result_datos_lugar-> execute();
+    $result_datos_lugar-> execute([ 'lid' => $current_lid]);
     $dataCollected_datos_lugar = $result_datos_lugar -> fetchAll();
 
     $query_obras = "SELECT DISTINCT obras.oid, obras.onombre, obras.fecha_inicio, obras.fecha_culminacion
                     FROM obras, lugares
-                    WHERE lugares.lid=$current_lid AND lugares.lid=obras.lid;";
+                    WHERE lugares.lid=:lid AND lugares.lid=obras.lid;";
     $result_obras = $db8 -> prepare($query_obras);
-    $result_obras -> execute();
+    $result_obras -> execute([ 'lid' => $current_lid]);
     $dataCollected_obras_lugar = $result_obras -> fetchAll();
 
     $query_artistas = "SELECT DISTINCT artistas.aid, artistas.anombre
                     FROM lugares, obras, pinto, artistas
-                    WHERE lugares.lid=$current_lid AND lugares.lid=obras.lid AND obras.oid=pinto.oid AND pinto.aid=artistas.aid;";
+                    WHERE lugares.lid=:lid AND lugares.lid=obras.lid AND obras.oid=pinto.oid AND pinto.aid=artistas.aid;";
     $result_artistas = $db8 -> prepare($query_artistas);
-    $result_artistas -> execute();
+    $result_artistas -> execute([ 'lid' => $current_lid]);
     $dataCollected_artistas_lugar = $result_artistas -> fetchAll();
 ?>
 

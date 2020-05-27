@@ -4,9 +4,9 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT H.nombre, H.direccion, R.f_in, R.f_out FROM RUH, Reservas AS R, Hoteles AS H WHERE $id = RUH.uid AND R.rid = RUH.rid AND H.hid = RUH.hid;";
+    $query = "SELECT H.nombre, H.direccion, R.f_in, R.f_out FROM RUH, Reservas AS R, Hoteles AS H WHERE :id = RUH.uid AND R.rid = RUH.rid AND H.hid = RUH.hid;";
     $result = $db9 -> prepare($query);
-    $result -> execute();
+    $result -> execute([ 'id' => $id ]);
     $data = $result -> fetchAll();
 ?>
 
