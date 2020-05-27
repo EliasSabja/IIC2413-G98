@@ -144,7 +144,7 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="vista_obras.php"> <!-- ref -->
+                           <a href="vistas/vista_obras.php"> <!-- ref -->
                               <img src="img/destination-4.jpg" alt="destination image" />
                            </a>
                         </div>
@@ -162,7 +162,7 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="vista_lugares.php"> <!-- ref -->
+                           <a href="vistas/vista_lugares.php"> <!-- ref -->
                               <img src="img/destination-3.jpg" alt="destination image" />
                            </a>
                         </div>
