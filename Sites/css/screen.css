@@ -2686,8 +2686,6 @@ textarea:focus {
 
 /* ----------------- 9.2. Footer ----------------- */
 .main-footer {
-  background-image: url(../img/footer-pattern.png);
-  background-repeat: repeat-x;
   background-color: #404040;
   padding: 60px 0;
 }
@@ -2792,8 +2790,8 @@ textarea:focus {
 .hero-box .hero-text h1 {
   font-family: "Raleway", sans-serif;
   letter-spacing: 0.08em;
-  font-weight: 700;
-  font-size: 72px;
+  font-weight: 400;
+  font-size: 70px;
   line-height: 1em;
   margin: 0 0 15px;
 }
@@ -2802,6 +2800,7 @@ textarea:focus {
   line-height: 1em;
   font-size: 30px;
   margin: 0 0 80px;
+  font-weight: 400;
 }
 @media (max-width: 768px) {
   .hero-box {
@@ -3154,7 +3153,6 @@ textarea:focus {
   background-position: center;
   background-attachment: fixed;
   padding: 160px 0;
-  margin-bottom: 100px;
 }
 .parallax-box h1,
 .parallax-box p {

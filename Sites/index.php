@@ -145,7 +145,7 @@
                      <div class="destination-box">
                         <div class="box-cover">
                            <a href="#"> <!-- ref -->
-                              <img src="img/destination-3.jpg" alt="destination image" />
+                              <img src="img/destination-4.jpg" alt="destination image" />
                            </a>
                         </div>
 
@@ -163,7 +163,7 @@
                      <div class="destination-box">
                         <div class="box-cover">
                            <a href="#"> <!-- ref -->
-                              <img src="img/destination-4.jpg" alt="destination image" />
+                              <img src="img/destination-3.jpg" alt="destination image" />
                            </a>
                         </div>
 
