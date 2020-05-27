@@ -126,7 +126,7 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="#"> <!-- ref -->
+                           <a onclick="document.getElementById('ver_artistas').submit() "> <!-- ref -->
                               <img src="img/destination-2.jpg" alt="destination image" />
                            </a>
                         </div>
