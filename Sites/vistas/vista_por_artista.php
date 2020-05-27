@@ -4,7 +4,7 @@
     $current_aid = $_GET['id'];
 
     require("../assets/conexion.php");
-    $query = "SELECT artistas.aid, artistas.fecha_nacimiento, artistas.descripcion 
+    $query = "SELECT artistas.aid, artistas.anombre, artistas.fecha_nacimiento, artistas.descripcion 
     FROM (SELECT DISTINCT artistas.aid FROM muerte, artistas WHERE artistas.aid=muerte.aid and muerte.fecha_fallecimiento >= CURRENT_DATE) 
     AS con, artistas WHERE artistas.aid=con.aid AND artistas.aid=:aid;";
 
@@ -12,7 +12,7 @@
     $result -> execute([ 'aid' => $current_aid ]);
     $dataCollected1 = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
-    $query2 = "SELECT artistas.aid, artistas.fecha_nacimiento, fecha_fallecimiento, artistas.descripcion 
+    $query2 = "SELECT artistas.aid, artistas.anombre, artistas.fecha_nacimiento, fecha_fallecimiento, artistas.descripcion 
                 FROM artistas, muerte 
                 WHERE artistas.aid=muerte.aid AND artistas.aid=:aid AND muerte.fecha_fallecimiento < CURRENT_DATE;";
 
@@ -59,11 +59,11 @@
             </tr>
             <?php if ($dataCollected == $dataCollected1) {
                         foreach($dataCollected as $p){
-                            echo "<tr> <td>$p[1]</td><td>$p[2]</td></tr>";
+                            echo "<tr> <td>$p[2]</td><td>$p[3]</td></tr>";
                         }
                     } else {
                         foreach($dataCollected as $p){
-                            echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
+                            echo "<tr> <td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
                         }
                     }
             ?>
