@@ -222,9 +222,9 @@
                <div class="widget widget_links">
                   <h5 class="widget-title">Autores</h5>
                   <ul>
-                     <li><a href="https://www.instagram.com/luckbox314/?hl=es-la">Deigo Bustamante</a></li>
-                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la">Lucas Muñoz</a></li>
-                     <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la">Elias Sabja</a></li>
+                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Deigo Bustamante</a></li>
+                     <li><a href="https://www.instagram.com/luckbox314/?hl=es-la" target="_blank">Lucas Muñoz</a></li>
+                     <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la" target="_blank">Elias Sabja</a></li>
                      <li><a href="#">Cristobal</a></li>
 
                   </ul>
