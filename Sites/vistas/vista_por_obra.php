@@ -4,25 +4,25 @@
     $current_oid = $_GET['id'];
 
     require("../assets/conexion.php");
-    $query = "SELECT obras.onombre, obras.fecha_inicio, obras.fecha_culminacion, periodo.periodo
+    $query = "SELECT DISTINCT obras.onombre, obras.fecha_inicio, obras.fecha_culminacion, periodo.periodo
             FROM obras, periodo
-            WHERE obras.oid=$current_oid AND obras.fecha_inicio=periodo.fecha_inicio AND obras.fecha_culminacion=periodo.fecha_culminacion;";
+            WHERE obras.oid=:obra_oid AND obras.fecha_inicio=periodo.fecha_inicio AND obras.fecha_culminacion=periodo.fecha_culminacion;";
     $result = $db8 -> prepare($query);
-    $result -> execute();
+    $result -> execute([ 'obra_oid' => $current_oid ]);
     $dataCollected_current_obra = $result -> fetchAll();
 
     $query_artistas = "SELECT DISTINCT artistas.aid, artistas.anombre
                     FROM artistas, pinto, obras 
-                    WHERE obras.oid=$current_oid AND artistas.aid=pinto.aid AND obras.oid=pinto.oid;";
+                    WHERE obras.oid=:obra_oid AND artistas.aid=pinto.aid AND obras.oid=pinto.oid;";
     $result_artistas = $db8 -> prepare($query_artistas);
-    $result_artistas -> execute();
+    $result_artistas -> execute([ 'obra_oid' => $current_oid ]);
     $dataCollected_artistas = $result_artistas -> fetchAll();
 
     $query_lugares = "SELECT DISTINCT lugares.lid, lugares.lnombre, ciudades.ciudad, paises.pais
                     FROM obras, lugares, ciudades, paises 
-                    WHERE obras.oid=$current_oid AND obras.lid=lugares.lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
+                    WHERE obras.oid=:obra_oid AND obras.lid=lugares.lid AND lugares.cid=ciudades.cid AND ciudades.pid=paises.pid;";
     $result_lugares = $db8 -> prepare($query_lugares);
-    $result_lugares -> execute();
+    $result_lugares -> execute([ 'obra_oid' => $current_oid ]);
     $dataCollected_lugares = $result_lugares -> fetchAll();
 
 ?>

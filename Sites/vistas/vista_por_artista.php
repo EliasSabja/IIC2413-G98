@@ -6,18 +6,18 @@
     require("../assets/conexion.php");
     $query = "SELECT artistas.aid, artistas.fecha_nacimiento, artistas.descripcion 
     FROM (SELECT DISTINCT artistas.aid FROM muerte, artistas WHERE artistas.aid=muerte.aid and muerte.fecha_fallecimiento >= CURRENT_DATE) 
-    AS con, artistas WHERE artistas.aid=con.aid AND artistas.aid=$current_aid;";
+    AS con, artistas WHERE artistas.aid=con.aid AND artistas.aid=:aid;";
 
     $result = $db8 -> prepare($query);
-    $result -> execute();
+    $result -> execute([ 'aid' => $current_aid ]);
     $dataCollected1 = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
     $query2 = "SELECT artistas.aid, artistas.fecha_nacimiento, fecha_fallecimiento, artistas.descripcion 
                 FROM artistas, muerte 
-                WHERE artistas.aid=muerte.aid AND artistas.aid=$current_aid AND muerte.fecha_fallecimiento < CURRENT_DATE;";
+                WHERE artistas.aid=muerte.aid AND artistas.aid=:aid AND muerte.fecha_fallecimiento < CURRENT_DATE;";
 
     $result2 = $db8 -> prepare($query2);
-    $result2 -> execute();
+    $result2 -> execute([ 'aid' => $current_aid ]);
     $dataCollected2 = $result2 -> fetchAll();
 
     if ($dataCollected1[0]){
@@ -26,9 +26,9 @@
         $dataCollected = $dataCollected2;
     }
 
-    $query_obras = "SELECT obras.oid, obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=$current_aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
+    $query_obras = "SELECT obras.oid, obras.onombre FROM artistas, pinto, obras WHERE artistas.aid=:aid AND artistas.aid=pinto.aid AND pinto.oid=obras.oid;";
     $result_obras = $db8 -> prepare($query_obras);
-    $result_obras -> execute();
+    $result_obras -> execute([ 'aid' => $current_aid ]);
     $data_obras_collected = $result_obras -> fetchAll();
 ?>
 
