@@ -3228,7 +3228,6 @@ textarea:focus {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  text-align: center;
 }
 
 .custom td,
@@ -3248,7 +3247,7 @@ textarea:focus {
 .custom th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: #3A3939;
   color: white;
 }
