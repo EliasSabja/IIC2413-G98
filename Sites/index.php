@@ -12,6 +12,7 @@
       <link href="css/screen.css" rel="stylesheet" />
    </head>
    <body class="home" id="page">
+
       <!-- Header -->
       <header class="main-header">
          <div class="container">
@@ -50,6 +51,7 @@
             </div>
          </div>
       </header>
+
       <!-- Main Content -->
       <div class="content-box">
          <!-- Hero Section -->
@@ -72,13 +74,24 @@
                      <p class="hero-text">Descubre un nuevo mundo con nosotros</p>
                   </div>
                </div>
+               
+               <!--botones-->
+               <div class="row">
 
-                  <form class="destinations-form">
-                     <div class="input-line">
-                        <input type="text" name="destination" value="" class="form-input check-value" placeholder="WHAT IS YOUR DESTINATION, SAILOR?" />
-                        <button type="button" name="destination-submit" class="form-submit btn btn-special">Find a boat</button>
-                     </div>
-                  </form>
+                  <div class="col-md-6">
+                  </div>
+
+                  <div class="col-md-6" style="text-align:center;">
+                  <a href="#tickets uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
+                  </div>
+                  
+                  <div class="col-md-6" style="text-align:center;">
+                  <a href="#hoteles uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Hoteles</a>
+                  </div>
+                  
+                  <div class="col-md-6">
+                  </div>
+
                </div>
             </div>
 
@@ -191,52 +204,54 @@
          </div>
          
       </div>
-   <footer class="main-footer">
-      <div class="container">
-         <div class="row">
 
-            <div class="col-md-5">
-               <div class="widget widget_links">
-                  <h5 class="widget-title">Servicios</h5>
-                  <ul>
-                     <li><a onclick="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
-                     <li><a href="#">Obras</a></li>
-                     <li><a href="#">Lugares de interes</a></li>
-                  </ul>
+      <!--footer-->
+      <footer class="main-footer">
+         <div class="container">
+            <div class="row">
+
+               <div class="col-md-5">
+                  <div class="widget widget_links">
+                     <h5 class="widget-title">Servicios</h5>
+                     <ul>
+                        <li><a onclick="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
+                        <li><a href="#">Obras</a></li>
+                        <li><a href="#">Lugares de interes</a></li>
+                     </ul>
+                  </div>
                </div>
-            </div>
 
-            <div class="col-md-5">
-               <div class="widget widget_links">
-                  <h5 class="widget-title">Comprar</h5>
-                  <ul>
-                     <li><a href="#">Ticket</a></li>
-                     <li><a href="#">Reserva</a></li>
-                     <li><a href="#">Entrada</a></li>
-                  </ul>
+               <div class="col-md-5">
+                  <div class="widget widget_links">
+                     <h5 class="widget-title">Comprar</h5>
+                     <ul>
+                        <li><a href="#">Ticket</a></li>
+                        <li><a href="#">Reserva</a></li>
+                        <li><a href="#">Entrada</a></li>
+                     </ul>
+                  </div>
                </div>
-            </div>
 
-            
-            <div class="col-md-5">
-               <div class="widget widget_links">
-                  <h5 class="widget-title">Autores</h5>
-                  <ul>
-                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Diego Bustamante</a></li>
-                     <li><a href="https://www.instagram.com/luckbox314/?hl=es-la" target="_blank">Lucas Muñoz</a></li>
-                     <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la" target="_blank">Elias Sabja</a></li>
-                     <li><a href="#">Cristobal</a></li>
+               
+               <div class="col-md-5">
+                  <div class="widget widget_links">
+                     <h5 class="widget-title">Autores</h5>
+                     <ul>
+                        <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Diego Bustamante</a></li>
+                        <li><a href="https://www.instagram.com/luckbox314/?hl=es-la" target="_blank">Lucas Muñoz</a></li>
+                        <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la" target="_blank">Elias Sabja</a></li>
+                        <li><a href="#">Cristobal</a></li>
 
-                  </ul>
+                     </ul>
+                  </div>
                </div>
+               
             </div>
-            
          </div>
-      </div>
-   </footer>
+      </footer>
 
-   <!-- Scripts -->
-   <script src="js/jquery.js"></script>
-   <script src="js/functions.js"></script>
-</body>
+      <!-- Scripts -->
+      <script src="js/jquery.js"></script>
+      <script src="js/functions.js"></script>
+   </body>
 </html>
