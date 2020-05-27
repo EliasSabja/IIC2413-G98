@@ -7,7 +7,7 @@
     require("../assets/conexion.php");
     $query_museos = "SELECT lugares.lid, lugares.lnombre, museos.hora_apertura, museos.hora_cierre, museos.precio
             FROM lugares, museos
-            WHERE lugares.lid=$current_lid AND lugares.lid=museos.lid;";
+            WHERE lugares.lid=:lid AND lugares.lid=museos.lid;";
 
     $query_plazas = "SELECT lugares.lid, lugares.lnombre
                     FROM lugares
@@ -21,7 +21,7 @@
     $result_plazas = $db8 -> prepare($query_plazas);
     $result_iglesias = $db8 -> prepare($query_iglesias);
 
-    $result_museos -> execute();
+    $result_museos -> execute([ 'lid' => $current_lid]);
     $result_plazas -> execute();
     $result_iglesias -> execute();
 
