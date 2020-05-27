@@ -4,9 +4,9 @@
     $current_oid = $_GET['id'];
 
     require("../assets/conexion.php");
-    $query = "SELECT onombre, fecha_inicio, fecha_culminacion 
-            FROM obras
-            WHERE obras.oid=$current_oid;";
+    $query = "SELECT obras.onombre, obras.fecha_inicio, obras.fecha_culminacion, periodo.periodo
+            FROM obras, periodo
+            WHERE obras.oid=$current_oid AND obras.fecha_inicio=periodo.fecha_inicio AND obras.fecha_culminacion=periodo.fecha_culminacion;";
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected_current_obra = $result -> fetchAll();
@@ -46,10 +46,11 @@
             <tr>
                 <th>Fecha de inicio</th>
                 <th>Fecha de culminación</th>
+                <th>Periodo</th>
             </tr>
             <?php 
                 foreach($dataCollected_current_obra as $p){
-                    echo "<tr> <td>$p[1]</td><td>$p[2]</td></tr>";
+                    echo "<tr> <td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
                 }
             ?>
             </table>
