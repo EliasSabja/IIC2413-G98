@@ -27,7 +27,7 @@
         $query_uid = "SELECT uid FROM usuarios WHERE correo = $credenciales[2];";
         $result_uid = $db9 -> prepare($query_uid);
         $result_uid -> execute();
-        $uid = $result_c -> fetchAll();
+        $uid = $result_uid -> fetchAll();
         session_start();
         $_SESSION["correo"] = $credenciales[2];
         $_SESSION["nombre"] = $credenciales[1];

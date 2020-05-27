@@ -199,7 +199,7 @@
                <div class="widget widget_links">
                   <h5 class="widget-title">Servicios</h5>
                   <ul>
-                     <li><a href="#">Artistas</a></li>
+                     <li><a href="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
                      <li><a href="#">Obras</a></li>
                      <li><a href="#">Lugares de interes</a></li>
                   </ul>
@@ -222,7 +222,7 @@
                <div class="widget widget_links">
                   <h5 class="widget-title">Autores</h5>
                   <ul>
-                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Deigo Bustamante</a></li>
+                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Diego Bustamante</a></li>
                      <li><a href="https://www.instagram.com/luckbox314/?hl=es-la" target="_blank">Lucas Muñoz</a></li>
                      <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la" target="_blank">Elias Sabja</a></li>
                      <li><a href="#">Cristobal</a></li>
