@@ -72,11 +72,11 @@
                   </div>
 
                   <div class="col-md-4" style="text-align:center;">
-                  <a href="#tickets uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
+                  <a href="vistas/vista_comprar_tickets.php"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
                   </div>
                   
                   <div class="col-md-4" style="text-align:center;">
-                  <a href="#hoteles uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Hoteles</a>
+                  <a href="vistas/vista_hacer_reserva.php"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Hoteles</a>
                   </div>
                   
                   <div class="col-md-8">
@@ -129,7 +129,7 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="vistas/vista_obras.php"> <!-- ref -->
+                           <a href="vistas/vista_artistas.php"> <!-- ref -->
                               <img src="img/destination-2.jpg" alt="destination image" />
                            </a>
                         </div>
@@ -191,7 +191,7 @@
                   <div class="widget widget_links">
                      <h5 class="widget-title">Servicios</h5>
                      <ul>
-                        <li><a href="vistas/vista_obras.php">Artistas</a></li>
+                        <li><a href="vistas/vista_artistas.php">Artistas</a></li>
                         <li><a href="vistas/vista_obras.php">Obras</a></li>
                         <li><a href="vistas/vista_lugares.php">Lugares de interes</a></li>
                      </ul>
