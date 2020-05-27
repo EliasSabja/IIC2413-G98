@@ -113,6 +113,7 @@
             <hr />
         </div>
     </div>
+    <div style="text-align:center">
     <?php
     if ($_SESSION["nombre"]) {
         echo '<a href="#"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Comprar entrada</a>';
@@ -121,6 +122,7 @@
     }
     ?>
     <h3>Obras en la exposición</h3>
+    </div>
     <div class="container">
     <div class="row">
             <article>
@@ -140,8 +142,9 @@
             <hr />
         </div>
     </div>
-
+    <div style="text-align:center">
     <h3>Artistas que tienen obras en el lugar</h3>
+    </div>
     <div class="container">
     <div class="row">
             <article>
