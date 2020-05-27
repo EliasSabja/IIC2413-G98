@@ -1,12 +1,13 @@
 <?php include('../templates/header.html'); ?>
 
 <?php
+    session_start();
     $current_lid = $_GET['id'];
 
     require("../assets/conexion.php");
     $query_museos = "SELECT lugares.lid, lugares.lnombre, museos.hora_apertura, museos.hora_cierre, museos.precio
             FROM lugares, museos
-            WHERE lugares.lid=$current_lid AND lugares.lid=museos.lid;";
+            WHERE lugares.lid=:lid AND lugares.lid=museos.lid;";
 
     $query_plazas = "SELECT lugares.lid, lugares.lnombre
                     FROM lugares
@@ -20,7 +21,7 @@
     $result_plazas = $db8 -> prepare($query_plazas);
     $result_iglesias = $db8 -> prepare($query_iglesias);
 
-    $result_museos -> execute();
+    $result_museos -> execute([ 'lid' => $current_lid]);
     $result_plazas -> execute();
     $result_iglesias -> execute();
 
@@ -43,7 +44,7 @@
     $result_datos_lugar-> execute();
     $dataCollected_datos_lugar = $result_datos_lugar -> fetchAll();
 
-    $query_obras = "SELECT DISTINCT obras.oid, obras.onombre
+    $query_obras = "SELECT DISTINCT obras.oid, obras.onombre, obras.fecha_inicio, obras.fecha_culminacion
                     FROM obras, lugares
                     WHERE lugares.lid=$current_lid AND lugares.lid=obras.lid;";
     $result_obras = $db8 -> prepare($query_obras);
@@ -111,7 +112,13 @@
             <hr />
         </div>
     </div>
-
+    <?php
+    if ($_SESSION["nombre"]) {
+        echo '<a href="#"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Comprar entrada</a>';
+    } else {
+        echo '<h3>Ingresar a su cuenta para comprar entrada</h3>';
+    }
+    ?>
     <h3>Obras en la exposición</h3>
     <div class="container">
     <div class="row">
@@ -119,10 +126,12 @@
             <table class="custom">
             <tr>
                 <th>Nombre de la obra</th>
+                <th>Fecha inicio</th>
+                <th>Fecha de culminación</th>
             </tr>
             <?php 
                 foreach($dataCollected_obras_lugar as $obra_lugar){
-                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td></tr>";
+                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
                 }
             ?>
             </table>
