@@ -1,6 +1,7 @@
 <?php include('../templates/header.html'); ?>
 
 <?php
+    session_start();
     $current_lid = $_GET['id'];
 
     require("../assets/conexion.php");
@@ -111,9 +112,13 @@
             <hr />
         </div>
     </div>
-
-    <a href="#"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Comprar entrada</a>
-
+    <?php
+    if ($_SESSION["nombre"]) {
+        echo '<a href="#"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Comprar entrada</a>';
+    } else {
+        echo '<h3>Ingresar a su cuenta para comprar entrada</h3>';
+    }
+    ?>
     <h3>Obras en la exposición</h3>
     <div class="container">
     <div class="row">
