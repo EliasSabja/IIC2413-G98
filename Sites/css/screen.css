@@ -107,6 +107,11 @@ sub {
 img {
   border: 0;
 }
+@media (max-width: 463px) {
+  #logo{
+    display:none;
+  }
+}
 
 svg:not(:root) {
   overflow: hidden;
@@ -2674,9 +2679,10 @@ textarea:focus {
 }
 @media (max-width: 768px) {
   .main-header .site-nav .site-links {
-    display: none;
+    display: flex;
   }
 }
+
 
 /* ----------------- 9.2. Footer ----------------- */
 .main-footer {
@@ -2813,7 +2819,7 @@ textarea:focus {
 .statistics-box {
   display: flex;
   padding: 30px 10px;
-  margin-top: -70px;
+  margin-top: -40px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
