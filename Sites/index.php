@@ -71,7 +71,7 @@
                      </form>
                      <p class="hero-text">Descubre un nuevo mundo con nosotros</p>
                   </div>
-               <!--</div>
+               </div>
 
                   <form class="destinations-form">
                      <div class="input-line">
@@ -79,7 +79,7 @@
                         <button type="button" name="destination-submit" class="form-submit btn btn-special">Find a boat</button>
                      </div>
                   </form>
-               </div> -->
+               </div>
             </div>
 
             <!-- Statistics Box -->
