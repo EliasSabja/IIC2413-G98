@@ -144,8 +144,8 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="#"> <!-- ref -->
-                              <img src="img/destination-3.jpg" alt="destination image" />
+                           <a href="vista_obras.php"> <!-- ref -->
+                              <img src="img/destination-4.jpg" alt="destination image" />
                            </a>
                         </div>
 
@@ -162,15 +162,15 @@
                   <div class="col-md-8 col-sm-12 col-xs-24">
                      <div class="destination-box">
                         <div class="box-cover">
-                           <a href="#"> <!-- ref -->
-                              <img src="img/destination-4.jpg" alt="destination image" />
+                           <a href="vista_lugares.php"> <!-- ref -->
+                              <img src="img/destination-3.jpg" alt="destination image" />
                            </a>
                         </div>
 
                         <div class="box-details">
                            <div class="box-meta">
                               <h4 class="city">Lugares de interes</h4>
-                              <p class="country">Museos e iglesias</p><!-- detalles -->
+                              <p class="country">Museos, iglesias y plazas</p><!-- detalles -->
                            </div>
                         </div>
                      </div>
@@ -194,67 +194,43 @@
    <footer class="main-footer">
       <div class="container">
          <div class="row">
-            <div class="col-md-5">
-               <div class="widget widget_links">
-                  <h5 class="widget-title">Top Locations</h5>
-                  <ul>
-                     <li><a href="#">Lorem impsum dolor</a></li>
-                     <li><a href="#">Sit amet consectetur</a></li>
-                     <li><a href="#">Adipisicing elit</a></li>
-                     <li><a href="#">Eiusmod tempor</a></li>
-                     <li><a href="#">incididunt ut labore</a></li>
-                  </ul>
-               </div>
-            </div>
 
             <div class="col-md-5">
                <div class="widget widget_links">
-                  <h5 class="widget-title">Featured Boats</h5>
+                  <h5 class="widget-title">Servicios</h5>
                   <ul>
-                     <li><a href="#">Lorem impsum dolor</a></li>
-                     <li><a href="#">Sit amet consectetur</a></li>
-                     <li><a href="#">Adipisicing elit</a></li>
-                     <li><a href="#">Eiusmod tempor</a></li>
-                  </ul>
-               </div>
-            </div>
-
-            <div class="col-md-9">
-               <div class="widget widget_social">
-                  <h5 class="widget-title">Subscribe to our newsletter</h5>
-                  <form class="subscribe-form">
-                     <div class="input-line">
-                        <input type="text" name="subscribe-email" value="" placeholder="Your email address" />
-                     </div>
-                     <button type="button" name="subscribe-submit" class="btn btn-special no-icon">Subscribe</button>
-                  </form>
-
-                  <ul class="clean-list social-block">
-                     <li>
-                        <a href="#"><i class="icon-facebook"></i></a>
-                     </li>
-                     <li>
-                        <a href="#"><i class="icon-twitter"></i></a>
-                     </li>
-                     <li>
-                        <a href="#"><i class="icon-google-plus"></i></a>
-                     </li>
+                     <li><a href="#">Artistas</a></li>
+                     <li><a href="#">Obras</a></li>
+                     <li><a href="#">Lugares de interes</a></li>
                   </ul>
                </div>
             </div>
 
             <div class="col-md-5">
                <div class="widget widget_links">
-                  <h5 class="widget-title">Contact us</h5>
+                  <h5 class="widget-title">Comprar</h5>
                   <ul>
-                     <li><a href="#">Lorem impsum dolor</a></li>
-                     <li><a href="#">Sit amet consectetur</a></li>
-                     <li><a href="#">Adipisicing elit</a></li>
-                     <li><a href="#">Eiusmod tempor</a></li>
-                     <li><a href="#">incididunt ut labore</a></li>
+                     <li><a href="#">Ticket</a></li>
+                     <li><a href="#">Reserva</a></li>
+                     <li><a href="#">Entrada</a></li>
                   </ul>
                </div>
             </div>
+
+            
+            <div class="col-md-5">
+               <div class="widget widget_links">
+                  <h5 class="widget-title">Autores</h5>
+                  <ul>
+                     <li><a href="https://www.instagram.com/luckbox314/?hl=es-la">Deigo Bustamante</a></li>
+                     <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la">Lucas Muñoz</a></li>
+                     <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la">Elias Sabja</a></li>
+                     <li><a href="#">Cristobal</a></li>
+
+                  </ul>
+               </div>
+            </div>
+            
          </div>
       </div>
    </footer>
