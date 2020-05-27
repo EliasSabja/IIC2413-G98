@@ -199,7 +199,7 @@
                <div class="widget widget_links">
                   <h5 class="widget-title">Servicios</h5>
                   <ul>
-                     <li><a href="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
+                     <li><a onclick="document.getElementById('ver_artistas').submit() ">Artistas</a></li>
                      <li><a href="#">Obras</a></li>
                      <li><a href="#">Lugares de interes</a></li>
                   </ul>
