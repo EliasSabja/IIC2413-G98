@@ -68,18 +68,18 @@
                <!--botones-->
                <div class="row">
 
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                   </div>
 
-                  <div class="col-md-6" style="text-align:center;">
+                  <div class="col-md-4" style="text-align:center;">
                   <a href="#tickets uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
                   </div>
                   
-                  <div class="col-md-6" style="text-align:center;">
+                  <div class="col-md-4" style="text-align:center;">
                   <a href="#hoteles uwuwuwu"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Hoteles</a>
                   </div>
                   
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                   </div>
 
                </div>
