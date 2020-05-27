@@ -43,7 +43,7 @@
     $result_datos_lugar-> execute();
     $dataCollected_datos_lugar = $result_datos_lugar -> fetchAll();
 
-    $query_obras = "SELECT DISTINCT obras.oid, obras.onombre
+    $query_obras = "SELECT DISTINCT obras.oid, obras.onombre, obras.fecha_inicio, obras.fecha_culminacion
                     FROM obras, lugares
                     WHERE lugares.lid=$current_lid AND lugares.lid=obras.lid;";
     $result_obras = $db8 -> prepare($query_obras);
@@ -112,6 +112,8 @@
         </div>
     </div>
 
+    <a href="#"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Comprar entrada</a>
+
     <h3>Obras en la exposición</h3>
     <div class="container">
     <div class="row">
@@ -119,10 +121,12 @@
             <table class="custom">
             <tr>
                 <th>Nombre de la obra</th>
+                <th>Fecha inicio</th>
+                <th>Fecha de culminación</th>
             </tr>
             <?php 
                 foreach($dataCollected_obras_lugar as $obra_lugar){
-                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td></tr>";
+                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
                 }
             ?>
             </table>
