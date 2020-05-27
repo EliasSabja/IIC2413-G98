@@ -58,8 +58,9 @@
             <hr />
         </div>
     </div>
-
+    <div style="text-align:center">
     <h3>Artistas participantes</h3>
+    </div>
     <div class="container">
         <div class="row">
             <article>
@@ -77,8 +78,9 @@
             <hr />
         </div>
     </div>
-    
+    <div style="text-align:center">
     <h3>Lugar en que se encuentra la obra</h3>
+    </div>
     <div class="container">
         <div class="row">
             <article>
