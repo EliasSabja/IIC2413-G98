@@ -30,11 +30,11 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-           <?php 
-             foreach($dataCollected_current_obra as $p){
-                 echo "<h1>$p[0]</h1>";
-             }
-           ?>
+            <?php 
+                foreach($dataCollected_current_obra as $p){
+                    echo "<h1>$p[0]</h1>";
+                }
+            ?>
         
             <h3>Datos de la obra</h3>
         </div>
