@@ -10,7 +10,7 @@
     $data_entrada = $result_entrada -> fetchAll();
 
     foreach ($data_entrada as $entrada){
-        $eid = $entrada[0]
+        $eid = $entrada[0];
     }
 
     $query_eum = "INSERT INTO eum VALUES(:eid, :userid, :lid);";
