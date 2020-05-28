@@ -1,10 +1,12 @@
 <?php session_start(); ?>
 
-<?php 
+<?php
+    require("../assets/conexion.php");
     $uid = $_SESSION["id"];
     $lid = $_GET["lid"];
 
-    $result_entrada = $db9 -> prepare("INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;");
+    $query_entrada = "INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;";
+    $result_entrada = $db9 -> prepare($query_entrada);
     $result_entrada -> execute();
     $data_entrada = $result_entrada -> fetchAll();
 
