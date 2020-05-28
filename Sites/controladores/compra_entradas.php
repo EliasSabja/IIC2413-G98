@@ -4,8 +4,7 @@
     $uid = $_SESSION["id"];
     $lid = $_GET["lid"];
 
-    $query_entrada = "INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;";
-    $result_entrada = $this -> $db9 -> prepare($query_entrada);
+    $result_entrada = $db9 -> prepare("INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;");
     $result_entrada -> execute();
     $data_entrada = $result_entrada -> fetchAll();
 
