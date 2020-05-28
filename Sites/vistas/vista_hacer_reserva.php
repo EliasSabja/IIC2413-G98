@@ -11,7 +11,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h2 class="title">Elige el país donde se encuentre el hotel en el que quieras reservar</h2>
+            <h1 class="title">Elige el país donde se encuentre el hotel en el que quieras reservar</h1>
         </div>
     </div>
     <div class="container">
