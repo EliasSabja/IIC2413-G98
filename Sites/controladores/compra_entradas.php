@@ -1,5 +1,5 @@
 <?php session_start(); 
-    header("Location: ../vistas/vista_por_lugar?lid=$lid");
+    header("Location: ../vistas/vista_por_lugar?lid=$_GET["lid"]");
     die();?>
 
 <?php
