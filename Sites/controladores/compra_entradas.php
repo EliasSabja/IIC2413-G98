@@ -1,11 +1,11 @@
-<?php session_start(); 
-    header("Location: ../vistas/vista_por_lugar?lid=$_GET["lid"]");
-    die();?>
-
-<?php
-    require("../assets/conexion.php");
+<?php session_start();
     $uid = $_SESSION["id"];
-    $lid = $_GET["lid"];
+    $lid = $_GET["lid"]; 
+    
+    header("Location: ../vistas/vista_por_lugar.php?lid=$lid");
+    die();
+
+    require("../assets/conexion.php");
 
     $query_entrada = "INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;";
     $result_entrada = $db8 -> prepare($query_entrada);
