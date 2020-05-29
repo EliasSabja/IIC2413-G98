@@ -1,5 +1,3 @@
-<?php include('../templates/header.html'); ?>
-
 <?php
     session_start();
     $hid = $_GET['hid'];
@@ -22,6 +20,8 @@
     $result_h -> execute(['hid' => $hid]);
     $data_h = $result -> fetchAll();
 ?>
+
+<?php include('../templates/header.html'); ?>
 
 <section class="section section-destination">
     <div class="section-title">

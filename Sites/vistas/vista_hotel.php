@@ -43,7 +43,7 @@
                 <tr>
                     <td colspan="2">
                         <div class="align-center">
-                        <input type="submit" value="Registrarse" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
+                        <input type="submit" value="Reservar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                         </div>
                     </td>
                 </tr>
