@@ -32,7 +32,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1 class="title">Reserva realizada</h1>
+            <h1>Reserva realizada</h1>
         </div>
     </div>
     <div class="container">

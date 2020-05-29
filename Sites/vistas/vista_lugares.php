@@ -12,7 +12,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1 class="title">Explora los lugares registrados</h1>
+            <h1>Explora los lugares registrados</h1>
         </div>
     </div>
     <div class="container">

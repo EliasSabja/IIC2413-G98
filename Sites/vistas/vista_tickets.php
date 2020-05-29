@@ -13,7 +13,7 @@ include('../templates/header.html'); ?>
 <section class="section section-destination">
     <div class="section-title">
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
-            <h1 class="title">Tickets de <?php echo $_SESSION["nombre"]?></h1>
+            <h1>Tickets de <?php echo $_SESSION["nombre"]?></h1>
         </div>
     </div>
     <div class="container">
