@@ -1,8 +1,10 @@
 <?php
     session_start();
     $hid = $_GET['hid'];
-    $f_in = $_POST["in"];
-    $f_out = $_POST["out"];
+    $f_i = $_POST["in"];
+    $f_o = $_POST["out"];
+    $f_in = str_replace('-', '/', $f_i);  
+    $f_out = str_replace('-', '/', $f_o);  
 
     require("../assets/conexion.php");
     $query_reserva = "INSERT INTO reservas VALUES(default, :f_in, :f_out) RETURNING rid;";
