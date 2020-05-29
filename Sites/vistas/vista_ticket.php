@@ -25,6 +25,7 @@
 
 
     foreach ($data as $asiento){
+        echo $asiento;
         if (($key = array_search(intval($asiento[0]), $asientos)) !== false) {
             unset($asientos[$key]);
         }

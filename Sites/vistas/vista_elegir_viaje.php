@@ -5,7 +5,7 @@
 
 <?php
     require("../assets/conexion.php");
-    $query = "SELECT V.vid, V.precio, V.medio, V.h_salida, V.duracion FROM Viajes AS V, VOD WHERE V.vid = VOD.vid AND :origen= VOD.o_cid AND :destino = VOD.d_cid;";
+    $query = "SELECT DISTINCT V.vid, V.precio, V.medio, V.h_salida, V.duracion FROM Viajes AS V, VOD WHERE V.vid = VOD.vid AND :origen= VOD.o_cid AND :destino = VOD.d_cid;";
     $result = $db9 -> prepare($query);
     $result -> bindParam(':origen', $_POST["ciudad_origen"], PDO::PARAM_STR);
     $result -> bindParam(':destino', $_POST["ciudad_destino"], PDO::PARAM_STR);
