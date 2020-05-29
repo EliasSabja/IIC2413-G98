@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION ciudades_artistas (_artistas ARRAY)
-RETURNS TABLE(ciudad VARCHAR(255) AS
+RETURNS TABLE(ciudad VARCHAR(255)) AS
 $$
 DECLARE
     _aid INT;
