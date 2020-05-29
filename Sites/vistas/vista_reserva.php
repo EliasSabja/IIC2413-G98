@@ -46,10 +46,12 @@
             </tr>
             <?php
                 $nombre = $_SESSION['nombre'];
+                $nombre_hotel = $data_h[0][0];
+                $precio = $data_h[0][1];
                 echo "<tr>
                 <td>$nombre</td>
-                <td>$data_h[0][0]</td>
-                <td>$data_h[0][1]</td>
+                <td>$nombre_hotel</td>
+                <td>$precio</td>
                 <td>$f_in</td>
                 <td>$f_out</td>
                 </tr>";
