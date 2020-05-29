@@ -1,8 +1,7 @@
-<?php session_start(); ?>
-
-<?php header("Location: ../vistas/vista_por_lugar?lid=$lid");
+<?php session_start(); 
+    header("Location: ../vistas/vista_por_lugar?lid=$lid");
     die();?>
-    
+
 <?php
     require("../assets/conexion.php");
     $uid = $_SESSION["id"];
