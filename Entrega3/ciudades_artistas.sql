@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ciudades_artistas (_artistas ARRAY)
+CREATE OR REPLACE FUNCTION ciudades_artistas (_artistas INT[])
 RETURNS TABLE(ciudad VARCHAR(255)) AS
 $$
 DECLARE
