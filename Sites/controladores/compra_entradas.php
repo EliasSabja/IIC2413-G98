@@ -1,5 +1,8 @@
 <?php session_start(); ?>
 
+<?php header("Location: ../vistas/vista_por_lugar?lid=$lid");
+    die();?>
+    
 <?php
     require("../assets/conexion.php");
     $uid = $_SESSION["id"];
@@ -19,6 +22,3 @@
     $result_eum -> execute(["eid" -> $eid, "userid" -> $uid, "lid" -> $lid]);
     $data_eum = $result_eum -> fetchAll();
 ?>
-
-<?php header("Location: ../vistas/vista_por_lugar?lid=$lid");
-    die();?>
