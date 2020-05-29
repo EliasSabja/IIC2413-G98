@@ -7,14 +7,18 @@
     $f_out = str_replace('-', '/', $f_o);  
 
     require("../assets/conexion.php");
-    $query_reserva = "INSERT INTO reservas VALUES(default, :f_in, :f_out) RETURNING rid;";
+    $query_reserva = "INSERT INTO reservas VALUES(default, :fin, :fout) RETURNING rid;";
     $result_reserva = $db9 -> prepare($query_insert);
-    $result_reserva -> execute(['f_in' => $f_in, 'f_out' => $f_out]);
+    $result_reserva -> bindParam(':fin', $f_in, PDO::PARAM_STR);
+    $result_reserva -> bindParam(':fout', $f_out, PDO::PARAM_STR);
     $data_reserva = $result_reserva -> fetchAll();
 
     $query_ruh = "INSERT INTO ruh VALUES(:rid, :uid, :hid);";
     $result_ruh = $db9 -> prepare($query_ruh);
-    $result_ruh -> execute(['rid' => $data_reserva[0][0], 'uid' => $_SESSION["id"], 'hid' => $hid]);
+    $result_ruh -> bindParam(':rid', $data_reserva[0][0], PDO::PARAM_INT);
+    $result_ruh -> bindParam(':uid', $_SESSION["id"], PDO::PARAM_INT);
+    $result_ruh -> bindParam(':hid', $hid, PDO::PARAM_INT);
+    $result_ruh -> execute();
     $data_ruh = $result_ruh -> fetchAll();
 
     $query_h = "SELECT H.nombre, H.precio FROM hoteles AS H WHERE :hid = H.hid"; 
