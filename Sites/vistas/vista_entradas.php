@@ -1,6 +1,8 @@
 <?php session_start();
-    include('../templates/header.html');
+    include('../templates/header.html'); 
+?>
 
+<?php
     $id = $_SESSION["id"];
 
     require("../assets/conexion.php");
@@ -8,7 +10,7 @@
     $query_entradas = "SELECT lugares.lid, lugares.lnombre, museos.precio, entradas.f_compra
                         FROM eum, entradas, museos, lugares 
                         WHERE eum.uid=:id AND eum.eid=entradas.eid AND eum.lid=museos.lid AND museos.lid=lugares.lid;";
-    $result_entradas = prepare($query_entradas);
+    $result_entradas = $db8 -> prepare($query_entradas);
     $result_entradas -> bindParam(':id', $id, PDO::PARAM_INT);
     $result_entradas -> execute();
     $data_entradas = $result_entradas -> fetchAll();
