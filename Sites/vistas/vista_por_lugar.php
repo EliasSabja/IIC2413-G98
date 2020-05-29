@@ -116,7 +116,7 @@
     <div style="text-align:center">
     <?php
     if ($_SESSION["nombre"]) {
-        echo '<a href="../controladores/compra_entradas.php?lid=$current_lid"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 240px;">Comprar entrada</a>';
+        echo "<a href='../controladores/compra_entradas.php?lid=$current_lid' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;'>Comprar entrada</a>";
     } else {
         echo '<h3>Ingresar a su cuenta para comprar entrada</h3>';
     }

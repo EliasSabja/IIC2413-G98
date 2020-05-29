@@ -6,7 +6,7 @@
     die();
 
     require("../assets/conexion.php");
-
+    
     $query_entrada = "INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;";
     $result_entrada = $db8 -> prepare($query_entrada);
     $result_entrada -> execute();
