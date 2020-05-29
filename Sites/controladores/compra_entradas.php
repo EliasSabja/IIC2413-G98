@@ -13,11 +13,12 @@
         $eid = $entrada[0];
     }
 
-    echo "$eid";
-
     $query_eum = "INSERT INTO eum VALUES(:eid, :userid, :lid);";
     $result_eum = $db9 -> prepare($query_eum);
-    $result_eum -> execute(["eid" -> $eid, "userid" -> $uid, "lid" -> $lid]);
+    $result_eum -> bindParam(':eid', $eid, PDO::PARAM_INT);
+    $result_eum -> bindParam(':userid', $uid, PDO::PARAM_INT);
+    $result_eum -> bindParam(':lid', $lid, PDO::PARAM_INT);
+    $result_eum -> execute();
     $data_eum = $result_eum -> fetchAll();
 
     header("Location: ../vistas/vista_por_lugar.php?id=$lid");
