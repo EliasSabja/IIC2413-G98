@@ -18,15 +18,7 @@
     $result_eum = $db9 -> prepare($query_eum);
     $result_eum -> execute(["eid" -> $eid, "userid" -> $uid, "lid" -> $lid]);
     $data_eum = $result_eum -> fetchAll();
-
-    echo "COMPRA EXITOSA!";
 ?>
 
 <?php header("Location: ../vistas/vista_por_lugar?lid=$lid");
     die();?>
-
-<div style="text-align:center">
-    <h1>Procesando orden de compra</h1>
-</div>
-
-<?php include('../templates/footer.html'); ?>
