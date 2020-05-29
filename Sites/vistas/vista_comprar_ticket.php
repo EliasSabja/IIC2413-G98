@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <article>
-            <form action='vista_elegir_viajes.php' method='post' class='subscribe-form'>
+            <form action='vista_elegir_viaje.php' method='post' class='subscribe-form'>
             <table class="custom">
                 <tr>
                     <th colspan="2">Fecha de viaje</th>
