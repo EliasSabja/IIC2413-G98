@@ -11,6 +11,7 @@
     $result_reserva = $db9 -> prepare($query_reserva);
     $result_reserva -> bindParam(':fin', $f_in, PDO::PARAM_STR);
     $result_reserva -> bindParam(':fout', $f_out, PDO::PARAM_STR);
+    $result_reserva -> execute();
     $data_reserva = $result_reserva -> fetchAll();
 
     $query_ruh = "INSERT INTO ruh VALUES(:rid, :uid, :hid);";
@@ -47,8 +48,8 @@
                 $nombre = $_SESSION['nombre'];
                 echo "<tr>
                 <td>$nombre</td>
-                <td>$data_h[0]</td>
-                <td>$data_h[1]</td>
+                <td>$data_h[0][0]</td>
+                <td>$data_h[0][1]</td>
                 <td>$f_in</td>
                 <td>$f_out</td>
                 </tr>";
