@@ -24,7 +24,7 @@
     $query_h = "SELECT H.nombre, H.precio FROM hoteles AS H WHERE :hid = H.hid"; 
     $result_h = $db9 -> prepare($query_h);
     $result_h -> execute(['hid' => $hid]);
-    $data_h = $result -> fetchAll();
+    $data_h = $result_h -> fetchAll();
 ?>
 
 <?php include('../templates/header.html'); ?>
