@@ -22,7 +22,7 @@
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
             <?php
                 $nombre = $_SESSION["nombre"];
-                echo "<h2 class='title'>Perfil de $nombre </h2>";
+                echo "<h1>Perfil de $nombre </h1>";
             ?>
         </div>
     </div>
@@ -49,7 +49,7 @@
                 <div style="border:solid;padding:5px;border-radius:5px;">
                     <h1> Entradas </h1>
                     <p>Revisa todas tus Entradas a museos</p>
-                    <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
+                    <a href="vista_entradas.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
                 </div>
             </div>
             

@@ -13,7 +13,7 @@ include('../templates/header.html'); ?>
 <section class="section section-destination">
     <div class="section-title">
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
-            <h2 class="title">Reservas realizadas por <?php echo $_SESSION["nombre"]?></h2>
+            <h1>Reservas realizadas por <?php echo $_SESSION["nombre"]?></h1>
         </div>
     </div>
     <div class="container">

@@ -11,7 +11,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h2 class="title">Explora los artistas registrados</h2>
+            <h1>Explora los artistas registrados</h1>
         </div>
     </div>
     <div class="container">
