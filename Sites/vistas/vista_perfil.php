@@ -22,7 +22,7 @@
         <div class="container" style="margin-top:100px;margin-bottom:5px;">
             <?php
                 $nombre = $_SESSION["nombre"];
-                echo "<h2 class='title'>Perfil de $nombre </h2>";
+                echo "<h1>Perfil de $nombre </h1>";
             ?>
         </div>
     </div>
