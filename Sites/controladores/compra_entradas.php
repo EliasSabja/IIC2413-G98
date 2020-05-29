@@ -2,9 +2,6 @@
     $uid = $_SESSION["id"];
     $lid = $_GET["lid"]; 
 
-    header("Location: ../vistas/vista_por_lugar.php?id=$lid");
-    die();
-
     require("../assets/conexion.php");
     
     $query_entrada = "INSERT INTO entradas VALUES(default, CURRENT_DATE) RETURNING eid;";
@@ -20,4 +17,7 @@
     $result_eum = $db9 -> prepare($query_eum);
     $result_eum -> execute(["eid" -> $eid, "userid" -> $uid, "lid" -> $lid]);
     $data_eum = $result_eum -> fetchAll();
+
+    header("Location: ../vistas/vista_por_lugar.php?id=$lid");
+    die();
 ?>
