@@ -8,7 +8,7 @@
 
     require("../assets/conexion.php");
     $query_reserva = "INSERT INTO reservas VALUES(default, :fin, :fout) RETURNING rid;";
-    $result_reserva = $db9 -> prepare($query_insert);
+    $result_reserva = $db9 -> prepare($query_reserva);
     $result_reserva -> bindParam(':fin', $f_in, PDO::PARAM_STR);
     $result_reserva -> bindParam(':fout', $f_out, PDO::PARAM_STR);
     $data_reserva = $result_reserva -> fetchAll();
