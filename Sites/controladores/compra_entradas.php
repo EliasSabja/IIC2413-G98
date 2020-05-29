@@ -13,6 +13,8 @@
         $eid = $entrada[0];
     }
 
+    echo "$eid";
+
     $query_eum = "INSERT INTO eum VALUES(:eid, :userid, :lid);";
     $result_eum = $db9 -> prepare($query_eum);
     $result_eum -> execute(["eid" -> $eid, "userid" -> $uid, "lid" -> $lid]);
