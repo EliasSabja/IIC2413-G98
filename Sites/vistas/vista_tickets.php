@@ -4,7 +4,7 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, V.medio, C1.ciudad AS origen, C2.ciudad AS destino, V.h_salida FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE $id = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
+    $query = "SELECT T.asiento, T.f_viaje, T.f_compra, V.medio, C1.ciudad, C2.ciudad, V.h_salida, V.precio FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE $id = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -34,6 +34,7 @@ include('../templates/header.html'); ?>
 
                 <th>Ciudad de origen</th>
                 <th>Ciudad de destino</th>
+                <th>Precio</th>
 
             </tr>
             <?php
@@ -46,6 +47,7 @@ include('../templates/header.html'); ?>
                         <td>$p[0]</td>
                         <td>$p[4]</td>
                         <td>$p[5]</td>
+                        <td>$p[7]</td>
                     </tr>";
                 }
             ?> 

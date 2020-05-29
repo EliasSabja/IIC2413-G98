@@ -29,12 +29,11 @@
             <article>
             <table class="custom">
             <tr>
-                <th>vid</th><th>Precio</th><th>Medio</th><th>Hora de salida</th><th>Duración</th><th></th>
+                <th>Precio</th><th>Medio</th><th>Hora de salida</th><th>Duración</th><th></th>
             </tr>
             <?php
                 foreach ($data as $p) {
                     echo "<tr>
-                    <td>$p[0]</td>
                     <td>$p[1]</td>
                     <td>$p[2]</td>
                     <td>$p[3]</td>

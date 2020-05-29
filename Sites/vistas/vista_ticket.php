@@ -23,9 +23,7 @@
 
     $asientos = range(1,$capacidad);
 
-
     foreach ($data as $asiento){
-        echo $asiento;
         if (($key = array_search(intval($asiento[0]), $asientos)) !== false) {
             unset($asientos[$key]);
         }
@@ -50,7 +48,9 @@
                             echo "<h2>No quedan asientos disponibles</h2>";
                         }
                         else{
-                            echo "<h2>Elige un número de asiento</h2>";
+                            $dispo = count($asientos);
+                            echo "<h2>Elige un número de asiento disponible</h2>";
+                            echo "<h3>Quedan $dispo asientos disponibles</h3>";
                         }
                     ?>
 
