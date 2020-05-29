@@ -53,6 +53,7 @@
                 }
             ?> 
             </table>
+            <br>
             <div style="text-align: center;">
                 <a href="vista_entradas.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Entradas</a>
             </div>

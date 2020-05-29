@@ -54,6 +54,7 @@
                 </tr>";
             ?> 
             </table>
+            <br>
             <div style="text-align: center;">
                 <a href="vista_reservas.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Reservas</a>
             </div>
