@@ -4,7 +4,7 @@
     $cid = $_GET['cid'];
 
     require("../assets/conexion.php");
-    $query = "SELECT hoteles.nombre, hoteles.direccion, hoteles.telefono, hoteles.precio,   hoteles.hid FROM hec, hoteles WHERE hec.cid = :cid AND hec.hid = hoteles.hid; "; 
+    $query = "SELECT hoteles.nombre, hoteles.direccion, hoteles.telefono, hoteles.precio, hoteles.hid FROM hec, hoteles WHERE hec.cid = :cid AND hec.hid = hoteles.hid; "; 
 
     $result = $db9 -> prepare($query);
     $result -> execute(['cid' => $cid]);
@@ -49,7 +49,7 @@
                     </div>
 
                 <!-- Spacer -->
-                <div class = "col-md-6 " style="texgitt-align: center;padding:20px;"></div>
+                <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
 
             </div>
             <hr />
