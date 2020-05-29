@@ -52,7 +52,7 @@
                             <select name="ciudad_origen" id="ciudad_origen">
                                 <?php
                                 foreach ($data as $p) {
-                                    echo "<option value='$p[1]'>$data[0]</option>";
+                                    echo "<option value='$p[1]'>$p[0]</option>";
                                 }
                                 ?>
                             </select>
@@ -65,7 +65,7 @@
                             <select name="ciudad_destino" id="ciudad_destino">
                                 <?php
                                 foreach ($data as $p) {
-                                    echo "<option value='$p[1]'>$data[0]</option>";
+                                    echo "<option value='$p[1]'>$p[0]</option>";
                                 }
                                 ?>
                             </select>
