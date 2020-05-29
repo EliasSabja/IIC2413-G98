@@ -24,9 +24,10 @@
 
     $query_entradas = "SELECT lugares.lid, lugares.lnombre, museos.precio, entradas.f_compra
                         FROM eum, entradas, museos, lugares 
-                        WHERE eum.uid=:id AND eum.eid=entradas.eid AND eum.lid=museos.lid AND museos.lid=lugares.lid;";
+                        WHERE eum.uid=:id AND eum.eid=entradas.eid AND eum.lid=museos.lid AND museos.lid=lugares.lid AND eum.eid=:eid;";
     $result_entradas = $db8 -> prepare($query_entradas);
     $result_entradas -> bindParam(':id', $uid, PDO::PARAM_INT);
+    $result_entradas -> bindParam(':eid', $eid, PDO::PARAM_INT);
     $result_entradas -> execute();
     $data_entradas = $result_entradas -> fetchAll();
 ?>
