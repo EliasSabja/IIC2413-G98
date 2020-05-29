@@ -49,7 +49,7 @@
                 <div style="border:solid;padding:5px;border-radius:5px;">
                     <h1> Entradas </h1>
                     <p>Revisa todas tus Entradas a museos</p>
-                    <a href="#" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
+                    <a href="vista_entradas.php" class="btn btn-special no-icon" style="margin:0;border-radius: 5px;">Go</a>
                 </div>
             </div>
             
