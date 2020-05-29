@@ -32,7 +32,7 @@
                 <tr>
                     <td colspan="2">
                         <div class="input-line">
-                            <input id="in" type="date" name="in" min=
+                            <input id="date" type="date" name="date" min=
                                 <?php
                                     echo date('Y-m-d');
                                 ?>

@@ -1,17 +1,22 @@
-<?php include('../templates/header.html'); ?>
+<?php 
+    session_start();
+    include('../templates/header.html');
+?>
 
 <?php
     require("../assets/conexion.php");
-    $query = "SELECT DISTINCT anombre, aid FROM artistas;";
-    $result = $db8 -> prepare($query);
+    $query = "SELECT V.vid, V.precio, V.medio, V.h_salida, V.duracion FROM Viajes AS V, VOD WHERE V.vid = VOD.vid AND :origen= VOD.o_cid AND :destino = VOD.d_cid;";
+    $result = $db9 -> prepare($query);
+    $result -> bindParam(':origen', $_POST["ciudad_origen"], PDO::PARAM_STR);
+    $result -> bindParam(':destino', $_POST["ciudad_destino"], PDO::PARAM_STR);
     $result -> execute();
-    $dataCollected = $result -> fetchAll();
+    $data = $result -> fetchAll();
 ?>
 
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1>Explora los artistas registrados</h1>
+            <h1>Viajes disponibles</h1>
         </div>
     </div>
     <div class="container">
@@ -19,11 +24,17 @@
             <article>
             <table class="custom">
             <tr>
-                <th>Nombre artista</th>
+                <th>Precio</th><th>Medio</th><th>Hora de salida</th><th>Duración</th><th></th>
             </tr>
             <?php
-                foreach ($dataCollected as $p) {
-                    echo "<tr> <td><a href='vista_por_artista.php?id=$p[1]'>$p[0]</a></td></tr>";
+                foreach ($data as $p) {
+                    echo "<tr>
+                    <td>$p[1]</td>
+                    <td>$p[2]</td>
+                    <td>$p[3]</td>
+                    <td>$p[4]</td>
+                    <td><a href='vista_ticket.php?id=$p[0]&date=$date' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Comprar</a></td>
+                    </tr>";
                 }
             ?> 
             </table>

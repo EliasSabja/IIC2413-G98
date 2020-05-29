@@ -4,7 +4,7 @@ include('../templates/header.html'); ?>
 <?php
     require("../assets/conexion.php");
     $id = $_SESSION["id"];
-    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, V.medio, C1.ciudad AS origen, C2.ciudad AS destino FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE $id = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
+    $query = "SELECT T.asiento, T.f_viaje AS fecha_viaje, T.f_compra AS fecha_compra, V.medio, C1.ciudad AS origen, C2.ciudad AS destino, V.h_salida FROM TUV, Tickets AS T, Viajes AS V, VOD, Ciudades AS C1, Ciudades AS C2 WHERE $id = TUV.uid AND TUV.tid = T.tid AND TUV.vid = V.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid;";
     $result = $db9 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -25,11 +25,12 @@ include('../templates/header.html'); ?>
             <tr>
 
                 <th>Fecha de viaje</th>
+                <th>Hora de salida</th>
                 <th>Fecha de compra</th>
 
                 <th>Medio</th>
                 
-                <th>Numero de asiento</th>
+                <th>Número de asiento</th>
 
                 <th>Ciudad de origen</th>
                 <th>Ciudad de destino</th>
@@ -39,6 +40,7 @@ include('../templates/header.html'); ?>
                 foreach ($data as $p) {
                     echo "<tr> 
                         <td>$p[1]</td>
+                        <td>$p[6]</td>
                         <td>$p[2]</td>
                         <td>$p[3]</td>
                         <td>$p[0]</td>
@@ -64,7 +66,7 @@ include('../templates/header.html'); ?>
             </div>
 
             <!-- Spacer -->
-            <div class = "col-md-6 " style="texgitt-align: center;padding:20px;"></div>
+            <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
 
         </div>
     </div>

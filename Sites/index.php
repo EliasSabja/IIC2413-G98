@@ -72,7 +72,7 @@
                   </div>
 
                   <div class="col-md-4" style="text-align:center;">
-                  <a href="vistas/vista_comprar_tickets.php"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
+                  <a href="vistas/vista_comprar_ticket.php"class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;">Viajes</a>
                   </div>
                   
                   <div class="col-md-4" style="text-align:center;">
@@ -185,7 +185,7 @@
       <!--footer-->
       <footer class="main-footer">
          <div class="container">
-            <div class="row">
+            < class="row">
 
                <div class="col-md-5">
                   <div class="widget widget_links">
@@ -198,6 +198,7 @@
                   </div>
                </div>
 
+               <!--
                <div class="col-md-5">
                   <div class="widget widget_links">
                      <h5 class="widget-title">Comprar</h5>
@@ -208,6 +209,7 @@
                      </ul>
                   </div>
                </div>
+               -->
 
                
                <div class="col-md-5">
