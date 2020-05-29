@@ -14,7 +14,7 @@
     }
 
     $query_eum = "INSERT INTO eum VALUES(:eid, :userid, :lid);";
-    $result_eum = $db9 -> prepare($query_eum);
+    $result_eum = $db8 -> prepare($query_eum);
     $result_eum -> bindParam(':eid', $eid, PDO::PARAM_INT);
     $result_eum -> bindParam(':userid', $uid, PDO::PARAM_INT);
     $result_eum -> bindParam(':lid', $lid, PDO::PARAM_INT);
