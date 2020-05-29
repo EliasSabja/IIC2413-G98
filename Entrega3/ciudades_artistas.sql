@@ -14,4 +14,4 @@ RETURN QUERY SELECT * FROM cities;
 RETURN;
 DROP TABLE cities;
 END;
-$$ LANGUAJE plpgsql;
+$$ LANGUAGE plpgsql;
