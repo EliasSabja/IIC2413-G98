@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         <div class="input-line">
-                            <input id="in" type="date" name="in" min=
+                            <input id="in" type="date" name="in" max="2100-05-21" min=
                                 <?php
                                     echo date('Y-m-d');
                                 ?>
@@ -41,7 +41,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         <div class="align-center">
                         <input type="submit" value="Registrarse" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                         </div>
