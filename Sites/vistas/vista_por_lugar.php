@@ -135,7 +135,7 @@
             </tr>
             <?php 
                 foreach($dataCollected_obras_lugar as $obra_lugar){
-                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
+                    echo "<tr><td><a href=#</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
                 }
             ?>
             </table>
