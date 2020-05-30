@@ -1,8 +1,8 @@
-<?php $aids = $_POST["artistas_aid"];
+<?php $aids = $_POST['artistas_aid'];
 
     echo "$aids";
 
-    foreach ($aids as $aid){
-        echo "$aid";
+    for($i=0; $i < count($aids); $i++){
+        echo "Selected " . $aids[$i] . "<br/>";
     }
 ?>
