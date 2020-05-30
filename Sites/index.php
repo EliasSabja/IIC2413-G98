@@ -66,7 +66,7 @@
                </div>
                
                <div class = "col-md-24 " style="text-align: center;padding:20px;">
-                  <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:0 auto;border-radius: 5px;">Crea tu itinerario</a>
+                  <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:0 auto;border-radius: 5px;">Consulta itinerarios</a>
                </div>
 
                <!--botones-->
