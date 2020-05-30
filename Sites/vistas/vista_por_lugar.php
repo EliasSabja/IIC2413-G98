@@ -118,7 +118,7 @@
     if ($_SESSION["nombre"]) {
         echo "<a href='vista_entrada.php?lid=$current_lid' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;'>Comprar entrada</a>";
     } else {
-        echo "<a href='vista_entrada.php?lid=$current_lid' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;' disabled>Comprar entrada</a>";
+        echo "<a href=# class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;' disabled>Comprar entrada</a>";
         echo '<h4>Ingresar a su cuenta para comprar entrada</h4>';
     }
     ?>
@@ -135,7 +135,7 @@
             </tr>
             <?php 
                 foreach($dataCollected_obras_lugar as $obra_lugar){
-                    echo "<tr><td><a href=#</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
+                    echo "<tr><td><a href='vista_por_obra.php?id=$obra_lugar[0]'>$obra_lugar[1]</a></td><td>$obra_lugar[2]</td><td>$obra_lugar[3]</td></tr>";
                 }
             ?>
             </table>
