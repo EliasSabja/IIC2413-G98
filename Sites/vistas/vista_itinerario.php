@@ -50,7 +50,7 @@
             </div>
             </article>
             <hr />
-        <input type="submit"/>
+        <input type="submit" value="Revisar itinerarios"/>
         </div>
         </form>
     </div>
