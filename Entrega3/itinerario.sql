@@ -12,7 +12,7 @@ DECLARE
 BEGIN
     DROP TABLE IF EXISTS c_visitables;
     CREATE TEMPORARY TABLE c_visitables (ciudad VARCHAR(255));
-    INSERT INTO c_visitables(ciudad) SELECT ciudad FROM ciudades_artistas(_artistas);
+    INSERT INTO c_visitables(ciudad) SELECT ciudad FROM (ciudades_artistas(_artistas));
     
     EXEC SQL CONNECT TO :grupo99e2 USER :grupo99;
 
