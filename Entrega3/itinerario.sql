@@ -18,7 +18,7 @@ BEGIN
         INSERT INTO c_visitables (ciudad) SELECT DISTINCT C.ciudad AS ciudad FROM Pinto AS P, Obras AS O, Lugares AS L, Ciudades AS C WHERE _aid = P.aid AND P.oid = O.oid AND O.lid = L.lid AND L.cid = C.cid;
     END LOOP;
     
-    EXECUTE SQL CONNECT TO :grupo99e2 USER :grupo99;
+    EXECUTE SQL CONNECT TO grupo99e2 USER grupo99;
 
     precio_total := 0;
     itinerario := 1;
