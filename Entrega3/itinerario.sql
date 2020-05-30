@@ -10,11 +10,14 @@ DECLARE
     _itinerario INT;
     _datos RECORD;
     _aid INT;
+    _c_origen = RECORD;
 BEGIN
     DROP TABLE IF EXISTS c_visitables;
     CREATE TEMPORARY TABLE c_visitables (ciudad VARCHAR(255));
     FOREACH _aid IN ARRAY _artistas LOOP
-        SELECT * INTO c_visitables FROM (SELECT DISTINCT C.ciudad AS ciudad FROM Pinto AS P, Obras AS O, Lugares AS L, Ciudades AS C WHERE _aid = P.aid AND P.oid = O.oid AND O.lid = L.lid AND L.cid = C.cid);
+        FOR _c_origen IN (SELECT DISTINCT C.ciudad AS ciudad FROM Pinto AS P, Obras AS O, Lugares AS L, Ciudades AS C WHERE _aid = P.aid AND P.oid = O.oid AND O.lid = L.lid AND L.cid = C.cid) LOOP
+            INSERT INTO c_visitables VALUES(_c_origen.ciudad);
+        END LOOP;
     END LOOP;
     
     EXEC SQL CONNECT TO :grupo99e2 USER :grupo99;
