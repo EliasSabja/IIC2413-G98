@@ -81,18 +81,17 @@
                 <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
 
                     <!-- Button -->
-                    <form action='vista_elegir_viaje.php
-                    '>
+                    <form action='vista_elegir_viaje.php'>
                     <?php
                     $ciudad_o = $_GET["ciudad_origen"];
-                    $ciudad_d = $_GET["ciudad_origen"];                    
-                    echo "<input type='hidden' name='ciudad_origen' id='ciudad_origen' value = '$ciudad_o'>";
-                    echo "<input type='hidden' name='ciudad_destino' id='ciudad_destino' value = '$ciudad_d'>";
-                    echo "<input type='hidden' name='date' id='$date' value = 'date'>";
+                    $ciudad_d = $_GET["ciudad_destino"];                    
+                    echo "<input type='hidden' name='ciudad_origen' id='ciudad_origen' value='$ciudad_o'>";
+                    echo "<input type='hidden' name='ciudad_destino' id='ciudad_destino' value='$ciudad_d'>";
+                    echo "<input type='hidden' name='date' id='date' value='$date'>";
                     ?>
 
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <input typle="submit" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;" value="Atras">
+                        <input typle="submit" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px;" value="Atras">
                     </div>
                     </form>
 
