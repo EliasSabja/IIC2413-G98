@@ -13,7 +13,8 @@ BEGIN
     DROP TABLE IF EXISTS c_visitables;
     CREATE TEMPORARY TABLE c_visitables (ciudad VARCHAR(255));
     INSERT INTO c_visitables(ciudad) SELECT ciudad FROM ciudades_artistas(_artistas);
-    \c grupo99e2 grupo99
+    
+    EXEC('\c grupo99e2 grupo99')
 
     precio_total := 0;
     itinerario := 1;
