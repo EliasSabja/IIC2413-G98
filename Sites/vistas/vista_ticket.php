@@ -81,9 +81,19 @@
                 <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
 
                     <!-- Button -->
+                    <form action='vista_elegir_viaje'>
+                    <?php
+                    $ciudad_o = $_GET["ciudad_origen"];
+                    $ciudad_d = $_GET["ciudad_origen"];                    
+                    echo "<input type='hidden' name='ciudad_origen' id='ciudad_origen' value = '$ciudad_o'>";
+                    echo "<input type='hidden' name='ciudad_destino' id='ciudad_destino' value = '$ciudad_d'>";
+                    echo "<input type='hidden' name='date' id='$date' value = 'date'>";
+                    ?>
+
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <a onclick="window.history.back()" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
+                        <submit  class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</submit>
                     </div>
+                    </form>
 
                 <!-- Spacer -->
                 <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>

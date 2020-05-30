@@ -38,7 +38,7 @@
                     <td>$p[2]</td>
                     <td>$p[3]</td>
                     <td>$p[4]</td>
-                    <td><a href='vista_ticket.php?id=$p[0]&date=$date' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Comprar</a></td>
+                    <td><a href='vista_ticket.php?id=$p[0]&date=$date&ciudad_origen=$ciudad_o&ciudad_destino=$ciudad_d' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Comprar</a></td>
                     </tr>";
                 }
             ?> 
