@@ -10,6 +10,11 @@
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
+
+    $query_ciudades = "SELECT DISTINCT cid, ciudad FROM ciudades;";
+    $result_ciudades = $db9 -> prepare($query_ciudades);
+    $result_ciudades -> execute();
+    $data_ciudades = $result_ciudades -> fetchAll();
 ?>
 
 <section class="section section-destination">
@@ -51,6 +56,24 @@
             </article>
             <hr />
         <input type="submit" value="Revisar itinerarios"/>
+        </div>
+        <h2>Escoge la ciudad en que comenzará tu viaje</h2>
+        <div class="row">
+            <select name="ciudad">
+                <?php
+                    foreach($data_ciudades as $ciudad){
+                        echo "<option value='$ciudad[0]'>$ciudad[1]</option>";
+                    }
+                ?>
+            </select>
+        </div>
+        <h2>Escoge la fecha en que deseas viajar</h2>
+        <div class="input-line">
+                            <input id="date" type="date" name="date" min=
+                                <?php
+                                    echo date('Y-m-d');
+                                ?>
+                            >
         </div>
         </form>
     </div>
