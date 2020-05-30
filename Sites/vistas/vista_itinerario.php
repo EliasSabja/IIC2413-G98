@@ -74,8 +74,9 @@
                                 ?>
                             >
         </div><br><br>
-
-        <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x" style="text-align:center;"/>
+        <div class = "col-md-24 " style="text-align: center;padding:20px;">
+            <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
+        </div>
         </form>
     </div>
 </section>
