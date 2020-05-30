@@ -91,7 +91,7 @@
                     ?>
 
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <submit  class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</submit>
+                        <submit  class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;" value="Atras">
                     </div>
                     </form>
 
