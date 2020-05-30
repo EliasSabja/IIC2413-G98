@@ -92,7 +92,7 @@
                     ?>
 
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <submit  class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;" value="Atras">
+                        <input typle="submit" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;" value="Atras">
                     </div>
                     </form>
 
