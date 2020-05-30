@@ -10,7 +10,7 @@ DECLARE
     _itinerario INT;
     _datos RECORD;
     _aid INT;
-    _c_origen = RECORD;
+    _c_origen RECORD;
 BEGIN
     DROP TABLE IF EXISTS c_visitables;
     CREATE TEMPORARY TABLE c_visitables (ciudad VARCHAR(255));
