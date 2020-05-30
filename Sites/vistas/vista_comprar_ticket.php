@@ -91,7 +91,7 @@
 
                     <!-- Button -->
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <a onclick="window.history.back()" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
+                        <a href="../index.php" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
                     </div>
 
                 <!-- Spacer -->
