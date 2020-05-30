@@ -81,7 +81,8 @@
                 <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
 
                     <!-- Button -->
-                    <form action='vista_elegir_viaje'>
+                    <form action='vista_elegir_viaje.php
+                    '>
                     <?php
                     $ciudad_o = $_GET["ciudad_origen"];
                     $ciudad_d = $_GET["ciudad_origen"];                    
