@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="container">
-        <h2>Marca los artistas que deseas encontrar en tu viaje</h2>
+        <h2 style="text-align:center;">Marca los artistas que deseas encontrar en tu viaje</h2>
         <form action="itinerario_controller_test.php" method="post">
         <div class="row">
             <article>
@@ -55,10 +55,9 @@
             </div>
             </article>
             <hr />
-        <input type="submit" value="Revisar itinerarios"/>
         </div>
-        <h2>Escoge la ciudad en que comenzará tu viaje</h2>
-        <div class="row">
+        <h2 style="text-align:center;">Escoge la ciudad en que comenzará tu viaje</h2>
+        <div class="row" style="text-align:center;">
             <select name="ciudad">
                 <?php
                     foreach($data_ciudades as $ciudad){
@@ -67,14 +66,16 @@
                 ?>
             </select>
         </div>
-        <h2>Escoge la fecha en que deseas viajar</h2>
-        <div class="input-line">
+        <h2 style="text-align:center;">Escoge la fecha en que deseas viajar</h2>
+        <div class="input-line" style="text-align:center;">
                             <input id="date" type="date" name="date" min=
                                 <?php
                                     echo date('Y-m-d');
                                 ?>
                             >
         </div>
+
+        <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x"/>
         </form>
     </div>
 </section>
