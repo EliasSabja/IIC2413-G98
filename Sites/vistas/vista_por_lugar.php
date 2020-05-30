@@ -118,7 +118,8 @@
     if ($_SESSION["nombre"]) {
         echo "<a href='vista_entrada.php?lid=$current_lid' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;'>Comprar entrada</a>";
     } else {
-        echo '<h3>Ingresar a su cuenta para comprar entrada</h3>';
+        echo "<a href='vista_entrada.php?lid=$current_lid' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px; width: 240px;' disabled>Comprar entrada</a>";
+        echo '<h4>Ingresar a su cuenta para comprar entrada</h4>';
     }
     ?>
     <h3>Obras en la exposición</h3>
