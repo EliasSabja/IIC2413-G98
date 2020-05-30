@@ -50,6 +50,7 @@
             </div>
             </article>
             <hr />
+        <input type="submit"/>
         </div>
         </form>
     </div>

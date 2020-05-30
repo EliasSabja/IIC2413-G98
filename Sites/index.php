@@ -65,6 +65,12 @@
                   </div>
                </div>
                
+               <div class="row" >
+                  <div class="col-md-24">
+                     <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:0 auto;border-radius: 5px;">Crea tu itinerario</a>
+                  </div>
+               </div>
+
                <!--botones-->
                <div class="row">
 
@@ -83,14 +89,6 @@
                   </div>
 
                </div>
-            </div>
-
-            <div class="container">
-                  <div class="row">
-                     <div class="col-md-24">
-                        <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:5px 20px;border-radius: 5px;">Crea tu itinerario</a>
-                     </div>
-                  </div>
             </div>
 
             <!-- Statistics Box -->
