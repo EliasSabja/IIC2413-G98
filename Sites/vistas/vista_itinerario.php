@@ -65,7 +65,7 @@
                     }
                 ?>
             </select>
-        </div>
+        </div><br><br>
         <h2 style="text-align:center;">Escoge la fecha en que deseas viajar</h2>
         <div class="input-line" style="text-align:center;">
                             <input id="date" type="date" name="date" min=
@@ -73,9 +73,9 @@
                                     echo date('Y-m-d');
                                 ?>
                             >
-        </div>
+        </div><br><br>
 
-        <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x"/>
+        <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x" style="text-align:center;"/>
         </form>
     </div>
 </section>
