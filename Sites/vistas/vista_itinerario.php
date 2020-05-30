@@ -39,7 +39,7 @@
                 }
             ?> 
             </table>
-        </div>
+        </div><br><br>
         <h2 style="text-align:center;">Escoge la ciudad en que comenzará tu viaje</h2>
         <div class="row" style="text-align:center;">
             <select name="ciudad">
