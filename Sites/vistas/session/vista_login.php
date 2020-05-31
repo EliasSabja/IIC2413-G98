@@ -4,7 +4,7 @@
 <section class="section section-destination">
     <div class="section-title" style="padding-top: 110px;">
         <div class="container">
-            <h1>Ingresa tus datos para loggearte</h1>
+            <h1>Ingresa tus datos para loguearte</h1>
         </div>
     </div>
     <div class="container">
