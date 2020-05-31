@@ -20,7 +20,7 @@
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario(ARRAY :aids, :date, :cid);";
     $result = $db8 -> prepare($query);
-    $result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
+    $result -> bindParam(':aids', "[7]", PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
     $result -> bindParam(':cid', $cid, PDO::PARAM_STR);
     $result -> execute();
