@@ -7,11 +7,11 @@
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
-        echo "Selected" . $aids[$i] . "<br>"; 
+        echo "Selected" . $aids[$i] ; 
         if($empezado){
-            $aids_str .= ",";
+            $aids_str = $aids_str . ",";
         }
-        $aids_str .=  strval($aids[$i]);
+        $aids_str = $aids_str . $aids[$i];
         if(!$empezado){$empezado = true;}
     }
  
@@ -39,6 +39,7 @@
     <div class="container">
         <div class="row">
             <article>
+            <?php echo $aids_str;?>
             <?php
                 $previo_it = -1;
                 $primero = true;
