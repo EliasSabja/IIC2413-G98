@@ -3,7 +3,7 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = "";
+    $aids_str = "[";
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
@@ -14,11 +14,11 @@
         $aids_str = $aids_str . $aids[$i] . "<br>";
         if(!$empezado){$empezado = true;}
     }
- 
+    $aids_str = $aids_str . "]";
 
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY [7,5], :date, :cid);";
+    $query = "SELECT * FROM itinerario(ARRAY :aids, :date, :cid);";
     $result = $db8 -> prepare($query);
     $result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
