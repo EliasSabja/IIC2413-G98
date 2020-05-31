@@ -25,7 +25,7 @@
     $result -> bindParam(':cid', $cid, PDO::PARAM_STR);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
-
+    echo $dataCollected[0][0] . "-";
     
 ?>
 
@@ -39,17 +39,18 @@
         <div class="row">
             <article>
             <?php
-                $previo_it = "-1";
+                $previo_it = -1;
                 $primero = true;
                 $primero_primero = true;
                 $numero = 1;
                 foreach($dataCollected as $viaje){
-
+                    echo "viaje-";
                     if ($viaje[0] != $previo_it){
                         $primero = true;
                         $previo_it = $viaje[0];
+                        echo "primero-";
                     }   
-                    else{$primero = false;}
+                    else{$primero = false;echo "no primero-";}
 
                     if($primero){
                         if (!$primero_primero){
@@ -58,6 +59,7 @@
                         }
                         else {
                             $primero_primero = false;
+                            echo"primero_primero-"
                             echo"<table class='custom'>";
                         }
                         $n = ++$numero;
