@@ -7,11 +7,11 @@
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
-        echo "Selected" . $aids[$i] ; 
+        echo "Selected" . $aids[$i] . "<br>"; 
         if($empezado){
             $aids_str = $aids_str . ",";
         }
-        $aids_str = $aids_str . $aids[$i];
+        $aids_str = $aids_str . $aids[$i] . "<br>";
         if(!$empezado){$empezado = true;}
     }
  
