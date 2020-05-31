@@ -37,13 +37,13 @@ BEGIN
                         _precio_total := _datos1.precio1 + _datos2.precio2 + _datos3.precio3;
                         INSERT INTO I VALUES(_itinerario, _precio_total, _fecha, _datos1.origen1, _datos1.destino1, _datos1.medio1, _datos1.hora1, _datos1.duracion1, _datos1.precio1);
                         _fecha_actual := _fecha;
-                        _duracion := make_interval(hours => _datos1.duracion1)
+                        _duracion := make_interval(hours => _datos1.duracion1);
                         IF _datos1.hora1 + _duracion > _datos2.hora2 THEN
                             _fecha_actual := _fecha_actual + _dia;
                         ELSE NULL;
                         END IF;
                         INSERT INTO I VALUES(_itinerario, _precio_total, _fecha_actual, _datos2.origen2, _datos2.destino2, _datos2.medio2, _datos2.hora2, _datos2.duracion2, _datos2.precio2);
-                        _duracion := make_interval(hours => _datos2.duracion2)
+                        _duracion := make_interval(hours => _datos2.duracion2);
                         IF _datos2.hora2 + _duracion > _datos3.hora3 THEN
                             _fecha_actual := _fecha_actual + _dia;
                         ELSE NULL;
@@ -58,7 +58,7 @@ BEGIN
                 _precio_total := _datos1.precio1 + _datos2.precio2;
                 INSERT INTO I VALUES(_itinerario, _precio_total, _fecha, _datos1.origen1, _datos1.destino1, _datos1.medio1, _datos1.hora1, _datos1.duracion1, _datos1.precio1);
                 _fecha_actual := _fecha;
-                _duracion := make_interval(hours => _datos1.duracion1)
+                _duracion := make_interval(hours => _datos1.duracion1);
                 IF _datos1.hora1 + _duracion > _datos2.hora2 THEN
                     _fecha_actual := _fecha_actual + _dia;
                 ELSE NULL;
