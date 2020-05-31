@@ -7,13 +7,14 @@
     $aids_str = "";
 
     $empezado = false;
-    foreach($aids as $aid){
+    for ($i=0; $i < count($aids); $i++) { 
         if($empezado){
             $aids_str .= ",";
         }
-        $aids_str .=  strval($aid);
+        $aids_str .=  strval($aids[$i]);
         if(!$empezado){$empezado = true;}
     }
+
     echo $aids_str;
 
 
