@@ -59,7 +59,7 @@
                         }
                         else {
                             $primero_primero = false;
-                            echo"primero_primero-"
+                            echo"primero_primero-";
                             echo"<table class='custom'>";
                         }
                         $n = ++$numero;
