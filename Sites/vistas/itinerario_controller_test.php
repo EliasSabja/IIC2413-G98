@@ -19,7 +19,7 @@
     
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY" . $aids_str . ", :date, :cid);";
+    $query = "SELECT * FROM itinerario(ARRAY " . $aids_str . ", :date, :cid);";
     echo $query . "<br>";
     $result = $db8 -> prepare($query);
     #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
