@@ -38,6 +38,8 @@ BEGIN
                             _itinerario = _itinerario + 1;
                         END LOOP;
                     END LOOP;
+                ELSE
+                
                 END CASE;
                 FOR _datos IN (SELECT C1.ciudad AS origen1, C2.ciudad AS destino1, V.medio AS medio1, V.h_salida AS hora1, V.duracion AS duracion1, V.precio AS precio1 FROM (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Viajes') AS V(vid INT, h_salida TIME, duracion INT, medio VARCHAR(50), capacidad INT, precio FLOAT)) AS V, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM VOD') AS VOD(vid INT, o_cid INT, d_cid INT)) AS VOD, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Ciudades') AS C1(cid INT, ciudad VARCHAR(50))) AS C1, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Ciudades') AS C(cid INT, ciudad VARCHAR(50))) AS C2 WHERE V.vid = _v1.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid) LOOP
                     INSERT INTO I VALUES(_itinerario, _datos.origen1, _datos.destino1, _datos.medio1, _datos.hora1, _datos.duracion1, _datos.precio1);
@@ -47,6 +49,8 @@ BEGIN
                     _itinerario = _itinerario + 1;
                 END LOOP;
             END LOOP;
+        ELSE
+
         END CASE;
         FOR _datos IN (SELECT C1.ciudad AS origen1, C2.ciudad AS destino1, V.medio AS medio1, V.h_salida AS hora1, V.duracion AS duracion1, V.precio AS precio1 FROM (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Viajes') AS V(vid INT, h_salida TIME, duracion INT, medio VARCHAR(50), capacidad INT, precio FLOAT)) AS V, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM VOD') AS VOD(vid INT, o_cid INT, d_cid INT)) AS VOD, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Ciudades') AS C1(cid INT, ciudad VARCHAR(50))) AS C1, (SELECT * FROM dblink('dbname=grupo99e2 user=grupo99 password=Soto314', 'SELECT * FROM Ciudades') AS C(cid INT, ciudad VARCHAR(50))) AS C2 WHERE V.vid = _v1.vid AND V.vid = VOD.vid AND VOD.o_cid = C1.cid AND VOD.d_cid = C2.cid) LOOP
             INSERT INTO I VALUES(_itinerario, _datos.origen1, _datos.destino1, _datos.medio1, _datos.hora1, _datos.duracion1, _datos.precio1);
