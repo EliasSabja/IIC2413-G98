@@ -10,6 +10,11 @@
     $result = $db8 -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
+
+    $query_ciudades = "SELECT DISTINCT cid, ciudad FROM ciudades;";
+    $result_ciudades = $db9 -> prepare($query_ciudades);
+    $result_ciudades -> execute();
+    $data_ciudades = $result_ciudades -> fetchAll();
 ?>
 
 <section class="section section-destination">
@@ -19,7 +24,7 @@
         </div>
     </div>
     <div class="container">
-        <h2>Marca los artistas que deseas encontrar en tu viaje</h2>
+        <h2 style="text-align:center;">Marca los artistas que deseas encontrar en tu viaje</h2>
         <form action="itinerario_controller_test.php" method="post">
         <div class="row">
             <article>
@@ -34,8 +39,32 @@
                 }
             ?> 
             </table>
-            <!-- Go back -->
-            <div class="row" style="padding:20px;">
+        </div><br><br>
+        <h2 style="text-align:center;">Escoge la ciudad en que comenzará tu viaje</h2>
+        <div class="row" style="text-align:center;">
+            <select name="ciudad">
+                <?php
+                    foreach($data_ciudades as $ciudad){
+                        echo "<option value='$ciudad[0]'>$ciudad[1]</option>";
+                    }
+                ?>
+            </select>
+        </div><br><br>
+        <h2 style="text-align:center;">Escoge la fecha en que deseas viajar</h2>
+        <div class="input-line" style="text-align:center;">
+                            <input id="date" type="date" name="date" min=
+                                <?php
+                                    echo date('Y-m-d');
+                                ?>
+                            >
+        </div><br><br>
+        <div class = "col-md-24 " style="text-align: center;padding:20px;">
+            <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
+        </div>
+        </form>
+
+        <!-- Go back -->
+        <div class="row" style="padding:20px;">
                 <!-- Spacer -->
                 <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
 
@@ -50,9 +79,6 @@
             </div>
             </article>
             <hr />
-        <input type="submit" value="Revisar itinerarios"/>
-        </div>
-        </form>
     </div>
 </section>
 
