@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION itinerario (_artistas INT[], _fecha DATE, _origen INT)
-RETURNS TABLE(itinerario INT, precio_total FLOAT, fecha DATE, origen VARCHAR(255), destino VARCHAR(255), medio VARCHAR(255), hora_salida TIME, duracion INT, precio FLOAT) AS
+RETURNS TABLE(itinerario INT, origen VARCHAR(255), destino VARCHAR(255), medio VARCHAR(255), hora_salida TIME, duracion INT, precio FLOAT) AS
 $$
 DECLARE
     _ciudad RECORD;
