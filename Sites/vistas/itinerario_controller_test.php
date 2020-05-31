@@ -1,15 +1,13 @@
 <?php include('../templates/header.html'); ?>
 
 <?php $aids = $_POST['artistas_aid'];
-    echo $aids;
-    echo $aids[1];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
     $aids_str = "";
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
-        echo $aids[$i]; 
+        echo "Selected" . $aids[$i] . "<br>"; 
         if($empezado){
             $aids_str .= ",";
         }
