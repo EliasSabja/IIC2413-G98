@@ -1,7 +1,8 @@
 <?php include('../templates/header.html'); ?>
 
 <?php $aids = $_POST['artistas_aid'];
-
+    echo $aids[0];
+    echo $aids[1];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
     $aids_str = "";
@@ -14,8 +15,7 @@
         $aids_str .=  strval($aids[$i]);
         if(!$empezado){$empezado = true;}
     }
-    echo $aids[0];
-    echo $aids[1];
+ 
     echo $aids_str;
 
 
