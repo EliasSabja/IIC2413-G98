@@ -14,11 +14,11 @@
         $aids_str .=  strval($aid);
         if(!$empezado){$empezado = true;}
     }
-
+    echo $aids_str;
 
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY [:aids], ':date', :cid);";
+    $query = "SELECT * FROM itinerario(ARRAY [:aids], :date, :cid);";
     $result = $db8 -> prepare($query);
     $result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
