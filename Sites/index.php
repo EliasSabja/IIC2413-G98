@@ -66,7 +66,7 @@
                </div>
                
                <div class = "col-md-24 " style="text-align: center;padding:20px;">
-                  <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:0 auto;border-radius: 5px;">Crea tu itinerario</a>
+                  <a href="vistas/vista_itinerario.php"class="btn btn-special no-icon"style="margin:0 auto;border-radius: 5px;">Crear itinerario</a>
                </div>
 
                <!--botones-->
@@ -202,18 +202,16 @@
                   </div>
                </div>
 
-               <!--
                <div class="col-md-5">
                   <div class="widget widget_links">
-                     <h5 class="widget-title">Comprar</h5>
+                     <h5 class="widget-title">Viajes y estadía</h5>
                      <ul>
-                        <li><a href="#">Ticket</a></li>
-                        <li><a href="#">Reserva</a></li>
-                        <li><a href="#">Entrada</a></li>
+                        <li><a href="vistas/vista_comprar_ticket.php">Comprar ticket de viaje</a></li>
+                        <li><a href="vistas/vista_hacer_reserva.php">Hacer reserva de hotel</a></li>
+                        <li><a href="vistas/vista_itinerario.php">Crear itinerario</a></li>
                      </ul>
                   </div>
                </div>
-               -->
 
                
                <div class="col-md-5">
