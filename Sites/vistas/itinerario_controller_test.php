@@ -3,7 +3,7 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = "{";
+    $aids_str = "[";
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
@@ -14,28 +14,14 @@
         $aids_str = $aids_str . $aids[$i] . "<br>";
         if(!$empezado){$empezado = true;}
     }
-    $aids_str = $aids_str . "}";
+    $aids_str = $aids_str . "]";
     
-    function to_pg_array($set) {
-        settype($set, 'array'); // can be called with a scalar or array
-        $result = array();
-        foreach ($set as $t) {
-            if (is_array($t)) {
-                $result[] = to_pg_array($t);
-            } else {
-                $t = str_replace('"', '\\"', $t); // escape double quote
-                if (! is_numeric($t)) // quote only non-numeric values
-                    $t = '"' . $t . '"';
-                $result[] = $t;
-            }
-        }
-        return '{' . implode(",", $result) . '}'; // format
-    }
+    
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY :aids, :date, :cid);";
+    $query = "SELECT * FROM itinerario(ARRAY" . $aids_str . ", :date, :cid);";
     $result = $db8 -> prepare($query);
-    $result -> bindParam(':aids', to_pg_array($aids), PDO::PARAM_STR);
+    #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
     $result -> bindParam(':cid', $cid, PDO::PARAM_STR);
     $result -> execute();
