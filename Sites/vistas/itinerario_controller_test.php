@@ -1,6 +1,7 @@
 <?php include('../templates/header.html'); ?>
 
 <?php $aids = $_POST['artistas_aid'];
+    echo $aids;
     echo $aids[0];
     echo $aids[1];
     $cid = $_POST['ciudad'];
@@ -8,7 +9,8 @@
     $aids_str = "";
 
     $empezado = false;
-    for ($i=0; $i < count($aids); $i++) { 
+    for ($i=0; $i < count($aids); $i++) {
+        echo $aids[$i]; 
         if($empezado){
             $aids_str .= ",";
         }
