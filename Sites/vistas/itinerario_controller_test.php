@@ -11,22 +11,10 @@
         #echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
         $i = $i + 1;
         $aids_str = $aids_str . $artista_aid;
-        print_r($aids_str);
+        #print_r($aids_str);
     }
     echo "<br>";
-    echo "<br>";
-    echo "<br>";
     print_r($aids_str);
-    echo "<br>";
-    print_r($aids_str[0]);
-    echo "<br>";
-    print_r($aids_str[1]);
-    echo "<br>";
-    print_r($aids_str[2]);
-    echo "<br>";
-    print_r($aids_str[3]);
-    echo "<br>";
-    print_r($aids_str[4]);
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
