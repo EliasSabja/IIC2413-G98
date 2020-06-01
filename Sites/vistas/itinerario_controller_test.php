@@ -11,16 +11,16 @@
         if($empezado){
             $aids_str = $aids_str . ",";
         }
-        $aids_str = $aids_str . $aids[$i] . "<br>" ;
+        $aids_str = $aids_str . $aids[$i];
         if(!$empezado){$empezado = true;}
     }
     
     
     $aids_str = strval($aids_str);
-
+    $hola = "7,13";
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario('{";
-    $query = $query . $aids_str;
+    $query = $query . $hola;
     $query = $query . "}', :date, :cid);";
 
     $result = $db8 -> prepare($query);
