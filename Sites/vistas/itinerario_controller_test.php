@@ -19,8 +19,9 @@
     
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);";
-    echo $query . "<br>";
+    $query = "SELECT * FROM itinerario(ARRAY " . $aids_str . ", :date, :cid);";
+    echo ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);");
+    echo ($query === "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);");
     $result = $db8 -> prepare($query);
     #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
@@ -45,7 +46,7 @@
                 $previo_it = -1;
                 $primero = true;
                 $primero_primero = true;
-                $numero = 1;
+                $numero = 0;
                 foreach($dataCollected as $viaje){
                     echo "viaje-";
                     if ($viaje[0] != $previo_it){
