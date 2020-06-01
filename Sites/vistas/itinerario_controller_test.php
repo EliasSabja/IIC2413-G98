@@ -5,40 +5,17 @@
     $date = $_POST['date'];
     $aids_str = '';
 
-    #print_r($_POST['artistas_aid']);
-    $i = 0;
     $primero = true;
     foreach($_POST['artistas_aid'] as $artista_aid){
-        #echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
-        #$i = $i + 1;
         if ($primero){
             $aids_str = $artista_aid;
             $primero = false;
         } else {
             $aids_str = $aids_str . ',' . $artista_aid;
         }
-        #print_r($aids_str);
     }
 
-    #foreach($aids as $item){
-    #    echo '<pre/>';print_r($item); // print each sub-array of  original array
-    # }
-    
-    #$empezado = false;
-    #for ($i=0; $i < count($aids); $i++) {
-    #    echo "Selected" . $aids[$i]; 
-    #    if($empezado){
-    #        $aids_str = $aids_str . ",";
-    #    }
-    #    $aids_str = $aids_str . strval($aids[$i]);
-    #    if(!$empezado){$empezado = true;}
-    #}
-
     require("../assets/conexion.php");
-    #$query = "SELECT * FROM itinerario('{";
-    #$query = $query . $aids_str;
-    #$query = $query . "}', :date, :cid);";
-    #$aids_str = '7';
 
     $query = "SELECT * FROM itinerario(:aids, :date, :cid);";
     $result = $db8 -> prepare($query);
@@ -74,6 +51,7 @@
                         if (!$primero_primero){
                              
                             echo"</table><table class='custom'>";
+                            echo"<br><br>";
                         }
                         else {
                             $primero_primero = false;
