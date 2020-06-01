@@ -21,6 +21,11 @@
    $result_usuarios = $db8 -> prepare($query_usuarios);
    $result_usuarios -> execute();
    $usuarios = $result_usuarios -> fetchAll();
+
+   $lugares_interes = $lugares_interes[0][0];
+   $ciudades = $ciudades[0][0];
+   $hoteles = $hoteles[0][0];
+   $ciudades = $ciudades[0][0];
 ?>
 
 <!DOCTYPE html>
