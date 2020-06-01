@@ -1,5 +1,28 @@
 <?php session_start();?>
 
+<?php 
+   require("assets/conexion.php");
+   $query_lugares_interes = "SELECT COUNT(*) FROM lugares;";
+   $result_lugares_interes = $db8 -> prepare($query_lugares_interes);
+   $result_lugares_interes -> execute();
+   $lugares_interes = $result_lugares_interes -> fetchAll();
+
+   $query_ciudades = "SELECT COUNT(*) FROM ciudades;";
+   $result_ciudades = $db9 -> prepare($query_ciudades);
+   $result_ciudades -> execute();
+   $ciudades = $result_ciudades -> fetchAll();
+
+   $query_hoteles = "SELECT COUNT(*) FROM hoteles;";
+   $result_hoteles = $db9 -> prepare($query_hoteles);
+   $result_hoteles -> execute();
+   $hoteles = $result_hoteles -> fetchAll();
+
+   $query_usuarios = "SELECT COUNT(*) FROM usuarios;";
+   $result_usuarios = $db8 -> prepare($query_usuarios);
+   $result_usuarios -> execute();
+   $usuarios = $result_usuarios -> fetchAll();
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -93,22 +116,30 @@
             <div class="container">
                <div class="statistics-box">
                   <div class="statistics-item">
-                     <span class="value">5</span>
+                     <?php
+                        echo "<span class="value">$lugares_interes</span>";
+                     ?>
                      <p class="title">Lugares de interes</p>
                   </div>
 
                   <div class="statistics-item">
-                     <span class="value">12</span>
+                  <?php
+                        echo "<span class="value">$ciudades</span>";
+                     ?>
                      <p class="title">Ciudades</p>
                   </div>
 
                   <div class="statistics-item">
-                     <span class="value">23</span>
+                  <?php
+                        echo "<span class="value">$hoteles</span>";
+                     ?>
                      <p class="title">Hoteles</p>
                   </div>
 
                   <div class="statistics-item">
-                     <span class="value">At least 3</span>
+                  <?php
+                        echo "<span class="value">$usuarios</span>";
+                     ?>
                      <p class="title">Usuarios</p>
                   </div>
                </div>

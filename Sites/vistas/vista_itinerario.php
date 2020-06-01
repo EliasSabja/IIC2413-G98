@@ -25,7 +25,7 @@
     </div>
     <div class="container">
         <h2 style="text-align:center;">Marca los artistas que deseas encontrar en tu viaje</h2>
-        <form action="itinerario_controller_test.php" method="post">
+        <form action="vista_itinerarios.php" method="post">
         <div class="row">
             <article>
             <table class="custom">
@@ -59,7 +59,7 @@
                             >
         </div><br><br>
         <div class = "col-md-24 " style="text-align: center;padding:20px;">
-            <input type="submit" name="submit" value="Submit" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
+            <input type="submit" name="submit" value="Revisa itinerarios" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
         </div>
         </form>
 
