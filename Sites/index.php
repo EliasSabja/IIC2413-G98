@@ -122,28 +122,28 @@
                <div class="statistics-box">
                   <div class="statistics-item">
                      <?php
-                        echo "<span class="value">$lugares_interes</span>";
+                        echo "<span class='value'>$lugares_interes</span>";
                      ?>
                      <p class="title">Lugares de interes</p>
                   </div>
 
                   <div class="statistics-item">
                   <?php
-                        echo "<span class="value">$ciudades</span>";
+                        echo "<span class='value'>$ciudades</span>";
                      ?>
                      <p class="title">Ciudades</p>
                   </div>
 
                   <div class="statistics-item">
                   <?php
-                        echo "<span class="value">$hoteles</span>";
+                        echo "<span class='value'>$hoteles</span>";
                      ?>
                      <p class="title">Hoteles</p>
                   </div>
 
                   <div class="statistics-item">
                   <?php
-                        echo "<span class="value">$usuarios</span>";
+                        echo "<span class='value'>$usuarios</span>";
                      ?>
                      <p class="title">Usuarios</p>
                   </div>
