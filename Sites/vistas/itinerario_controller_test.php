@@ -3,7 +3,7 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = "[";
+    $aids_str = "";
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
@@ -11,15 +11,15 @@
         if($empezado){
             $aids_str = $aids_str . ",";
         }
-        $aids_str = $aids_str . $aids[$i] . "<br>";
+        $aids_str = $aids_str . $aids[$i] ;
         if(!$empezado){$empezado = true;}
     }
-    $aids_str = $aids_str . "]";
+    $aids_str = $aids_str . "";
     
     
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario(ARRAY " . $aids_str . ", :date, :cid);";
+    $query = "SELECT * FROM itinerario('{$aids_str}', :date, :cid);";
     if ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
         echo "true-";
     }
