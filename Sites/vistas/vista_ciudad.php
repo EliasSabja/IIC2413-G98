@@ -22,7 +22,7 @@ include('../templates/header.html');
         <div class="container">
             <?php
             if(!$_SESSION['nombre']){
-                $log = "disable";   
+                $log = "disabled";   
                 echo "<h1>No estas registrado, inicia sesión para hacer una reserva</h1>"; 
             }
             else{

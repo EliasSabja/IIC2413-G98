@@ -60,11 +60,11 @@ a:active, a:hover {
 }
 
 a:disabled {
-  color: #a1a1a1;
+  background: #a1a1a1;
 }
 
 input[type="submit"]:disabled {
-  color: #a1a1a1;
+  background: #a1a1a1;
 }
 
 
