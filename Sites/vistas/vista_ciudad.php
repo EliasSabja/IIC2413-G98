@@ -51,7 +51,7 @@ include('../templates/header.html');
                     <td>$p[1]</td>
                     <td>$p[2]</td>
                     <td>$p[3]</td>
-                    <td><a  href=$ref class='btn btn-special $block' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
+                    <td><a  href=$ref class='btn btn-special no-icon $block' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
                     </tr>";
                 }
             ?> 

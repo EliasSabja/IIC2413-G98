@@ -59,7 +59,7 @@ a:active, a:hover {
   color: #e7434e;
 }
 
-a:disabled {
+.block {
   background: #a1a1a1;
 }
 :disabled {
