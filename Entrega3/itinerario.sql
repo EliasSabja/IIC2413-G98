@@ -1,7 +1,8 @@
-CREATE OR REPLACE FUNCTION itinerario (_artistas INT[], _fecha DATE, _origen INT)
+CREATE OR REPLACE FUNCTION itinerario (_texto TEXT, _fecha DATE, _origen INT)
 RETURNS TABLE(itinerario INT, precio_total FLOAT, fecha DATE, origen VARCHAR(255), destino VARCHAR(255), medio VARCHAR(255), h_salida TIME, duracion INT, precio FLOAT) AS
 $$
 DECLARE
+    _artistas INT[];
     _fecha_actual DATE;
     _precio_total FLOAT;
     _v1 RECORD;
@@ -15,6 +16,7 @@ DECLARE
     _duracion INTERVAL;
     _dia INT;
 BEGIN
+    _artistas := string_to_array(_texto, ',');
     DROP TABLE IF EXISTS c_visitables;
     CREATE TEMPORARY TABLE c_visitables (ciudad VARCHAR(255));
     FOREACH _aid IN ARRAY _artistas LOOP
