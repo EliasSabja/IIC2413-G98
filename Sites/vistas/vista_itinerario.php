@@ -35,7 +35,7 @@
             </tr>
             <?php
                 foreach ($dataCollected as $p) {
-                    echo "<tr> <td>$p[1]</td><td><input type='checkbox' name='artistas_aid[]' value=$p[0]</td></tr>";
+                    echo "<tr> <td>$p[1]</td><td><input type='checkbox' name='artistas_aid[]' value='$p[0]'</td></tr>";
                 }
             ?> 
             </table>
