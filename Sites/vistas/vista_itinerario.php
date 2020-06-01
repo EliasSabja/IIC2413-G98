@@ -59,7 +59,7 @@
                             >
         </div><br><br>
         <div class = "col-md-24 " style="text-align: center;padding:20px;">
-            <input type="submit" value="Revisar itinerarios" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
+            <input type="submit" name="submit" value="Submit" class="btn btn-special no-icon size-2x" style="margin:0 auto;"/>
         </div>
         </form>
 

@@ -6,7 +6,9 @@
     $aids_str = implode(",", $_POST['artistas_aid']);
 
     #print_r($_POST['artistas_aid']);
-    print_r($_POST['artidas_aid'][0]);
+    foreach($_POST['artistas_aid'] as $artista_aid){
+        echo $artista_aid."</br>";
+    }
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
