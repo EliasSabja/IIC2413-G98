@@ -16,7 +16,12 @@
     echo "<br>";
     echo "<br>";
     echo "<br>";
+    print_r($aids_str);
+    print_r($aids_str[0]);
     print_r($aids_str[1]);
+    print_r($aids_str[2]);
+    print_r($aids_str[3]);
+    print_r($aids_str[4]);
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
