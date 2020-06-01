@@ -11,11 +11,12 @@
         if($empezado){
             $aids_str = $aids_str . ",";
         }
-        $aids_str = $aids_str . $aids[$i] ;
+        $aids_str = $aids_str . $aids[$i] . "<br>" ;
         if(!$empezado){$empezado = true;}
     }
     
     
+    $aids_str = strval($aids_str);
 
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario('{";
