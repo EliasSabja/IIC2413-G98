@@ -7,11 +7,11 @@
 
     $empezado = false;
     for ($i=0; $i < count($aids); $i++) {
-        echo "Selected" . $aids[$i] . "<br>"; 
+        echo "Selected" . $aids[$i]; 
         if($empezado){
             $aids_str = $aids_str . ",";
         }
-        $aids_str = $aids_str . $aids[$i] . "<br>";
+        $aids_str = $aids_str . $aids[$i];
         if(!$empezado){$empezado = true;}
     }
     $aids_str = $aids_str . "]";
@@ -21,13 +21,18 @@
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario(ARRAY " . $aids_str . ", :date, :cid);";
     if ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
-        echo "true";
+        echo "true-";
     }
-    else{echo "false";}
+    else{echo "false-";}
     if ($query === "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
-        echo "true";
+        echo "true-";
     }
-    else{echo "false";}
+    else{echo "false-";}
+
+    echo $query;
+    echo "<br>";
+    echo "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);";
+
     $result = $db8 -> prepare($query);
     #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
