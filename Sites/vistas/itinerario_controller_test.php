@@ -6,9 +6,8 @@
     $aids_str = implode(" ", $aids);
     $aids_array = explode(" ", $aids_str);
     
-    foreach ($aids_array as $aid){
-        echo "$aid";
-    }
+    echo $aids_str;
+    
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
     # }
