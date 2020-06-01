@@ -19,7 +19,7 @@
     
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario('{$aids_str}', :date, :cid);";
+    $query = "SELECT * FROM itinerario('{7}', :date, :cid);";
     if ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
         echo "true-";
     }
