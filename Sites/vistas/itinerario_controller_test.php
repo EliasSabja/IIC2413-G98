@@ -23,6 +23,7 @@
     #$query = "SELECT * FROM itinerario('{";
     #$query = $query . $aids_str;
     #$query = $query . "}', :date, :cid);";
+    $aids_str = '7';
 
     $query = "SELECT * FROM itinerario(:aids, :date, :cid);";
     $result = $db8 -> prepare($query);
