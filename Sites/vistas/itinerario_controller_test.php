@@ -10,7 +10,7 @@
     foreach($_POST['artistas_aid'] as $artista_aid){
         echo "ARTISTA ".$i.":".$artista_aid."</br>";
         $i = $i + 1;
-        $aids_str = $aids_str.strval($artista_aid);
+        $aids_str = "$aids_str" . "$artista_aid";
     }
     echo "<br>";
     echo "<br>";
