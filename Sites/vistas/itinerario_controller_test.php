@@ -1,9 +1,9 @@
 <?php include('../templates/header.html'); ?>
 
-<?php $aids = $_POST['artistas_aid'];
+<?php 
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = implode(", ", $aids);
+    $aids_str = implode(",", $_POST['artistas_aid']);
 
     print_r($_POST['artistas_aid']);
     print_r($aids_str);
