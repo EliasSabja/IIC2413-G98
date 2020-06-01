@@ -20,10 +20,14 @@
 
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario(ARRAY " . $aids_str . ", :date, :cid);";
-    $true1 = (bool)($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);");
-    $true2 = (bool)($query === "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);");
-    echo $true1 ;
-    echo $true2 ;
+    if ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
+        echo "true";
+    }
+    else{echo "false";}
+    if ($query === "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
+        echo "true";
+    }
+    else{echo "false";}
     $result = $db8 -> prepare($query);
     #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
     $result -> bindParam(':date', $date, PDO::PARAM_STR);
