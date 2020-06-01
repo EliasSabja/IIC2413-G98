@@ -4,7 +4,6 @@
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
     $aids_str = implode(",", $aids);
-    $aids_array = explode(" ", $aids_str);
     
     echo $aids_str;
 
