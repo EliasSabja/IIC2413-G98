@@ -8,7 +8,7 @@
     #print_r($_POST['artistas_aid']);
     $i = 0;
     foreach($_POST['artistas_aid'] as $artista_aid){
-        echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
+        #echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
         $i = $i + 1;
         $aids_str = $aids_str . $artista_aid;
         print_r($aids_str);
