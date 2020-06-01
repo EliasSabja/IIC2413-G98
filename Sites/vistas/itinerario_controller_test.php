@@ -14,14 +14,12 @@
         $aids_str = $aids_str . $aids[$i] ;
         if(!$empezado){$empezado = true;}
     }
-    $aids_str = $aids_str . "";
     
     
 
     require("../assets/conexion.php");
-    $hola = "7";
     $query = "SELECT * FROM itinerario('{";
-    $query = $query . $hola;
+    $query = $query . $aids_str;
     $query = $query . "}', :date, :cid);";
 
     $result = $db8 -> prepare($query);
