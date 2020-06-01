@@ -45,7 +45,6 @@
     <div class="container">
         <div class="row">
             <article>
-            <?php echo $aids_str;?>
             <?php
                 $previo_it = -1;
                 $primero = true;
