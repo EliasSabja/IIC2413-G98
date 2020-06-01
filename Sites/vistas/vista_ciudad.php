@@ -13,7 +13,7 @@ include('../templates/header.html');
     $result -> execute(['cid' => $cid]);
     $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
-    $log = "";
+    $block = "";
     
 ?>
 
@@ -22,7 +22,7 @@ include('../templates/header.html');
         <div class="container">
             <?php
             if(!$_SESSION['nombre']){
-                $log = "disabled";   
+                $block = "block";   
                 echo "<h1>No estas registrado, inicia sesión para hacer una reserva</h1>"; 
             }
             else{
@@ -42,13 +42,16 @@ include('../templates/header.html');
             <?php
                 
                 foreach ($dataCollected as $p) {
-
+                    $ref = "vista_hotel.php?hid=$p[4]";
+                    if(!$_SESSION['nombre']){
+                        $ref = "#";
+                    }
                     echo "<tr>
                     <td>$p[0]</td>
                     <td>$p[1]</td>
                     <td>$p[2]</td>
                     <td>$p[3]</td>
-                    <td><a $log href='vista_hotel.php?hid=$p[4]' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
+                    <td><a  href=$ref class='btn btn-special $block' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
                     </tr>";
                 }
             ?> 

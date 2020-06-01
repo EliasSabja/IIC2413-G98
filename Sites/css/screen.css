@@ -62,6 +62,9 @@ a:active, a:hover {
 a:disabled {
   background: #a1a1a1;
 }
+:disabled {
+  background: #a1a1a1;
+}
 
 input[type="submit"]:disabled {
   background: #a1a1a1;
