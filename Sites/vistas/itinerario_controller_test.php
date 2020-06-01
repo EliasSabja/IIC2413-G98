@@ -19,19 +19,8 @@
     
 
     require("../assets/conexion.php");
-    $query = "SELECT * FROM itinerario('{7}', :date, :cid);";
-    if ($query == "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
-        echo "true-";
-    }
-    else{echo "false-";}
-    if ($query === "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);"){
-        echo "true-";
-    }
-    else{echo "false-";}
-
-    echo $query;
-    echo "<br>";
-    echo "SELECT * FROM itinerario(ARRAY " . "[7]" . ", :date, :cid);";
+    $hola = "7";
+    $query = "SELECT * FROM itinerario('{$hola}', :date, :cid);";
 
     $result = $db8 -> prepare($query);
     #$result -> bindParam(':aids', $aids_str, PDO::PARAM_STR);
@@ -57,7 +46,7 @@
                 $previo_it = -1;
                 $primero = true;
                 $primero_primero = true;
-                $numero = 0;
+                $numero = 1;
                 foreach($dataCollected as $viaje){
                     echo "viaje-";
                     if ($viaje[0] != $previo_it){
@@ -78,6 +67,7 @@
                             echo"<table class='custom'>";
                         }
                         $n = ++$numero;
+                        $n = $n - 1;
                         $total = $viaje[1]; 
                         echo"
                         <tr>
