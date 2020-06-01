@@ -3,14 +3,19 @@
 <?php 
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = implode(",", $_POST['artistas_aid']);
+    $aids_str = '';
 
     #print_r($_POST['artistas_aid']);
     $i = 0;
     foreach($_POST['artistas_aid'] as $artista_aid){
         echo "ARTISTA ".$i.":".$artista_aid."</br>";
         $i = $i + 1;
+        $aids_str = $aids_str.strval($artista_aid);
     }
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo $aids_str;
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
