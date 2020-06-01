@@ -3,11 +3,11 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = implode(",", $aids);
+    $aids_str = implode(" ", $aids);
     $aids_array = explode(" ", $aids_str);
     
     foreach ($aids_array as $aid){
-        echo "$aid<br>";
+        echo "$aid";
     }
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
@@ -36,8 +36,6 @@
     $result -> bindParam(':cid', $cid, PDO::PARAM_STR);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
-    echo $dataCollected[0][0] . "-";
-    
 ?>
 
 <section class="section section-destination">
@@ -56,13 +54,11 @@
                 $primero_primero = true;
                 $numero = 1;
                 foreach($dataCollected as $viaje){
-                    echo "viaje-";
                     if ($viaje[0] != $previo_it){
                         $primero = true;
                         $previo_it = $viaje[0];
-                        echo "primero-";
                     }   
-                    else{$primero = false;echo "no primero-";}
+                    else{$primero = false;}
 
                     if($primero){
                         if (!$primero_primero){
@@ -71,7 +67,6 @@
                         }
                         else {
                             $primero_primero = false;
-                            echo"primero_primero-";
                             echo"<table class='custom'>";
                         }
                         $n = ++$numero;
