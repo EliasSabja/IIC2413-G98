@@ -7,10 +7,16 @@
 
     #print_r($_POST['artistas_aid']);
     $i = 0;
+    $primero = true;
     foreach($_POST['artistas_aid'] as $artista_aid){
         #echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
-        $i = $i + 1;
-        $aids_str = $aids_str . $artista_aid;
+        #$i = $i + 1;
+        if ($primero){
+            $aids_str = $artista_aid;
+            $primero = false;
+        } else {
+            $aids_str = $aids_str . ',' . $artista_aid;
+        }
         #print_r($aids_str);
     }
     echo "<br>";
