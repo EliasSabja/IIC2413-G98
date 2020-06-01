@@ -6,8 +6,10 @@
     $aids_str = implode(",", $_POST['artistas_aid']);
 
     #print_r($_POST['artistas_aid']);
+    $i = 0;
     foreach($_POST['artistas_aid'] as $artista_aid){
-        echo $artista_aid."</br>";
+        echo "ARTISTA ".$i.":".$artista_aid."</br>";
+        $i = $i + 1;
     }
 
     #foreach($aids as $item){
