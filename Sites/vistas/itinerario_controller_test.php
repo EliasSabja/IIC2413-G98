@@ -14,7 +14,7 @@
         $aids_str = $aids_str . strval($aids[$i]);
         if(!$empezado){$empezado = true;}
     }
-    $hola = "7,13";
+    
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario('{";
     $query = $query . $aids_str;
