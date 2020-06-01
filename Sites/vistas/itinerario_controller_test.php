@@ -3,11 +3,11 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = implode(" ", $aids);
+    $aids_str = implode(",", $aids);
     $aids_array = explode(" ", $aids_str);
     
     echo $aids_str;
-    
+
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
     # }
