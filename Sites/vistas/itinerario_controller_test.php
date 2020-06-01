@@ -8,14 +8,14 @@
     #print_r($_POST['artistas_aid']);
     $i = 0;
     foreach($_POST['artistas_aid'] as $artista_aid){
-        echo "ARTISTA ".$i.":".$artista_aid."</br>";
+        echo "ARTISTA " . $i . ":" . $artista_aid . "</br>";
         $i = $i + 1;
-        $aids_str = "$aids_str" . "$artista_aid";
+        $aids_str = $aids_str . $artista_aid;
     }
     echo "<br>";
     echo "<br>";
     echo "<br>";
-    echo $aids_str;
+    print_r($aids_str);
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
