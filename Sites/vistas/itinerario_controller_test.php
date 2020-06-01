@@ -20,7 +20,7 @@
     $hola = "7,13";
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario('{";
-    $query = $query . $hola;
+    $query = $query . $aids_str;
     $query = $query . "}', :date, :cid);";
 
     $result = $db8 -> prepare($query);
