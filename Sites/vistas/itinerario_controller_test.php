@@ -5,7 +5,7 @@
     $date = $_POST['date'];
     $aids_str = implode(",", $_POST['artistas_aid']);
 
-    print_r($_POST['artistas_aid']);
+    #print_r($_POST['artistas_aid']);
     print_r($aids_str);
 
     #foreach($aids as $item){
