@@ -84,7 +84,7 @@
       <div class="content-box">
          <!-- Hero Section -->
          <section class="section section-hero">
-            <div class="hero-box" style="padding-bottom:150px;">
+            <div class="hero-box">
                <div class="container">
                   <div class="hero-text align-center">
                      <h1>¡Reserva un viaje ahora!</h1>

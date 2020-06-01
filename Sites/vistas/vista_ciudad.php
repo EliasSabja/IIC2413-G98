@@ -1,4 +1,7 @@
-<?php include('../templates/header.html'); ?>
+<?php 
+session_start();
+include('../templates/header.html'); 
+?>
 
 <?php
     $cid = $_GET['cid'];
@@ -10,12 +13,23 @@
     $result -> execute(['cid' => $cid]);
     $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
+    $log = "";
+    
 ?>
 
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1>Elige el hotel en el que quieras reservar</h1>
+            <?php
+            if(!$_SESSION['nombre']){
+                $log = "disable";   
+                echo "<h1>No estas registrado, inicia sesión para hacer una reserva</h1>"; 
+            }
+            else{
+                echo "<h1>Elige el hotel en el que quieras reservar</h1>";
+            }
+            
+            ?>
         </div>
     </div>
     <div class="container">
@@ -26,13 +40,15 @@
                 <th>Nombre</th><th>Dirección</th><th>Telefono</th><th>Precio</th><th></th>
             </tr>
             <?php
+                
                 foreach ($dataCollected as $p) {
+
                     echo "<tr>
                     <td>$p[0]</td>
                     <td>$p[1]</td>
                     <td>$p[2]</td>
                     <td>$p[3]</td>
-                    <td><a href='vista_hotel.php?hid=$p[4]' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
+                    <td><a $log href='vista_hotel.php?hid=$p[4]' class='btn btn-special no-icon' style='margin:5px 20px;border-radius: 5px;'>Reservar</a></td>
                     </tr>";
                 }
             ?> 

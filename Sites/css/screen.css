@@ -59,6 +59,15 @@ a:active, a:hover {
   color: #e7434e;
 }
 
+a:disabled {
+  color: #a1a1a1;
+}
+
+input[type="submit"]:disabled {
+  color: #a1a1a1;
+}
+
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -2821,7 +2830,7 @@ textarea:focus {
 .statistics-box {
   display: flex;
   padding: 30px 10px;
-  margin-top: -40px;
+  margin-top: -200px;
   width: 100%;
   align-items: center;
   justify-content: space-between;

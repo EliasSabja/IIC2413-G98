@@ -1,4 +1,7 @@
-<?php include('../templates/header.html'); ?>
+<?php 
+session_start();
+include('../templates/header.html'); 
+?>
 
 <?php
     require("../assets/conexion.php");
@@ -47,6 +50,9 @@
                         if(!$asientos){
                             echo "<h2>No quedan asientos disponibles</h2>";
                         }
+                        elseif(!$_SESSION['nombre']){
+                            echo "<h2>No estas registrado, inicia sesión para comprar un ticket</h2>";
+                        }
                         else{
                             $dispo = count($asientos);
                             echo "<h2>Elige un número de asiento disponible</h2>";
@@ -68,7 +74,7 @@
                             }
                             ?>
                         </select>
-                        <input <?php if(!$asientos){echo "disabled";}?> type="submit" value="Comprar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
+                        <input <?php if(!$asientos or !$_SESSION['nombre']){echo "disabled";}?> type="submit" value="Comprar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                     </form>
                 </div>
                 <div class="col-md-8"></div>
