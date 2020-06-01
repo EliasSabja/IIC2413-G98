@@ -3,18 +3,20 @@
 <?php $aids = $_POST['artistas_aid'];
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
-    $aids_str = "";
+    $aids_str = implode(",", $aids);
 
-    $empezado = false;
-    for ($i=0; $i < count($aids); $i++) {
-        echo "Selected" . $aids[$i]; 
-        if($empezado){
-            $aids_str = $aids_str . ",";
-        }
-        $aids_str = $aids_str . strval($aids[$i]);
-        if(!$empezado){$empezado = true;}
-    }
-    
+
+
+    #$empezado = false;
+    #for ($i=0; $i < count($aids); $i++) {
+    #    echo "Selected" . $aids[$i]; 
+    #    if($empezado){
+    #        $aids_str = $aids_str . ",";
+    #    }
+    #    $aids_str = $aids_str . strval($aids[$i]);
+    #    if(!$empezado){$empezado = true;}
+    #}
+
     require("../assets/conexion.php");
     $query = "SELECT * FROM itinerario('{";
     $query = $query . $aids_str;
