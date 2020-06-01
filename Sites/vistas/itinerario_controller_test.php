@@ -4,8 +4,8 @@
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
     $aids_str = implode(",", $aids);
-    
-    echo $aids_str;
+
+    print_r($_POST['artistas_aid']);
 
     #foreach($aids as $item){
     #    echo '<pre/>';print_r($item); // print each sub-array of  original array
