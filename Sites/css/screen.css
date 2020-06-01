@@ -60,7 +60,7 @@ a:active, a:hover {
 }
 
 .block {
-  background: #a1a1a1;
+  background: #a1a1a1 !important;
 }
 :disabled {
   background: #a1a1a1;
