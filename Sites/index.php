@@ -8,7 +8,7 @@
    $lugares_interes = $result_lugares_interes -> fetchAll();
 
    $query_ciudades = "SELECT COUNT(*) FROM ciudades;";
-   $result_ciudades = $db9 -> prepare($query_ciudades);
+   $result_ciudades = $db8 -> prepare($query_ciudades);
    $result_ciudades -> execute();
    $ciudades = $result_ciudades -> fetchAll();
 
@@ -18,14 +18,14 @@
    $hoteles = $result_hoteles -> fetchAll();
 
    $query_usuarios = "SELECT COUNT(*) FROM usuarios;";
-   $result_usuarios = $db8 -> prepare($query_usuarios);
+   $result_usuarios = $db9 -> prepare($query_usuarios);
    $result_usuarios -> execute();
    $usuarios = $result_usuarios -> fetchAll();
 
    $lugares_interes = $lugares_interes[0][0];
    $ciudades = $ciudades[0][0];
    $hoteles = $hoteles[0][0];
-   $ciudades = $ciudades[0][0];
+   $usuarios = $usuarios[0][0];
 ?>
 
 <!DOCTYPE html>
