@@ -4,11 +4,10 @@
     $cid = $_POST['ciudad'];
     $date = $_POST['date'];
     $aids_str = implode(",", $aids);
-    foreach($aids as $item){
-        echo '<pre/>';print_r($item); // print each sub-array of  original array
-     }
-
-
+    #foreach($aids as $item){
+    #    echo '<pre/>';print_r($item); // print each sub-array of  original array
+    # }
+    
     #$empezado = false;
     #for ($i=0; $i < count($aids); $i++) {
     #    echo "Selected" . $aids[$i]; 
