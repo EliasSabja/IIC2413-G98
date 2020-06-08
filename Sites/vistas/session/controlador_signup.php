@@ -20,14 +20,11 @@
         die();
     }
     else {
-        $query_i = "INSERT INTO usuarios VALUES(default, '$credenciales[0]', '$credenciales[1]', '$credenciales[2]', '$credenciales[3]', true, '$credenciales[4]');";
+        $query_i = "INSERT INTO usuarios VALUES(default, '$credenciales[0]', '$credenciales[1]', '$credenciales[2]', '$credenciales[3]', true, '$credenciales[4]') RETURNING uid;";
         $result_i = $db9 -> prepare($query_i);
         $result_i -> execute();
+        $uid = $result_i -> fetchAll();
         
-        $query_uid = "SELECT uid FROM usuarios WHERE correo = $credenciales[2];";
-        $result_uid = $db9 -> prepare($query_uid);
-        $result_uid -> execute();
-        $uid = $result_uid -> fetchAll();
         session_start();
         $_SESSION["correo"] = $credenciales[2];
         $_SESSION["nombre"] = $credenciales[1];
