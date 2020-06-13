@@ -9,9 +9,9 @@ import os
 USER_KEYS = ['uid', 'name', 'last_name',
             'occupation', 'follows', 'age']
 
-USER = "grupoXX"
-PASS = "grupoXX"
-DATABASE = "grupoXX"
+USER = "grupo98"
+PASS = "grupo98"
+DATABASE = "grupo98"
 
 # El cliente se levanta en la URL de la wiki
 # URL = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
@@ -19,19 +19,17 @@ URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}"
 client = MongoClient(URL)
 
 # Utilizamos la base de datos del grupo
-db = client["grupoXX"]
+db = client["grupo98"]
 
 # Seleccionamos la collección de usuarios
-usuarios = db.usuarios
+usuarios = db.users
 
 '''
 Usuarios:
   "uid": <id del usuario>,
   "name": <nombre>,
-  "last_name": <apellido>,
   "age": <edad>,
-  "occupation": <a qué se dedica>,
-  "follows": [<arreglo con una lista de ids de usuarios>]
+  "description": <descripcion>
 '''
 
 # Iniciamos la aplicación de flask
