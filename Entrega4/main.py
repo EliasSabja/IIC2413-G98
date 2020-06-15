@@ -57,6 +57,7 @@ def get_users():
     Obtiene todos los usuarios
     '''
     # Omitir el _id porque no es json serializable
+    # chequear proyeccion de dummy y _id
     resultados = list(db.users.find({}, {"_id": 0}))
     return json.jsonify(resultados)
 
@@ -65,6 +66,7 @@ def get_user(uid):
     '''
     Obtiene el usuario de id entregada
     '''
+    # chequear proyeccion de  _id
     users = list(db.users.find({"uid": uid}, {"_id": 0}))
 
     if len(users) > 0:
@@ -102,6 +104,7 @@ def get_message(mid):
     '''
     Obtiene el mensaje de id entregada
     '''
+    # chequear proyeccion de dummy y _id
     messages = list(db.messages.find({"mid": mid}, {"_id": 0}))
     
     if len(messages) > 0:
@@ -194,10 +197,10 @@ def get_text_search():
         return "otra_consulta"
 
     if hay_id:
-        return db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}})
+        return db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}}).projection({"dummy": 0, "score": {"$meta": "textScore"}})
+
     else:
-        return db.messages.find({"$text": {"$search": texto}}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}})
-        return None
+        return db.messages.find({"$text": {"$search": texto}}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}}).projection({"dummy": 0, "score": {"$meta": "textScore"}})
 
 if __name__ == "__main__":
     #app.run()
