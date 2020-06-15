@@ -3,16 +3,17 @@ from pymongo import MongoClient
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import atexit
+import subprocess
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
-USER_KEYS = ['uid', 'name', 'last_name',
-            'occupation', 'follows', 'age']
 
 USER = "grupo98"
 PASS = "perro123"
 DATABASE = "grupo98"
 
+message_keys = ["message", "sender", "receptant", "lat", "long", "date"]
 # El cliente se levanta en la URL de la wiki
 # URL = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
 URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}"
@@ -65,7 +66,11 @@ def get_user(uid):
     Obtiene el usuario de id entregada
     '''
     users = list(db.users.find({"uid": uid}, {"_id": 0}))
-    return json.jsonify(users)
+
+    if len(users) > 0:
+        return json.jsonify(users)
+    else:
+        return json.jsonify({"messages": "No existe un usuario con dicho id", "success": False})
 
 @app.route("/messages")
 def get_messages():
@@ -87,7 +92,7 @@ def get_messages():
                                                 {"_id": 0}))
         return json.jsonify(mensajes)
     elif (id1 and not id2) or (not id1 and id2):
-        return "No se ha ingresado un id :("
+        return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
     else:
         mensajes = list(db.messages.find({}, {"_id": 0}).limit(30))
         return json.jsonify(mensajes)
@@ -98,32 +103,101 @@ def get_message(mid):
     Obtiene el mensaje de id entregada
     '''
     messages = list(db.messages.find({"mid": mid}, {"_id": 0}))
-    return json.jsonify(messages)
+    
+    if len(messages) > 0:
+        return json.jsonify(messages)
+    else:
+        return json.jsonify({"message": "No existe mensaje con dicho id", "success": False})
 
 @app.route("/messages", methods=['POST'])
-def post_messages()
+def post_messages():
     '''
     Recibe atributos, si son válidos
     se crea un nuevo mensaje
     '''
-    return None
+    #Se reciben los datos del nuevo mensaje en un diccionario
+    data = request.json
+    if ("message" in data) and ("sender" in data) and ("receptant" in data) and ("lat" in data) and ("long" in data) and ("date" in data):
+        #Se anaden los atributos dado que todos existen
+        new_message = {key: request.json[key] for key in message_keys}
+        if (type(data["long"]) == float) and (type(data["lat"]) == float) and (type(data["message"]) == str) and (type(data["receptant"]) == int) and (type(data["sender"]) == int) and (type(data["date"]) == str):
+            #Se genera el mid
+            max = list(db.messages.find({}, {"_id": 0, "lat": 0, "long": 0, "sender": 0, "receptant": 0, "message": 0, "date": 0, "dummy": 0}).sort([("mid", -1)]).limit(1))
+            data["mid"] = max[0]["mid"] + 1
+            #Se inserta atributo dummy para text search
+            data["dummy"] = "x"
+            #Se inserta en la base de datos
+            result = db.messages.insert_one(data)
+            if (result):
+                message = "Mensaje creado exitosamente"
+                success = True
+            else:
+                message = "Mensaje no pudo crearse, datos inválidos"
+                success = False
+            message = "Mensaje creado exitosamente"
+            success = True
+        else:
+            message = "Mensaje no pudo crearse, datos inválidos"
+            success = False
+    else:
+        message = "Mensaje no pudo crearse, faltan datos"
+        success = False
+    return json.jsonify({"message": message, "success": success})
 
 @app.route("/messages/<int:mid>", methods=['DELETE'])
-def delete_messages(mid)
+def delete_messages(mid):
     '''
     Recibe id de un mensaje
     y lo elimina
     '''
-    db.messages.delete_one({"mid": mid})
-    aviso = f'Mensaje con id {mid} ha sido eliminado'
-    return json.jsonify({"result": "success", "message": aviso})
+    message = list(db.messages.find({"mid": mid}, {"_id": 0}))
+
+    if len(message) > 0:
+        db.messages.delete_one({"mid": mid})
+        aviso = f'Mensaje con id {mid} ha sido eliminado'
+        success = True
+    else:
+        aviso = "No existe mensaje con dicho id"
+        success = False
+    return json.jsonify({"result": success, "message": aviso})
 
 @app.route("/text-search")
-def get_text_search()
+def get_text_search():
     '''
     Búsqueda de texto
     '''
-    return None
+    json = dict()
+    deseables, requeridas, prohibidas, hay_id = False, False, False, False
+    texto = '" '
+    if json["desired"]:
+        deseables = True
+        for palabra in json["desired"]:
+            texto += palabra + " "
+    if json["required"]:
+        requeridas = True
+        for palabra in json["required"]:
+            texto += '\"' + palabra + '\" '
+    if json["forbidden"]:
+        prohibidas = True
+        for palabra in json["forbidden"]:
+            texto += "-" + palabra + " "
+    if json["userId"]:
+        hay_id = True
+        sender = json["userId"]
+
+    texto += ' "'
+    if deseables and not requeridas and not prohibidas:
+        return None
+    elif not deseables and not requeridas and prohibidas:
+        texto = "x " + texto
+    elif hay_id and not deseables and not requeridas and not prohibidas:
+        return "otra_consulta"
+
+    if hay_id:
+        return db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}})
+    else:
+        return db.messages.find({"$text": {"$search": texto}}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}})
+        return None
 
 if __name__ == "__main__":
     #app.run()
