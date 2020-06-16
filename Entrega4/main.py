@@ -74,7 +74,7 @@ def get_user(uid):
     else:
         return json.jsonify({"messages": "No existe un usuario con dicho id", "success": False})
 
-@app.route("/messages")
+@app.route("/messages", methods=["GET"])
 def get_messages():
     '''
     Obtiene todos los mensajes
@@ -96,7 +96,7 @@ def get_messages():
     elif (id1 and not id2) or (not id1 and id2):
         return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
     else:
-        mensajes = list(db.messages.find({}, {"_id": 0}).limit(30))
+        mensajes = list(db.messages.find({}, {"_id": 0}).limit(20))
         return json.jsonify(mensajes)
 
 @app.route("/messages/<int:mid>")
@@ -162,46 +162,51 @@ def delete_messages(mid):
     else:
         aviso = "No existe mensaje con dicho id"
         success = False
-    return json.jsonify({"result": success, "message": aviso})
+    return json.jsonify({"success": success, "message": aviso})
 
-@app.route("/text-search")
+@app.route("/text-search", methods=["GET"])
 def get_text_search():
     '''
     Búsqueda de texto
     '''
-    json = dict()
+    body = request.json
     deseables, requeridas, prohibidas, hay_id = False, False, False, False
-    texto = '" '
-    if json["desired"]:
-        deseables = True
-        for palabra in json["desired"]:
-            texto += palabra + " "
-    if json["required"]:
-        requeridas = True
-        for palabra in json["required"]:
-            texto += '\"' + palabra + '\" '
-    if json["forbidden"]:
-        prohibidas = True
-        for palabra in json["forbidden"]:
-            texto += "-" + palabra + " "
-    if json["userId"]:
-        hay_id = True
-        sender = json["userId"]
+    texto = ''
+    if "desired" in body:
+        if body["desired"]:
+            deseables = True
+            for palabra in body["desired"]:
+                texto += palabra + " "
+    if "required" in body:
+        if body["required"]:
+            requeridas = True
+            for palabra in body["required"]:
+                texto += '\"' + palabra + '\" '
+    if "forbidden" in body:
+        if body["forbidden"]:
+            prohibidas = True
+            for palabra in body["forbidden"]:
+                texto += "-" + palabra + " "
+    if "userId" in body:
+        if body["userId"]:
+            hay_id = True
+            sender = body["userId"]
 
-    texto += ' "'
     if deseables and not requeridas and not prohibidas:
-        return None
+        return json.jsonify({"message": "No especificaste palabras requeridas ni prohibidas", "success": False})
     elif not deseables and not requeridas and prohibidas:
         texto = "x " + texto
     elif hay_id and not deseables and not requeridas and not prohibidas:
-        return "otra_consulta"
-
+        return json.jsonify(list(db.messages.find({"sender": sender}, {"_id": 0, "dummy": 0})))
     if hay_id:
-        return db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}}).projection({"dummy": 0, "score": {"$meta": "textScore"}})
+        return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})])))
 
     else:
-        return db.messages.find({"$text": {"$search": texto}}, {"score": {"$meta": "textScore"}}).sort({"score": {"$meta": "textScore"}}).projection({"dummy": 0, "score": {"$meta": "textScore"}})
+        if body:
+            return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})]).limit(20)))
+        else:
+            return json.jsonify({"message": "No especificaste palabras requeridas ni las prohibidas ni tampoco un id", "success": False})
 
 if __name__ == "__main__":
-    #app.run()
-    app.run(debug=True) # Para debuggear!
+    app.run()
+    #app.run(debug=True) # Para debuggear!
