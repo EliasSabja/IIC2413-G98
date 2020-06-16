@@ -96,7 +96,7 @@ def get_messages():
     elif (id1 and not id2) or (not id1 and id2):
         return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
     else:
-        mensajes = list(db.messages.find({}, {"_id": 0}).limit(20))
+        mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20))
         return json.jsonify(mensajes)
 
 @app.route("/messages/<int:mid>")
@@ -105,7 +105,7 @@ def get_message(mid):
     Obtiene el mensaje de id entregada
     '''
     # chequear proyeccion de dummy y _id
-    messages = list(db.messages.find({"mid": mid}, {"_id": 0}))
+    messages = list(db.messages.find({"mid": mid}, {"_id": 0, "dummy": 0}))
     
     if len(messages) > 0:
         return json.jsonify(messages)
@@ -140,11 +140,37 @@ def post_messages():
             message = "Mensaje creado exitosamente"
             success = True
         else:
-            message = "Mensaje no pudo crearse, datos inválidos"
+            message = "Mensaje no pudo crearse, los siguientes datos no son del tipo correcto: "
             success = False
+            if (not "message" in data):
+                message += "message "
+            if (not "sender" in data):
+                message += "sender "
+            if (not "receptant" in data):
+                message += "receptant "
+            if (not "lat" in data):
+                message += "lat "
+            if (not "long" in data):
+                message += "long "
+            if (not "date" in data):
+                message += "date "
+            message += "."
     else:
-        message = "Mensaje no pudo crearse, faltan datos"
+        message = "Mensaje no pudo crearse, faltan los siguientes datos: "
         success = False
+        if (not "message" in data):
+            message += "message "
+        if (not "sender" in data):
+            message += "sender "
+        if (not "receptant" in data):
+            message += "receptant "
+        if (not "lat" in data):
+            message += "lat "
+        if (not "long" in data):
+            message += "long "
+        if (not "date" in data):
+            message += "date "
+        message += "."
     return json.jsonify({"message": message, "success": success})
 
 @app.route("/messages/<int:mid>", methods=['DELETE'])
@@ -192,21 +218,18 @@ def get_text_search():
             hay_id = True
             sender = body["userId"]
 
-    if deseables and not requeridas and not prohibidas:
-        return json.jsonify({"message": "No especificaste palabras requeridas ni prohibidas", "success": False})
-    elif not deseables and not requeridas and prohibidas:
-        texto = "x " + texto
-    elif hay_id and not deseables and not requeridas and not prohibidas:
-        return json.jsonify(list(db.messages.find({"sender": sender}, {"_id": 0, "dummy": 0})))
-    if hay_id:
-        return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})])))
-
-    else:
-        if body:
-            return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})]).limit(20)))
+    if body:
+        if not deseables and not requeridas and prohibidas:
+            texto = "x " + texto
+        elif hay_id and not deseables and not requeridas and not prohibidas:
+            return json.jsonify(list(db.messages.find({"sender": sender}, {"_id": 0, "dummy": 0})))
+        if hay_id:
+            return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}, {"sender": sender}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})])))
         else:
-            return json.jsonify({"message": "No especificaste palabras requeridas ni las prohibidas ni tampoco un id", "success": False})
+            return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})]).limit(20)))
+    else:
+        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20)))
 
 if __name__ == "__main__":
-    app.run()
-    #app.run(debug=True) # Para debuggear!
+    #app.run()
+    app.run(debug=True) # Para debuggear!
