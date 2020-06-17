@@ -48,7 +48,7 @@ def home():
     '''
     Página de inicio
     '''
-    return "<h1>¡Hola!</h1>"
+    return json.jsonify({"message": "Hola", "success": True})
 
 @app.route("/users")
 def get_users():
@@ -95,7 +95,7 @@ def get_messages():
     elif (id1 and not id2) or (not id1 and id2):
         return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
     else:
-        mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20))
+        mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}))
         return json.jsonify(mensajes)
 
 @app.route("/messages/<int:mid>")
@@ -226,7 +226,7 @@ def get_text_search():
         else:
             return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})]).limit(20)))
     else:
-        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20)))
+        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0})))
 
 if __name__ == "__main__":
     app.run()
