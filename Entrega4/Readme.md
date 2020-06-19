@@ -44,7 +44,7 @@
 
 ## Consideraciones
 
-- Las funciones que daban problemas porque retornaban demasiados mensajes tuvimos que ponerles un límite.
+- Las funciones que daban problemas porque retornaban demasiados mensajes tuvimos que ponerles un límite de máximo 30 mensajes.
 
 - Para búsqueda de texto tuvimos que crear un atributo `dummy` de valor `"x"` y agregarlo al índice para así poder buscar teniendo disponibe sólo palabras prohibidas.
 
