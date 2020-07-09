@@ -87,15 +87,21 @@ def get_messages():
     if id1 and id2:
         id1 = int(id1)
         id2 = int(id2)
-
-        mensajes = list(db.messages.find({"$or": [ {"$and": [{"sender": id1},{"receptant": id2}]},
-                                                {"$and": [{"sender": id2},{"receptant": id1}]} ]},
-                                                {"_id": 0}))
-        return json.jsonify(mensajes)
+        ids_query = list(db.users.find({}, {"_id": 0, "uid": 1}))
+        ids = list(map(lambda x: x["uid"], ids_query))
+        if id1 not in ids:
+            return json.jsonify({"message": "id1 no es válido", "success": False})
+        elif id2 not in ids:
+            return json.jsonify({"message": "id2 no es válido", "success": False})
+        else:
+            mensajes = list(db.messages.find({"$or": [ {"$and": [{"sender": id1},{"receptant": id2}]},
+                                                    {"$and": [{"sender": id2},{"receptant": id1}]} ]},
+                                                    {"_id": 0, "dummy": 0}))
+            return json.jsonify(mensajes)
     elif (id1 and not id2) or (not id1 and id2):
         return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
     else:
-        mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}))
+        mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20))
         return json.jsonify(mensajes)
 
 @app.route("/messages/<int:mid>")
@@ -125,6 +131,7 @@ def post_messages():
             #Se genera el mid
             max = list(db.messages.find({}, {"_id": 0, "lat": 0, "long": 0, "sender": 0, "receptant": 0, "message": 0, "date": 0, "dummy": 0}).sort([("mid", -1)]).limit(1))
             data["mid"] = max[0]["mid"] + 1
+            
             #Se inserta atributo dummy para text search
             data["dummy"] = "x"
             #Se inserta en la base de datos
@@ -171,13 +178,13 @@ def post_messages():
         message += "."
     return json.jsonify({"message": message, "success": success})
 
-@app.route("/messages/<int:mid>", methods=['DELETE'])
-def delete_messages(mid):
+@app.route("/message/<int:mid>", methods=['DELETE'])
+def delete_message(mid):
     '''
     Recibe id de un mensaje
     y lo elimina
     '''
-    message = list(db.messages.find({"mid": mid}, {"_id": 0}))
+    message = list(db.messages.find({"mid": mid}, {"_id": 0, "dummy": 0}))
 
     if len(message) > 0:
         db.messages.delete_one({"mid": mid})
@@ -193,7 +200,10 @@ def get_text_search():
     '''
     Búsqueda de texto
     '''
-    body = request.json
+    try:
+        body = request.json
+    except:
+        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(30)))
     deseables, requeridas, prohibidas, hay_id = False, False, False, False
     texto = ''
     if "desired" in body:
@@ -216,7 +226,7 @@ def get_text_search():
             hay_id = True
             sender = body["userId"]
 
-    if body:
+    if deseables or requeridas or prohibidas or hay_id:
         if not deseables and not requeridas and prohibidas:
             texto = "x " + texto
         elif hay_id and not deseables and not requeridas and not prohibidas:
@@ -226,7 +236,7 @@ def get_text_search():
         else:
             return json.jsonify(list(db.messages.find({"$and": [{"$text": {"$search": texto}}]}, {"dummy": 0, "_id": 0, "score": {"$meta": "textScore"}}).sort([("score", {"$meta": "textScore"})]).limit(20)))
     else:
-        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0})))
+        return json.jsonify(list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(30)))
 
 
 if __name__ == "__main__":
