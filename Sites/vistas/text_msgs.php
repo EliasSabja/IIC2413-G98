@@ -24,18 +24,20 @@
         $fields['userId'] = $u;
     }
 
-    $postvars = http_build_query($fields);
-    echo $postvars;
+    #$postvars = http_build_query($fields);
+    #echo $postvars;
 
-    $ch = curl_init();
+    $make_call = callAPI('POST', 'http://go-art.herokuapp.com/text-search', json_encode($fields));
+    $response = json_decode($make_call, true);
+    $errors = $response['response']['errors'];
+    $response = $response['response']['data'][0];
 
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, count($fields));
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-
-    $response = curl_exec($ch);
-
-    curl_close($ch);
+    #$ch = curl_init();
+    #curl_setopt($ch, CURLOPT_URL, $url);
+    #curl_setopt($ch, CURLOPT_POST, count($fields));
+    #curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+    #$response = curl_exec($ch);
+    #curl_close($ch);
 
     $response = str_replace("},{", "}~~{", $response);
     $response = substr($response, 1, -2);
