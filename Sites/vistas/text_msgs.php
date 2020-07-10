@@ -13,9 +13,10 @@
     'forbidden' => $_POST["prohibidas"],
     'userId' => $_POST["sender"]
     );
-    echo $fields->{'desired'}, "pppppp";
+    echo $fields['desired'], "pppppp";
     $postvars = http_build_query($fields);
     echo $postvars;
+
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
