@@ -37,8 +37,8 @@
     );
       
     $context  = stream_context_create( $options );
-    $result = file_get_contents( $url, false, $context );
-    $response = json_decode( $result );
+    $response = file_get_contents( $url, false, $context );
+    #$response = json_decode( $result );
 
     #$ch = curl_init();
     #curl_setopt($ch, CURLOPT_URL, $url);
@@ -47,6 +47,7 @@
     #$response = curl_exec($ch);
     #curl_close($ch);
 
+    echo $response;
     $response = str_replace("},{", "}~~{", $response);
     $response = substr($response, 1, -2);
     $respuestas = explode("~~", $response);
