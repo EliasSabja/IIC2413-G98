@@ -5,9 +5,15 @@
 <?php
     $id = $_SESSION["id"];
     $response = file_get_contents("http://go-art.herokuapp.com/messages/$id");
-    $response = json_decode($response);
-    $response = new SimpleXMLElement($response);
-    echo $response;
+    $resp = substr($response, 1, -2);
+    $resp = json_decode($resp);
+    echo $resp->{'message'};
+    #$msgs = array();
+    foreach($response as $resp){
+        $resp = json_decode($resp);
+        echo $resp->{'message'};
+        #$msgs
+    }
 ?>
 
 

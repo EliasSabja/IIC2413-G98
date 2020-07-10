@@ -48,7 +48,7 @@
                     </div>
 
                 <!-- Spacer -->
-                <div class = "col-md-6 " style="texgitt-align: center;padding:20px;"></div>
+                <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
 
             </div>
             </article>
