@@ -11,7 +11,7 @@
     'forbidden' => $_POST["prohibidas"],
     'userId' => $_POST["sender"]
     );
-    echo $fields['deseables'];
+    echo $fields['desired'];
     $postvars = http_build_query($fields);
     echo $postvars;
     $ch = curl_init();
@@ -38,7 +38,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1>Mensajes recibidos</h1>
+            <h1>Resultado búsqueda por texto</h1>
         </div>
     </div>
     <div class="container">
