@@ -23,22 +23,22 @@
                 <tr>
                     <td>
                         <div class="input-line">
-                            <input type="text" id="deseables">
+                            <input type="text" name="deseables">
                         </div>
                     </td>
                     <td>
                         <div class="input-line">
-                            <input type="text" id="requeridas">
+                            <input type="text" name="requeridas">
                         </div>
                     </td>
                     <td>
                         <div class="input-line">
-                            <input type="text" id="prohibidas">
+                            <input type="text" name="prohibidas">
                         </div>
                     </td>
                     <td>
                         <div class="input-line">
-                            <input type="text" id="sender">
+                            <input type="text" name="sender">
                         </div>
                     </td>
                 </tr>
