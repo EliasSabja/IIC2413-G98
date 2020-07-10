@@ -11,7 +11,6 @@
     $msgs = array();
     foreach($respuestas as $resp){
         $resp = json_decode($resp);
-        #echo $resp->{'message'};
         array_push($msgs, $resp);
     }
 ?>
@@ -67,7 +66,5 @@
         </div>
     </div>
 </section>
-
-
 
 <?php include('../templates/footer.html'); ?>
