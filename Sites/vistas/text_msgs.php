@@ -23,10 +23,7 @@
     if($u){
         $fields['userId'] = $u;
     }
-
-    #$postvars = http_build_query($fields);
-    #echo $postvars;
-
+    
     $options = array(
         'http' => array(
         'method'  => 'POST',
@@ -35,17 +32,9 @@
                     "Accept: application/json\r\n"
         )
     );
-      
+    echo $options['content'];
     $context  = stream_context_create( $options );
     $response = file_get_contents( $url, false, $context );
-    #$response = json_decode( $result );
-
-    #$ch = curl_init();
-    #curl_setopt($ch, CURLOPT_URL, $url);
-    #curl_setopt($ch, CURLOPT_POST, count($fields));
-    #curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-    #$response = curl_exec($ch);
-    #curl_close($ch);
 
     echo $response;
     $response = str_replace("},{", "}~~{", $response);
