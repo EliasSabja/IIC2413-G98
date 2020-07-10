@@ -27,11 +27,11 @@
     $options = array(
         'http' => array(
         'method'  => 'POST',
-        'content' => http_build_query($fields),
+        'content' => json_encode($fields),
         'header'=>  "TextSearch"
         )
     );
-    echo $options['content'];
+    echo $options["http"]['content'];
     $context  = stream_context_create( $options );
     $response = file_get_contents( $url, false, $context );
 
