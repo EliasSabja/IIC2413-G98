@@ -2,16 +2,16 @@
 
 <div class="row">
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
-        <a href='vistas/msg_enviar.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Enviar Mensajes</a>
+        <a href='msg_enviar.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Enviar Mensajes</a>
     </div>
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
-        <a href='vistas/msg_recibidos.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mensajes Recibidos</a>
+        <a href='msg_recibidos.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mensajes Recibidos</a>
     </div>
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
-        <a href='vistas/msg_enviados.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mensajes Enviados</a>
+        <a href='msg_enviados.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mensajes Enviados</a>
     </div>
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
-        <a href='vistas/msg_mapa.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mapa Mensajes</a>
+        <a href='msg_mapa.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mapa Mensajes</a>
     </div>
 </div>
 
