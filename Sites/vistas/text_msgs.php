@@ -5,7 +5,7 @@
 <?php
     $url = 'http://go-art.herokuapp.com/text-search';
 
-    $d = $_POST["deseable"];
+    $d = $_POST["deseables"];
     $r = $_POST["requeridas"];
     $f = $_POST["prohibidas"];
     $u = $_POST["sender"];
@@ -34,7 +34,6 @@
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
 
     $response = curl_exec($ch);
-    echo $response;
 
     curl_close($ch);
 
