@@ -137,15 +137,15 @@ def post_messages():
     data = request.json
     if ("message" in data) and ("receptant" in data) and ("sender" in data):
         data["long"] = random.uniform(-179, 180)
-        
+
         data["lat"] = random.uniform(-90, 90)
 
         data["date"] = datetime.today().strftime('%Y-%m-%d')
-
-        receptant = db.users.find({"name": data["receptant"]},{"_id": 0})
-        receptant_id = receptant["uid"]
-        data["receptant"] = receptant_id
         
+        receptant = list(db.users.find({"name": data["receptant"]},{"_id": 0}))
+        receptant_id = receptant[0]["uid"]
+        data["receptant"] = receptant_id
+        return json.jsonify(data)
         #Se anaden los atributos dado que todos existen
         if (type(data["long"]) == float) and (type(data["lat"]) == float) and (type(data["message"]) == str) and (type(data["receptant"]) == int) and (type(data["sender"]) == int) and (type(data["date"]) == str):
             #Se genera el mid
