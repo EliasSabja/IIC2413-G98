@@ -5,17 +5,15 @@
 <?php
     $id = $_SESSION["id"];
     $response = file_get_contents("http://go-art.herokuapp.com/messages");
-    $resp = substr($response, 1, -2);
-    echo $resp;
-    $respuestas = explode(",", $resp);
-    $resp = json_decode($resp[0]);
-    echo $resp->{'message'};
-    #$msgs = array();
-    #foreach($response as $resp){
-    #    $resp = json_decode($resp);
-    #    echo $resp->{'message'};
-    #    $msgs
-    #}
+    $response = substr($response, 1, -2);
+    $respuestas = explode(",", $response);
+    echo $respuestas;
+    $msgs = array();
+    foreach($respuestas as $resp){
+        $resp = json_decode($resp);
+        echo $resp->{'message'};
+        array_push($msgs, $resp);
+    }
 ?>
 
 
