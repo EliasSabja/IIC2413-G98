@@ -139,6 +139,11 @@ def post_messages():
         data["long"] = random.uniform(-179, 180)
         data["lat"] = random.uniform(-90, 90)
         data["date"] = datetime.today().strftime('%Y-%m-%d')
+
+        receptant = db.users.find({"name": data["receptant"]},{"_id": 0})
+        receptant_id = receptant["uid"]
+        data["receptant"] = receptant_id
+        
         #Se anaden los atributos dado que todos existen
         if (type(data["long"]) == float) and (type(data["lat"]) == float) and (type(data["message"]) == str) and (type(data["receptant"]) == int) and (type(data["sender"]) == int) and (type(data["date"]) == str):
             #Se genera el mid
