@@ -9,33 +9,32 @@
     $r = $_POST["requeridas"];
     $f = $_POST["prohibidas"];
     $u = $_POST["sender"];
-
+    
     $fields = array();
     if($d){
-        $fields['desired'] = $d;
+        $fields['desired'] = explode(" ", $d);
     }
     if($r){
-        $fields['required'] = $r;
+        $fields['required'] = explode(" ", $r);
     }
     if($f){
-        $fields['forbidden'] = $f;
+        $fields['forbidden'] = explode(" ", $f);
     }
     if($u){
-        $fields['userId'] = $u;
+        $fields['userId'] = explode(" ", $u);
     }
-    
+
     $options = array(
         'http' => array(
         'method'  => 'POST',
-        'content' => json_encode($fields),
-        'header'=>  "TextSearch"
+        'content' => json_encode( $fields ),
+        'header'=>  "Content-Type: application/json\r\n" .
+                    "Accept: application/json\r\n"
         )
     );
-    echo $options["http"]['content'];
     $context  = stream_context_create( $options );
     $response = file_get_contents( $url, false, $context );
 
-    echo $response;
     $response = str_replace("},{", "}~~{", $response);
     $response = substr($response, 1, -2);
     $respuestas = explode("~~", $response);
