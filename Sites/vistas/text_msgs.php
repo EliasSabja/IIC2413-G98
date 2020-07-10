@@ -27,10 +27,18 @@
     #$postvars = http_build_query($fields);
     #echo $postvars;
 
-    $make_call = callAPI('POST', 'http://go-art.herokuapp.com/text-search', json_encode($fields));
-    $response = json_decode($make_call, true);
-    $errors = $response['response']['errors'];
-    $response = $response['response']['data'][0];
+    $options = array(
+        'http' => array(
+        'method'  => 'POST',
+        'content' => json_encode( $fields ),
+        'header'=>  "Content-Type: application/json\r\n" .
+                    "Accept: application/json\r\n"
+        )
+    );
+      
+    $context  = stream_context_create( $options );
+    $result = file_get_contents( $url, false, $context );
+    $response = json_decode( $result );
 
     #$ch = curl_init();
     #curl_setopt($ch, CURLOPT_URL, $url);
