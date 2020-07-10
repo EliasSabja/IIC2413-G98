@@ -98,8 +98,16 @@ def get_messages():
                                                     {"$and": [{"sender": id2},{"receptant": id1}]} ]},
                                                     {"_id": 0, "dummy": 0}))
             return json.jsonify(mensajes)
-    elif (id1 and not id2) or (not id1 and id2):
-        return json.jsonify({"message": "No se ha ingresado un id :(", "success": False})
+    elif not id1 and id2:
+        #Recibidos
+        id2 = int(id2)
+        msgs_recieved = list(db.messages.find({"receptant": id2}, {"_id": 0, "dummy": 0}))
+        return json.jsonify(msgs_recieved)
+    elif id1 and not id2:
+        #Enviados
+        id1 = int(id1)
+        msgs_sent = list(db.messages.find({"sender": id1}, {"_id": 0, "dummy": 0}))
+        return json.jsonify(msgs_sent)
     else:
         mensajes = list(db.messages.find({}, {"_id": 0, "dummy": 0}).limit(20))
         return json.jsonify(mensajes)
