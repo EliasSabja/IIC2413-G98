@@ -137,7 +137,9 @@ def post_messages():
     data = request.json
     if ("message" in data) and ("receptant" in data) and ("sender" in data):
         data["long"] = random.uniform(-179, 180)
+        
         data["lat"] = random.uniform(-90, 90)
+
         data["date"] = datetime.today().strftime('%Y-%m-%d')
 
         receptant = db.users.find({"name": data["receptant"]},{"_id": 0})
