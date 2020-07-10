@@ -11,7 +11,7 @@
     'forbidden' => $_POST["prohibidas"],
     'userId' => $_POST["sender"]
     );
-
+    echo $fields['deseables'];
     $postvars = http_build_query($fields);
     echo $postvars;
     $ch = curl_init();
