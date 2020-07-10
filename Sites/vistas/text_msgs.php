@@ -27,9 +27,8 @@
     $options = array(
         'http' => array(
         'method'  => 'POST',
-        'content' => json_encode( $fields ),
-        'header'=>  "Content-Type: application/json\r\n" .
-                    "Accept: application/json\r\n"
+        'content' => http_build_query($fields),
+        'header'=>  "TextSearch"
         )
     );
     echo $options['content'];
