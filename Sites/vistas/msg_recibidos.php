@@ -11,7 +11,7 @@
     $msgs = array();
     foreach($respuestas as $resp){
         $resp = json_decode($resp);
-        echo $resp->{'message'};
+        #echo $resp->{'message'};
         array_push($msgs, $resp);
     }
 ?>
@@ -37,7 +37,14 @@
             </tr>
             <?php
                 foreach ($msgs as $m) {
-                    echo "<tr><td>$m['date']</td><td>$m['lat']</td><td>$m['long']</td><td>$m['message']</td><td>$m['mid']</td><td>$m['receptant']</td><td>$m['sender']</td></tr>";
+                    $f = $m->{'date'};
+                    $la = $m->{'lat'};
+                    $lo = $m->{'long'};
+                    $me = $m->{'message'};
+                    $mid = $m->{'mid'};
+                    $r = $m->{'receptant'};
+                    $s = $m->{'sender'};
+                    echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
                 }
             ?> 
             </table>
