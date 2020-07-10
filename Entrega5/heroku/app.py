@@ -203,7 +203,7 @@ def delete_message(mid):
         success = False
     return json.jsonify({"success": success, "message": aviso})
 
-@app.route("/text-search", methods=["GET"])
+@app.route("/text-search", methods=["POST"])
 def get_text_search():
     '''
     Búsqueda de texto
