@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <article>
-            <form action='text_msgs.php' method='post' class='subscribe-form'>
+            <form action='controlador_enviar.php' method='post' class='subscribe-form'>
             <table class="custom">
                 <tr>
                     <th>Username</th>
@@ -33,7 +33,7 @@
                 <tr>
                     <td colspan="4">
                         <div class="align-center">
-                        <input type="submit" value="Buscar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
+                        <input type="submit" value="Enviar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                         </div>
                     </td>
                 </tr>
