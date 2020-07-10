@@ -5,13 +5,15 @@
 <?php
     $url = 'http://go-art.herokuapp.com/text-search';
 
+    echo $_POST["deseables"], "pp";
+
     $fields = array(
     'desired' => $_POST["deseables"],
     'required' => $_POST["requeridas"],
     'forbidden' => $_POST["prohibidas"],
     'userId' => $_POST["sender"]
     );
-    echo $fields['desired'], "pnen";
+    echo $fields->{'desired'}, "pppppp";
     $postvars = http_build_query($fields);
     echo $postvars;
     $ch = curl_init();
