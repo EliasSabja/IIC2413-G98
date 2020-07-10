@@ -5,15 +5,25 @@
 <?php
     $url = 'http://go-art.herokuapp.com/text-search';
 
-    echo $_POST["deseables"], "pp";
+    $d = $_POST["deseable"];
+    $r = $_POST["requeridas"];
+    $f = $_POST["prohibidas"];
+    $u = $_POST["sender"];
 
-    $fields = array(
-    'desired' => $_POST["deseables"],
-    'required' => $_POST["requeridas"],
-    'forbidden' => $_POST["prohibidas"],
-    'userId' => $_POST["sender"]
-    );
-    echo $fields['desired'], "pppppp";
+    $fields = array();
+    if($d){
+        $fields['desired'] = $d;
+    }
+    if($r){
+        $fields['required'] = $r;
+    }
+    if($f){
+        $fields['forbidden'] = $f;
+    }
+    if($u){
+        $fields['userId'] = $u;
+    }
+
     $postvars = http_build_query($fields);
     echo $postvars;
 
