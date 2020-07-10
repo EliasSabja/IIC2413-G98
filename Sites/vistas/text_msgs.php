@@ -13,6 +13,7 @@
     );
 
     $postvars = http_build_query($fields);
+    echo $postvars;
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
