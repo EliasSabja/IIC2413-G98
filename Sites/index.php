@@ -113,8 +113,14 @@
                   
                   <div class="col-md-8">
                   </div>
-
                </div>
+               <?php
+               if ($_SESSION["nombre"]) {
+                  echo "<div class = 'col-md-24' style='text-align: center;padding:20px;'>
+                  <a href='vistas/menu_mensajes.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mensajes</a>
+                  </div>";
+               }
+               ?>
             </div>
 
             <!-- Statistics Box -->
@@ -257,8 +263,6 @@
                         <li><a href="https://www.instagram.com/diegoemilio01/?hl=es-la" target="_blank">Diego Bustamante</a></li>
                         <li><a href="https://www.instagram.com/luckbox314/?hl=es-la" target="_blank">Lucas Muñoz</a></li>
                         <li><a href="https://www.instagram.com/eli_sabja/?hl=es-la" target="_blank">Elias Sabja</a></li>
-                        <li><a href="#">Cristobal</a></li>
-
                      </ul>
                   </div>
                </div>
