@@ -18,7 +18,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1>Mensajes recibidos</h1>
+            <h1>Mensajes enviados</h1>
         </div>
     </div>
     <div class="container">

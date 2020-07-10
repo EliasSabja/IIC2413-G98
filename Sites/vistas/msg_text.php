@@ -15,10 +15,10 @@
             <form action='text_msgs.php' method='post' class='subscribe-form'>
             <table class="custom">
                 <tr>
-                    <th colspan="2">Deseables</th>
-                    <th colspan="2">Requeridas</th>
-                    <th colspan="2">Prohibidas</th>
-                    <th colspan="2">Id Emisor</th>
+                    <th>Deseables</th>
+                    <th>Requeridas</th>
+                    <th>Prohibidas</th>
+                    <th>Id Emisor</th>
                 </tr>
                 <tr>
                     <td>
@@ -43,7 +43,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="4">
                         <div class="align-center">
                         <input type="submit" value="Buscar" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                         </div>
