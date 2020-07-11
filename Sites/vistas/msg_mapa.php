@@ -15,7 +15,7 @@
         </div>
     </div>
     
-    <div id="mapid" style="height:180px;"></div>
+    <div id="mapid" style="height:180px;width:680px;"></div>
 
 </section>
 <?php include('../templates/footer_mapa.html'); ?>
