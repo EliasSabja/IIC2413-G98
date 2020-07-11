@@ -15,7 +15,6 @@
         $resp = json_decode($resp);
         array_push($msgs, $resp);
     }
-    echo 'mensaje', gettype($msgs[0]->{"lat"});
 ?>
 
 <section class="section section-destination">
@@ -97,7 +96,7 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
     <?php 
         foreach ($msgs as $msg){
-            echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup(" . strval($msg->{"message"}) . ");";
+            echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
         }
     ?>
 </script>
