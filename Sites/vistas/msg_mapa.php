@@ -87,7 +87,7 @@
 integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 crossorigin=""></script>
 <script>
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var mymap = L.map('mapid').setView([35.77304, 140.387044], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -97,7 +97,7 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
     <?php 
         foreach ($msgs as $msg){
-            echo "L.marker([" . strval($msg->{"long"}) . "," . strval($msg->{"lat"}) . "]).addTo(mymap);";
+            echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap);";
         }
     ?>
 </script>
