@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import os
 import atexit
 import subprocess
+import random
+from datetime import datetime
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
@@ -133,7 +135,10 @@ def post_messages():
     '''
     #Se reciben los datos del nuevo mensaje en un diccionario
     data = request.json
-    if ("message" in data) and ("sender" in data) and ("receptant" in data) and ("lat" in data) and ("long" in data) and ("date" in data):
+    if ("message" in data) and ("receptant" in data) and ("sender" in data):
+        data["long"] = random.uniform(-179, 180)
+        data["lat"] = random.uniform(-90, 90)
+        data["date"] = datetime.today().strftime('%Y-%m-%d')
         #Se anaden los atributos dado que todos existen
         if (type(data["long"]) == float) and (type(data["lat"]) == float) and (type(data["message"]) == str) and (type(data["receptant"]) == int) and (type(data["sender"]) == int) and (type(data["date"]) == str):
             #Se genera el mid
