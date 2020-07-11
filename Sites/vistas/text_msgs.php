@@ -21,7 +21,7 @@
         $fields['forbidden'] = explode(" ", $f);
     }
     if($u){
-        $fields['userId'] = explode(" ", $u);
+        $fields['userId'] = $u;
     }
 
     $options = array(
