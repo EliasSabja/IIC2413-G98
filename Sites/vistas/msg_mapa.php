@@ -97,7 +97,7 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
     <?php 
         foreach ($msgs as $msg){
-            echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap);";
+            echo "L.marker([" . strval($msg->{"long"}) . "," . strval($msg->{"lat"}) . "]).addTo(mymap);";
         }
     ?>
 </script>
