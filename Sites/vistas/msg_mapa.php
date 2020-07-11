@@ -15,8 +15,9 @@
         $resp = json_decode($resp);
         array_push($msgs, $resp);
     }
-
-    echo 'mensajes', $msgs[0];
+    foreach($msgs as $msg){
+        echo 'mensajes', $msg;
+    }
 ?>
 
 <section class="section section-destination">
