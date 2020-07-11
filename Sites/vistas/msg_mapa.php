@@ -16,7 +16,7 @@
         array_push($msgs, $resp);
     }
     foreach($msgs as $msg){
-        echo 'mensajes', $msg;
+        echo 'mensajes', $msg -> {'lat'};
     }
 ?>
 
