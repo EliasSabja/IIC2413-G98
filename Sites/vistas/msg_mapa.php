@@ -14,8 +14,13 @@
             <h1>Ubicación de mensajes entre <?php echo $fecha_i ?> y <?php echo $fecha_f ?></h1>
         </div>
     </div>
-    
-    <div id="mapid" style="height:180px;width:680px;"></div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-12">
+            <div id="mapid" style="height:500px;width:100%;"></div>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
 
 </section>
 <?php include('../templates/footer_mapa.html'); ?>
