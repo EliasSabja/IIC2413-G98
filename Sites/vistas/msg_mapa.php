@@ -30,7 +30,7 @@
             $mid = $m->{'mid'};
             $r = $m->{'receptant'};
             $s = $m->{'sender'};
-            echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
+            #echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
         }
         
 
