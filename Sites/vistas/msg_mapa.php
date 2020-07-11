@@ -15,9 +15,7 @@
         $resp = json_decode($resp);
         array_push($msgs, $resp);
     }
-    foreach($msgs as $msg){
-        echo 'mensajes', $msg -> {'lat'};
-    }
+    echo 'mensaje', gettype($msgs[0]->{"lat"});
 ?>
 
 <section class="section section-destination">
