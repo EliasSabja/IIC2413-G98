@@ -17,26 +17,6 @@
     }
 
     echo 'mensajes', $msgs[0];
-
-    foreach ($msgs as $m) {
-        if (
-            strtotime($m->{'date'}) > strtotime($fecha_i) &
-            strtotime($m->{'date'}) < strtotime($fecha_f)
-        ){
-            $f = $m->{'date'};
-            $la = $m->{'lat'};
-            $lo = $m->{'long'};
-            $me = $m->{'message'};
-            $mid = $m->{'mid'};
-            $r = $m->{'receptant'};
-            $s = $m->{'sender'};
-            #echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
-        }
-        
-
-    }
-
-    #echo "<tr><td>$fecha_i</td><td>$fecha_f</td></tr>";
 ?>
 
 <section class="section section-destination">
