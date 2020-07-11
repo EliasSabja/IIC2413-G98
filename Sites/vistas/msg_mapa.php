@@ -16,7 +16,7 @@
         array_push($msgs, $resp);
     }
 
-    echo 'mensajes', $msgs;
+    echo 'mensajes', $msgs[0];
 
     foreach ($msgs as $m) {
         if (
