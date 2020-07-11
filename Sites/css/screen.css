@@ -3269,7 +3269,6 @@ textarea:focus {
   color: white;
 }
 
-div#mapid{
-  height: 300px;
-  width: 850px;
+#mapid{
+  height: 180px;
 }
