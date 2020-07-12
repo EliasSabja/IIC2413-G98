@@ -20,7 +20,7 @@
 <section class="section section-destination">
     <div class="section-title">
         <div class="container">
-            <h1>Mensajes recibidos</h1>
+            <h1>Ubicación de mensajes entre <?php echo $fecha_i ?> y <?php echo $fecha_f ?></h1>
         </div>
     </div>
     <div class="container">
@@ -50,10 +50,6 @@
                         $r = $m->{'receptant'};
                         $s = $m->{'sender'};
                         echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
-                    }
-                    else {
-                        $f = $m->{'date'};
-                        echo "<tr><td>$fecha_i</td><td>$f</td><td>$fecha_f</td></tr>";  
                     }
                     
 
