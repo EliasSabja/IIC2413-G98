@@ -97,7 +97,7 @@ crossorigin=""></script>
     <?php 
         foreach ($msgs as $msg){
             if($fecha_i < $msg->{"date"} && $fecha_f > $msg->{"date"}){
-                echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
+                echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"date"}) . "</b><br>" . strval($msg->{"message"}) . "');";
             }
         }
     ?>
