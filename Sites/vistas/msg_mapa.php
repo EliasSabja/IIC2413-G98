@@ -97,8 +97,8 @@ crossorigin=""></script>
     <?php 
         foreach ($msgs as $msg){
             if(
-                strtotime($m->{'date'}) > strtotime($fecha_i) &
-                strtotime($m->{'date'}) < strtotime($fecha_f)
+                strtotime($msg->{'date'}) > strtotime($fecha_i) &
+                strtotime($msg->{'date'}) < strtotime($fecha_f)
             ){
                 echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
             }
