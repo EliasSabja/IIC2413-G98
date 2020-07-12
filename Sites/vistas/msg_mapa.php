@@ -86,6 +86,19 @@
 integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 crossorigin=""></script>
 <script>
+    let lista_marcadores = [];
+    <?php 
+        foreach ($msgs as $msg){
+            if($fecha_i < $msg->{"date"} && $fecha_f > $msg->{"date"}){
+                echo "var marker = new L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"date"}) . "</b><br>" . strval($msg->{"message"}) . "');";
+                echo "lista_marcadores.push(marker);";
+            }
+        }
+    ?>
+    var marcadores = L.layerGroup(lista_marcadores);
+    var overlay = {
+        "Marcadores": marcadores
+    };
     var mymap = L.map('mapid').setView([<?php echo $msgs[0]->{"lat"};?>, <?php echo $msgs[0]->{"long"}; ?>], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -93,13 +106,7 @@ crossorigin=""></script>
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
+    layers: [marcadores],
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
-    <?php 
-        foreach ($msgs as $msg){
-            if($fecha_i < $msg->{"date"} && $fecha_f > $msg->{"date"}){
-                echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"date"}) . "</b><br>" . strval($msg->{"message"}) . "');";
-            }
-        }
-    ?>
 </script>
 </html>
