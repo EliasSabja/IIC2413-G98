@@ -4,8 +4,8 @@
 ?>
 <?php
     $id = $_SESSION["id"];
-    $fecha_i = $_GET["date_i"];
-    $fecha_f = $_GET["date_f"];
+    $fecha_i = $_PSOT["date_i"];
+    $fecha_f = $_POST["date_f"];
     $response = file_get_contents("http://go-art.herokuapp.com/messages?id1=$id");
     $response = str_replace("},{", "}~~{", $response);
     $response = substr($response, 1, -2);
