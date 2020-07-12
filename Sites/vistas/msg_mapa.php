@@ -33,7 +33,7 @@
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2p1aHQ0bG5qMTNmeDQ0dTlrYmVwczIxeiJ9.nQgtI9N87X-eoI5ROjoh4A'}).addTo(mymap);
+            accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
             var marker = L.marker([51.5, -0.09]).addTo(mymap);
         </script>
     </div>
