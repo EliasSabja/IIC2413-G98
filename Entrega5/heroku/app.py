@@ -136,9 +136,9 @@ def post_messages():
     #Se reciben los datos del nuevo mensaje en un diccionario
     data = request.json
     if ("message" in data) and ("receptant" in data) and ("sender" in data):
-        data["long"] = random.uniform(-179, 180)
+        data["long"] = random.uniform(9.673828, 9.693952)
 
-        data["lat"] = random.uniform(-90, 90)
+        data["lat"] = random.uniform(45.359078, 45.369504)
 
         data["date"] = datetime.today().strftime('%Y-%m-%d')
         
