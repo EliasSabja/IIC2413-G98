@@ -15,12 +15,6 @@
         $resp = json_decode($resp);
         array_push($msgs, $resp);
     }
-    foreach ($msgs as $msg){
-        #strtotime($msg->{'date'}) > strtotime($fecha_i) && strtotime($msg->{'date'}) < strtotime($fecha_f)
-        echo "date", $msg->{"date"}, "<br>", strtotime($msg->{"date"}), "<br>";
-        echo "fecha_i", $fecha_i, "<br>";
-        echo "fecha_f", $fecha_f, "<br>";
-    }
 ?>
 
 <section class="section section-destination">
@@ -102,8 +96,10 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
     <?php 
         foreach ($msgs as $msg){
-            
-            if(true){
+            $f_i = new DateTime($fecha_i);
+            $f_f = new DateTime($fecha_i);
+            $date = new DateTime($msg->{"date"});
+            if($date > $f_i && $date < $f_f){
                 echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
             }
         }
