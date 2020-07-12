@@ -21,12 +21,12 @@
                 <tr>
                     <td>
                         <div class="input-line">
-                            <input id="date_i" type="date_i" name="date_i">
+                            <input id="date_i" type="date" name="date_i">
                         </div>
                     </td>
                     <td>
                         <div class="input-line">
-                            <input id="date_f" type="date_f" name="date_f">
+                            <input id="date_f" type="date" name="date_f">
                         </div>
                     </td>
                 </tr>

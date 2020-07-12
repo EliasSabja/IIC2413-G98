@@ -26,9 +26,6 @@
     <div class="container">
         <div class="row">
             <article>
-                <?php
-                echo $fecha_i , $fecha_f ;
-                ?>
             <table class="custom">
             <tr>
                 <th>Fecha</th>
@@ -50,6 +47,9 @@
                     $s = $m->{'sender'};
                     echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
                 }
+
+                echo "<tr><td>$fecha_i</td><td>$fecha_f</td></tr>;
+               
             ?> 
             </table>
             <!-- Go back -->

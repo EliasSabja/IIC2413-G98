@@ -14,7 +14,7 @@
         <a href='msg_text.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Búsqueda por Texto</a>
     </div>
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
-        <a href='msg_mapa.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mapa Mensajes</a>
+        <a href='msg_mapa_fecha.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Mapa Mensajes</a>
     </div>
 </div>
 
