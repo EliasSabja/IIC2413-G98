@@ -31,7 +31,22 @@
         <div class="col-md-6"></div>
     </div>
 
+    <!-- Go back -->
+    <div class="row" style="padding:20px;">
+                <!-- Spacer -->
+                <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
+
+                    <!-- Button -->
+                    <div class = "col-md-12 " style="text-align: center;padding:20px;">
+                        <a onclick="window.history.back()" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
+                    </div>
+
+                <!-- Spacer -->
+                <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
+
+    </div>
 </section>
+
 
 <footer class="main-footer">
     <div class="container">

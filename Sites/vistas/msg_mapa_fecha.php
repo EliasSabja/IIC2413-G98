@@ -34,7 +34,7 @@
                 <tr>
                     <td colspan="2">
                         <div class="align-center">
-                        <input type="submit" value="Ver viajes" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
+                        <input type="submit" value="Buscar mensajes" class="btn btn-special no-icon size-2x" style="position: static; border-radius: 5px;">
                         </div>
                     </td>
                 </tr>
@@ -50,7 +50,7 @@
 
                     <!-- Button -->
                     <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <a href="../menu_mensajes.php" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
+                        <a onclick="window.history.back()" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
                     </div>
 
                 <!-- Spacer -->
