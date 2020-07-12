@@ -1,6 +1,6 @@
 <?php include('../templates/header.html'); ?>
 
-<div class="row">
+<div class="row" style="padding-top: 150px;">
     <div class = 'col-md-24' style='text-align: center;padding:20px;'>
         <a href='msg_enviar.php'class='btn btn-special no-icon'style='margin:0 auto;border-radius: 5px;'>Enviar Mensajes</a>
     </div>

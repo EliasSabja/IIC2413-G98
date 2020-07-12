@@ -4,6 +4,8 @@
 ?>
 <?php
     $id = $_SESSION["id"];
+    $fecha_i = $_GET["fecha_i"];
+    $fecha_f = $_GET["fecha_f"];
     $response = file_get_contents("http://go-art.herokuapp.com/messages?id1=$id");
     $response = str_replace("},{", "}~~{", $response);
     $response = substr($response, 1, -2);
@@ -24,6 +26,9 @@
     <div class="container">
         <div class="row">
             <article>
+                <?php
+                echo $fecha_i , $fecha_f ;
+                ?>
             <table class="custom">
             <tr>
                 <th>Fecha</th>
