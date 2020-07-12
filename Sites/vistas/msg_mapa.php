@@ -96,13 +96,7 @@ crossorigin=""></script>
     accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2tjaWhteHVqMHFidzJxbzBwMmE0MGUwbCJ9.9K8F9xdOATN10tNQjADDTQ'}).addTo(mymap);
     <?php 
         foreach ($msgs as $msg){
-            $f_i = new DateTime($fecha_i);
-            $f_f = new DateTime($fecha_i);
-            $date = new DateTime($msg->{"date"});
-            echo 'console.log(' . strval($f_i->format("Y-m-d")) . ');';
-            echo 'console.log(' . strval($f_f->format("Y-m-d")) . ');';
-            echo 'console.log(' . strval($date->format("Y-m-d")) . ');';
-            if($date > $f_i && $date < $f_f){
+            if($fecha_i < $msg->{"date"} && $fecha_f > $msg->{"date"}){
                 echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
             }
         }
