@@ -3268,3 +3268,8 @@ textarea:focus {
   background-color: #3A3939;
   color: white;
 }
+
+div#mapid{
+  height: 300px;
+  width: 850px;
+}

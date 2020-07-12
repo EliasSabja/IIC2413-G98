@@ -23,60 +23,27 @@
             <h1>Ubicación de mensajes entre <?php echo $fecha_i ?> y <?php echo $fecha_f ?></h1>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <article>
-            <table class="custom">
-            <tr>
-                <th>Fecha</th>
-                <th>Latitud</th>
-                <th>Longitud</th>
-                <th>Contenido</th>
-                <th>Id mensaje</th>
-                <th>Receptor</th>
-                <th>Emisor</th>
-            </tr>
-            <?php
-                foreach ($msgs as $m) {
-                    if (
-                        strtotime($m->{'date'}) > strtotime($fecha_i) &
-                        strtotime($m->{'date'}) < strtotime($fecha_f)
-                    ){
-                        $f = $m->{'date'};
-                        $la = $m->{'lat'};
-                        $lo = $m->{'long'};
-                        $me = $m->{'message'};
-                        $mid = $m->{'mid'};
-                        $r = $m->{'receptant'};
-                        $s = $m->{'sender'};
-                        echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
-                    }
-                    
+    
+    <div class="mapid">
 
-                }
-
-                echo "<tr><td>$fecha_i</td><td>$fecha_f</td></tr>";
-               
-            ?> 
-            </table>
-            <!-- Go back -->
-            <div class="row" style="padding:20px;">
-                <!-- Spacer -->
-                <div class = "col-md-6 col " style="text-align: center;padding:20px;"></div>
-
-                    <!-- Button -->
-                    <div class = "col-md-12 " style="text-align: center;padding:20px;">
-                        <a onclick="window.history.back()" class="btn btn-special no-icon" style="margin:5px 20px;border-radius: 5px; width: 146px;">Atras</a>
-                    </div>
-
-                <!-- Spacer -->
-                <div class = "col-md-6 " style="text-align: center;padding:20px;"></div>
-
-            </div>
-            </article>
-            <hr />
-        </div>
     </div>
 </section>
 
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin="">
+</script>
+<script>
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZWxpYXMyMTA1c2IiLCJhIjoiY2p1aHQ0bG5qMTNmeDQ0dTlrYmVwczIxeiJ9.nQgtI9N87X-eoI5ROjoh4A'
+}).addTo(mymap);
+    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+</script>
 <?php include('../templates/footer.html'); ?>
