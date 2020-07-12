@@ -51,6 +51,11 @@
                         $s = $m->{'sender'};
                         echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
                     }
+                    else {
+                        $f = $m->{'date'};
+                        echo "<tr><td>$fecha_i</td><td>$f</td><td>$fecha_f</td></tr>";  
+                    }
+                    
 
                 }
 
