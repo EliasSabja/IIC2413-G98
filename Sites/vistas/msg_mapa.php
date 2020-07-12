@@ -99,10 +99,10 @@ crossorigin=""></script>
             $f_i = new DateTime($fecha_i);
             $f_f = new DateTime($fecha_i);
             $date = new DateTime($msg->{"date"});
-            echo 'console.log(' . $f_i . ')';
-            echo 'console.log(' . $f_f . ')';
-            echo 'console.log(' . $date . ')';
-            if($date > $f_i && $date < $f_f){
+            echo 'console.log(' . strval($f_i) . ');';
+            echo 'console.log(' . strval($f_f) . ');';
+            echo 'console.log(' . strval($date) . ');';
+            if(true){
                 echo "L.marker([" . strval($msg->{"lat"}) . "," . strval($msg->{"long"}) . "]).addTo(mymap).bindPopup('<b>" . strval($msg->{"message"}) . "</b>');";
             }
         }
