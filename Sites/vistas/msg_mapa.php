@@ -4,7 +4,7 @@
 ?>
 <?php
     $id = $_SESSION["id"];
-    $fecha_i = $_PSOT["date_i"];
+    $fecha_i = $_POST["date_i"];
     $fecha_f = $_POST["date_f"];
     $response = file_get_contents("http://go-art.herokuapp.com/messages?id1=$id");
     $response = str_replace("},{", "}~~{", $response);
@@ -38,14 +38,20 @@
             </tr>
             <?php
                 foreach ($msgs as $m) {
-                    $f = $m->{'date'};
-                    $la = $m->{'lat'};
-                    $lo = $m->{'long'};
-                    $me = $m->{'message'};
-                    $mid = $m->{'mid'};
-                    $r = $m->{'receptant'};
-                    $s = $m->{'sender'};
-                    echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
+                    if (
+                        strtotime($m->{'date'}) > strtotime($fecha_i) &
+                        strtotime($m->{'date'}) < strtotime($fecha_f)
+                    ){
+                        $f = $m->{'date'};
+                        $la = $m->{'lat'};
+                        $lo = $m->{'long'};
+                        $me = $m->{'message'};
+                        $mid = $m->{'mid'};
+                        $r = $m->{'receptant'};
+                        $s = $m->{'sender'};
+                        echo "<tr><td>$f</td><td>$la</td><td>$lo</td><td>$me</td><td>$mid</td><td>$r</td><td>$s</td></tr>";
+                    }
+
                 }
 
                 echo "<tr><td>$fecha_i</td><td>$fecha_f</td></tr>";
